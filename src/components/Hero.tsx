@@ -84,7 +84,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-              <div className="text-vultur-red font-bold text-3xl">15+</div>
+              <div className="text-vultur-red font-bold text-3xl">25+</div>
               <div className="text-gray-800">ani de experiență</div>
             </div>
           </div>

@@ -19,12 +19,27 @@ const AboutSection = () => {
                   }}
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-[240px]">
-                <div className="flex items-center">
-                  <Award className="h-10 w-10 text-vultur-red mr-4" />
-                  <div>
-                    <div className="font-bold text-xl">Partener</div>
-                    <div className="text-lg">Autorizat</div>
+              
+              {/* Enhanced partner badge with Webasto logo */}
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-vultur-red to-vultur-dark p-6 rounded-xl shadow-lg max-w-[280px] transform hover:scale-105 transition-transform duration-300">
+                <div className="text-white">
+                  <div className="flex items-center mb-3">
+                    <Award className="h-10 w-10 text-white mr-4" />
+                    <div>
+                      <div className="font-bold text-xl">Partener</div>
+                      <div className="text-lg">Autorizat</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center">
+                    <img 
+                      src="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
+                      alt="Webasto" 
+                      className="h-8 mr-2"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://placehold.co/120x30/ffffff/c41e1e?text=Webasto';
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -40,7 +55,7 @@ const AboutSection = () => {
               Experiență și calitate în domeniul auto
             </h2>
             <p className="text-gray-600 mb-8">
-              Cu o experiență de peste 15 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri. Pe lângă toate acestea dispunem de propriul magazin de piese auto.
+              Cu o experiență de peste 25 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri. Pe lângă toate acestea dispunem de propriul magazin de piese auto.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -50,7 +65,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Experiență dovedită</h3>
-                  <p className="text-sm text-gray-600">Peste 15 ani de experiență în domeniul auto electric</p>
+                  <p className="text-sm text-gray-600">Peste 25 ani de experiență în domeniul auto electric</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -76,7 +91,7 @@ const AboutSection = () => {
                   <Award className="h-5 w-5 text-vultur-red" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Partener autorizat</h3>
+                  <h3 className="font-medium mb-1">Partener autorizat Webasto</h3>
                   <p className="text-sm text-gray-600">Suntem partener autorizat pentru mărcile principale</p>
                 </div>
               </div>
