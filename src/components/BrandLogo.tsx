@@ -35,22 +35,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = true }: BrandL
   return (
     <div className="flex items-center gap-3">
       <div className={`${logoSizes[size]} ${bgColors[variant]} rounded-lg shadow-lg flex items-center justify-center relative overflow-hidden`}>
-        <img 
-          src="/lovable-uploads/527e8bb5-edaf-4902-aa41-50e626f665aa.png" 
-          alt="Vulturul Electric Logo" 
-          className="w-full h-full object-contain" 
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            // Fallback to stylized eagle with zap icon
-            target.style.display = 'none';
-            const container = target.parentElement;
-            if (container) {
-              const zap = document.createElement('div');
-              zap.innerHTML = '<div class="absolute inset-0 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>';
-              container.appendChild(zap.firstChild!);
-            }
-          }}
-        />
+        <Zap className="h-8 w-8 text-white" />
       </div>
       
       {showText && (

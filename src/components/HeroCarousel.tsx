@@ -14,28 +14,28 @@ const sliderItems = [
     id: 1,
     title: "REPARAȚII ELECTROMOTOARE",
     description: "Servicii complete de reparații și recondiționări pentru orice tip de electromotor auto",
-    image: "/lovable-uploads/09cb70f2-9872-4d37-84a1-7f6d868cf6d0.png",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Zap className="h-8 w-8 text-white" />
   },
   {
     id: 2,
     title: "ALTERNATOARE",
     description: "Diagnosticare și reparații alternatoare pentru toate tipurile de autovehicule",
-    image: "/lovable-uploads/5c56f901-7fb3-459d-b66d-206f3d0231e8.png",
+    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Battery className="h-8 w-8 text-white" />
   },
   {
     id: 3,
     title: "INSTALAȚII ELECTRICE",
     description: "Recondiționări complete ale instalațiilor electrice și remedieri scurt circuite",
-    image: "/lovable-uploads/e95affab-b50d-4d5c-98cc-6c88700c87c2.png",
+    image: "https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Cpu className="h-8 w-8 text-white" />
   },
   {
     id: 4,
     title: "SISTEME AUTO",
     description: "Montaj alarme, închideri centralizate, sisteme audio și navigație pentru confort și siguranță",
-    image: "/lovable-uploads/c8f767fa-7681-4596-ad6b-bb7f7b15a908.png",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Car className="h-8 w-8 text-white" />
   }
 ];
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = 'https://placehold.co/1200x800/c41e1e/ffffff?text=Service+Auto+Electric';
+                    target.src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center px-8 md:px-12">
