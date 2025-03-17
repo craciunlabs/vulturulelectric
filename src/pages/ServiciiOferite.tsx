@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import CtaSection from '@/components/CtaSection';
-import { Car, Wrench, Cpu, Tool, Settings, Battery, ShieldCheck, Plug } from 'lucide-react';
+import { Car, Wrench, Cpu, Settings, Battery, ShieldCheck, Plug } from 'lucide-react';
 
 const ServiciiOferite = () => {
   useEffect(() => {
@@ -71,7 +71,7 @@ const ServiciiOferite = () => {
               <ServiceCard
                 title="Montaj Casetofoane"
                 description="Servicii de instalare a sistemelor audio auto, cu integrare perfectă în bordul mașinii."
-                icon={<Tool className="h-6 w-6" />}
+                icon={<Settings className="h-6 w-6" />}
               />
               
               <ServiceCard

@@ -1,5 +1,5 @@
 
-import { Check, Award, Tool, ShieldCheck } from 'lucide-react';
+import { Check, Award, Wrench, ShieldCheck } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -55,7 +55,7 @@ const AboutSection = () => {
               </div>
               <div className="flex items-start">
                 <div className="bg-vultur-red/10 rounded-full p-2 mr-3 mt-0.5">
-                  <Tool className="h-5 w-5 text-vultur-red" />
+                  <Wrench className="h-5 w-5 text-vultur-red" />
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Echipamente moderne</h3>
