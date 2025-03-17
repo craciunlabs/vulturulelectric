@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import BrandLogo from './BrandLogo';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,15 +64,7 @@ const Header = () => {
       >
         <div className="container flex justify-between items-center">
           <Link to="/" className="relative block animate-fade-down">
-            <img 
-              src="/logo.png" 
-              alt="Vulturul Electric" 
-              className="h-12 md:h-16 object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = 'https://placehold.co/240x80/c41e1e/ffffff?text=Vulturul+Electric';
-              }}
-            />
+            <BrandLogo variant="dark" size="md" />
           </Link>
           
           {/* Desktop Navigation */}

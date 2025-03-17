@@ -12,6 +12,9 @@ const Index = () => {
   useEffect(() => {
     // On page load, scroll to top
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = "Vulturul Electric - Service Auto Electric Professional";
   }, []);
 
   return (

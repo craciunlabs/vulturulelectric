@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import HeroCarousel from './HeroCarousel';
+import BrandLogo from './BrandLogo';
 
 interface ImageLoaderProps {
   src: string;
@@ -44,6 +46,9 @@ const Hero = () => {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
+            <div className="flex items-center mb-6">
+              <BrandLogo size="lg" variant="default" />
+            </div>
             <div className="flex items-center mb-3">
               <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
               <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Service Auto Electric Profesionist</span>
@@ -76,15 +81,10 @@ const Hero = () => {
           
           <div className="hidden md:block relative animate-fade-up">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <ImageLoader
-                src="https://images.unsplash.com/photo-1623861397137-0f18f5d9b12f?q=80&w=1000&auto=format&fit=crop"
-                alt="Diagnostic auto"
-                className="w-full h-[400px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <HeroCarousel />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-              <div className="text-vultur-red font-bold text-3xl">25+</div>
+              <div className="text-vultur-red font-bold text-3xl">30+</div>
               <div className="text-gray-800">ani de experiență</div>
             </div>
           </div>
