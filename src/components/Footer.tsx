@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react';
 
@@ -46,7 +45,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
-                <span>DF 79, Nr. 226, Sat Vad, Jud. Gorj, Romania</span>
+                <span>DE 79, Nr. 229, Vârt, 215400, Gorj, Romania</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
