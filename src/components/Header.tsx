@@ -47,7 +47,7 @@ const Header = () => {
             </div>
             <div className="hidden md:flex items-center">
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
-              <span>DF 79, Nr. 226, Sat Vad, Jud. Gorj, Romania</span>
+              <span>DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania</span>
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ const Header = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 text-vultur-red" />
-                <span className="text-sm">DF 79, Nr. 226, Sat Vad, Jud. Gorj, Romania</span>
+                <span className="text-sm">DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania</span>
               </div>
             </div>
           </nav>

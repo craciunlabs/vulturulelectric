@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="text-white animate-fade-down">
             <div className="flex items-center mb-3">
               <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-              <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Service Auto Electric Profesionist</span>
+              <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Service Auto Electric Autorizat</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               REPARAȚII<br/>
@@ -79,9 +79,19 @@ const Hero = () => {
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <HeroCarousel />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-              <div className="text-vultur-red font-bold text-3xl">30+</div>
-              <div className="text-gray-800">ani de experiență</div>
+            <div className="grid grid-cols-3 gap-3 absolute -bottom-6 left-0 right-0">
+              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
+                <div className="text-vultur-red font-bold text-xl md:text-2xl">30+</div>
+                <div className="text-gray-800 text-sm">ani de experiență</div>
+              </div>
+              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
+                <div className="text-vultur-red font-bold text-xl md:text-2xl">2000+</div>
+                <div className="text-gray-800 text-sm">clienți fericiți</div>
+              </div>
+              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
+                <div className="text-vultur-red font-bold text-xl md:text-2xl">Webasto</div>
+                <div className="text-gray-800 text-sm">instalări și service</div>
+              </div>
             </div>
           </div>
         </div>
