@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Clock, MapPin, ChevronUp, Sun, Moon, Search } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, ChevronUp, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
@@ -12,7 +12,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState<'ro' | 'en'>('ro');
   const [showSearch, setShowSearch] = useState(false);
   
@@ -68,15 +67,6 @@ const Header = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
-    }
-  };
-  
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
     }
   };
   
@@ -150,20 +140,6 @@ const Header = () => {
               aria-label="Search"
             >
               <Search className="h-5 w-5" />
-            </Button>
-            
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleDarkMode} 
-              className="rounded-full"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
             </Button>
             
             <Button 
@@ -319,19 +295,7 @@ const Header = () => {
                 <span className="text-sm">DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania</span>
               </div>
               
-              <div className="flex items-center space-x-4 mt-6">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={toggleDarkMode} 
-                  className="flex-1"
-                >
-                  {isDarkMode ? (
-                    <><Sun className="h-4 w-4 mr-2" /> Light Mode</>
-                  ) : (
-                    <><Moon className="h-4 w-4 mr-2" /> Dark Mode</>
-                  )}
-                </Button>
+              <div className="flex items-center mt-6">
                 <Button 
                   variant="outline" 
                   size="sm" 
