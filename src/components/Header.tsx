@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin, ChevronUp, Sun, Moon, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -230,8 +230,10 @@ const Header = () => {
                       {i < breadcrumbs.length - 1 ? (
                         <>
                           <BreadcrumbItem>
-                            <BreadcrumbLink as={Link} to={breadcrumb.path}>
-                              {breadcrumb.name}
+                            <BreadcrumbLink asChild>
+                              <Link to={breadcrumb.path}>
+                                {breadcrumb.name}
+                              </Link>
                             </BreadcrumbLink>
                           </BreadcrumbItem>
                           <BreadcrumbSeparator />
