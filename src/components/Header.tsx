@@ -64,7 +64,7 @@ const Header = () => {
       >
         <div className="container flex justify-between items-center">
           <Link to="/" className="relative block animate-fade-down">
-            <BrandLogo variant="dark" size="lg" />
+            <BrandLogo variant="dark" size="xl" showText={false} />
           </Link>
           
           {/* Desktop Navigation */}
