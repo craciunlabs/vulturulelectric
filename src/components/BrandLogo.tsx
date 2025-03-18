@@ -1,9 +1,8 @@
-
 import { Zap } from 'lucide-react';
 
 interface BrandLogoProps {
   variant?: 'default' | 'white' | 'dark';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   showText?: boolean;
 }
 
@@ -11,13 +10,15 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = true }: BrandL
   const logoSizes = {
     sm: 'w-8 h-8',
     md: 'w-12 h-12',
-    lg: 'w-16 h-16'
+    lg: 'w-16 h-16',
+    xl: 'w-20 h-20'
   };
   
   const textSizes = {
     sm: 'text-lg',
     md: 'text-xl',
-    lg: 'text-2xl'
+    lg: 'text-2xl',
+    xl: 'text-3xl'
   };
   
   const textColors = {
