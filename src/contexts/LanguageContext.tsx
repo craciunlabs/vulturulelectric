@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type Language = 'ro' | 'en';
@@ -59,7 +58,7 @@ const translations = {
     authorizedPartner: 'Partener autorizat',
     
     // Testimonials section
-    testimonialsTitle: 'Clienții Noștri Mulțumiți',
+    testimonialsTitle: 'Ce spun Clienții',
     testimonialsDesc: 'Descoperă experiențele clienților noștri cu serviciile Vulturul Electric. Satisfacția lor este prioritatea noastră!',
     writeReview: 'Doriți să scrieți o recenzie?',
     realExperiences: 'Aceste testimoniale reprezintă experiențele reale ale clienților noștri.',
@@ -157,7 +156,7 @@ const translations = {
     authorizedPartner: 'Authorized partner',
     
     // Testimonials section
-    testimonialsTitle: 'Our Happy Clients',
+    testimonialsTitle: 'What Clients Say',
     testimonialsDesc: 'Discover our clients\' experiences with Vulturul Electric services. Their satisfaction is our priority!',
     writeReview: 'Would you like to write a review?',
     realExperiences: 'These testimonials represent real experiences of our clients.',
