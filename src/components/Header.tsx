@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin, ChevronUp, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -7,6 +7,36 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
 import { Button } from './ui/button';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from './ui/breadcrumb';
+
+// Create a simple translation object for demonstration
+const translations = {
+  ro: {
+    home: 'Acasa',
+    about: 'Despre noi',
+    services: 'Servicii oferite',
+    shop: 'Magazin Piese Auto',
+    gallery: 'Galerie',
+    clients: 'Clienți',
+    contact: 'Contact',
+    schedule: 'Avem deschis: Luni - Vineri, 09<sup>00</sup> - 18<sup>00</sup>',
+    callUs: 'Sunați ne acum: +40 721 407 727',
+    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
+    search: 'Căutare...'
+  },
+  en: {
+    home: 'Home',
+    about: 'About Us',
+    services: 'Services',
+    shop: 'Auto Parts Shop',
+    gallery: 'Gallery',
+    clients: 'Clients',
+    contact: 'Contact',
+    schedule: 'We are open: Monday - Friday, 09<sup>00</sup> - 18<sup>00</sup>',
+    callUs: 'Call us now: +40 721 407 727',
+    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
+    search: 'Search...'
+  }
+};
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,22 +50,22 @@ const Header = () => {
   
   // Set up route map for breadcrumbs
   const routeMap: Record<string, { name: string; path: string }> = {
-    '/': { name: 'Acasa', path: '/' },
-    '/despre-noi': { name: 'Despre noi', path: '/despre-noi' },
-    '/servicii-oferite': { name: 'Servicii oferite', path: '/servicii-oferite' },
-    '/magazin-piese-auto': { name: 'Magazin Piese Auto', path: '/magazin-piese-auto' },
-    '/galerie': { name: 'Galerie', path: '/galerie' },
-    '/clienti': { name: 'Clienți', path: '/clienti' },
-    '/contact': { name: 'Contact', path: '/contact' },
+    '/': { name: translations[language].home, path: '/' },
+    '/despre-noi': { name: translations[language].about, path: '/despre-noi' },
+    '/servicii-oferite': { name: translations[language].services, path: '/servicii-oferite' },
+    '/magazin-piese-auto': { name: translations[language].shop, path: '/magazin-piese-auto' },
+    '/galerie': { name: translations[language].gallery, path: '/galerie' },
+    '/clienti': { name: translations[language].clients, path: '/clienti' },
+    '/contact': { name: translations[language].contact, path: '/contact' },
   };
   
   // Generate breadcrumb path
-  const getBreadcrumbs = () => {
+  const getBreadcrumbs = useCallback(() => {
     const paths = location.pathname.split('/').filter(Boolean);
     
     if (paths.length === 0) return [];
     
-    const breadcrumbs = [{ name: 'Acasa', path: '/' }];
+    const breadcrumbs = [{ name: translations[language].home, path: '/' }];
     
     let currentPath = '';
     for (const segment of paths) {
@@ -47,7 +77,7 @@ const Header = () => {
     }
     
     return breadcrumbs;
-  };
+  }, [location.pathname, language, routeMap]);
   
   const breadcrumbs = getBreadcrumbs();
   
@@ -81,6 +111,9 @@ const Header = () => {
     });
   };
 
+  // Get translations based on current language
+  const t = translations[language];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
       {/* Top bar */}
@@ -89,17 +122,17 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <Clock className="h-3.5 w-3.5 mr-1.5" />
-              <span>Avem deschis: Luni - Vineri, 09<sup>00</sup> - 18<sup>00</sup></span>
+              <span dangerouslySetInnerHTML={{ __html: t.schedule }} />
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center">
               <Phone className="h-3.5 w-3.5 mr-1.5" />
-              <span>Sunați ne acum: +40 721 407 727</span>
+              <span>{t.callUs}</span>
             </div>
             <div className="hidden md:flex items-center">
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
-              <span>DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania</span>
+              <span>{t.address}</span>
             </div>
           </div>
         </div>
@@ -121,13 +154,13 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4 xl:space-x-6 animate-fade-down">
-            <Link to="/" className="nav-link font-medium">Acasa</Link>
-            <Link to="/despre-noi" className="nav-link font-medium">Despre noi</Link>
-            <Link to="/servicii-oferite" className="nav-link font-medium">Servicii oferite</Link>
-            <Link to="/magazin-piese-auto" className="nav-link font-medium">Magazin Piese Auto</Link>
-            <Link to="/galerie" className="nav-link font-medium">Galerie</Link>
-            <Link to="/clienti" className="nav-link font-medium">Clienți</Link>
-            <Link to="/contact" className="nav-link font-medium">Contact</Link>
+            <Link to="/" className="nav-link font-medium">{t.home}</Link>
+            <Link to="/despre-noi" className="nav-link font-medium">{t.about}</Link>
+            <Link to="/servicii-oferite" className="nav-link font-medium">{t.services}</Link>
+            <Link to="/magazin-piese-auto" className="nav-link font-medium">{t.shop}</Link>
+            <Link to="/galerie" className="nav-link font-medium">{t.gallery}</Link>
+            <Link to="/clienti" className="nav-link font-medium">{t.clients}</Link>
+            <Link to="/contact" className="nav-link font-medium">{t.contact}</Link>
           </nav>
           
           {/* Right side tools */}
@@ -187,7 +220,7 @@ const Header = () => {
             <div className="relative">
               <input 
                 type="text"
-                placeholder="Căutare..."
+                placeholder={t.search}
                 className="w-full p-2 pr-10 border border-gray-300 rounded-md" 
               />
               <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -240,49 +273,49 @@ const Header = () => {
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Acasa
+              {t.home}
             </Link>
             <Link 
               to="/despre-noi" 
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Despre noi
+              {t.about}
             </Link>
             <Link 
               to="/servicii-oferite" 
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Servicii oferite
+              {t.services}
             </Link>
             <Link 
               to="/magazin-piese-auto" 
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Magazin Piese Auto
+              {t.shop}
             </Link>
             <Link 
               to="/galerie" 
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Galerie
+              {t.gallery}
             </Link>
             <Link 
               to="/clienti" 
               className="py-4 border-b border-gray-100 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Clienți
+              {t.clients}
             </Link>
             <Link 
               to="/contact" 
               className="py-4 text-lg font-medium" 
               onClick={toggleMenu}
             >
-              Contact
+              {t.contact}
             </Link>
             
             <div className="mt-6 py-4 border-t border-gray-100">
@@ -292,7 +325,7 @@ const Header = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 text-vultur-red" />
-                <span className="text-sm">DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania</span>
+                <span className="text-sm">{t.address}</span>
               </div>
               
               <div className="flex items-center mt-6">

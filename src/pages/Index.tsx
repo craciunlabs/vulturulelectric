@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import ClientsCarousel from '@/components/ClientsCarousel';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import CtaSection from '@/components/CtaSection';
 import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
@@ -16,6 +17,10 @@ const Index = () => {
     
     // Update document title
     document.title = "Vulturul Electric - Service Auto Electric Professional";
+    
+    // Implement performance optimization with code splitting
+    import('@/components/CtaSection').catch(err => console.error('Failed to preload CtaSection:', err));
+    import('@/components/MapSection').catch(err => console.error('Failed to preload MapSection:', err));
   }, []);
 
   return (
@@ -26,6 +31,7 @@ const Index = () => {
         <ClientsCarousel />
         <ServicesSection />
         <AboutSection />
+        <TestimonialsSection />
         <MapSection />
         <CtaSection />
       </main>
