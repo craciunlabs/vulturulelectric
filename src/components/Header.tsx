@@ -7,56 +7,27 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
 import { Button } from './ui/button';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from './ui/breadcrumb';
-
-// Create a simple translation object for demonstration
-const translations = {
-  ro: {
-    home: 'Acasa',
-    about: 'Despre noi',
-    services: 'Servicii oferite',
-    shop: 'Magazin Piese Auto',
-    gallery: 'Galerie',
-    clients: 'Clienți',
-    contact: 'Contact',
-    schedule: 'Avem deschis: Luni - Vineri, 09<sup>00</sup> - 18<sup>00</sup>',
-    callUs: 'Sunați ne acum: +40 721 407 727',
-    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
-    search: 'Căutare...'
-  },
-  en: {
-    home: 'Home',
-    about: 'About Us',
-    services: 'Services',
-    shop: 'Auto Parts Shop',
-    gallery: 'Gallery',
-    clients: 'Clients',
-    contact: 'Contact',
-    schedule: 'We are open: Monday - Friday, 09<sup>00</sup> - 18<sup>00</sup>',
-    callUs: 'Call us now: +40 721 407 727',
-    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
-    search: 'Search...'
-  }
-};
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [language, setLanguage] = useState<'ro' | 'en'>('ro');
   const [showSearch, setShowSearch] = useState(false);
   
+  const { language, setLanguage, t } = useLanguage();
   const isMobile = useIsMobile();
   const location = useLocation();
   
   // Set up route map for breadcrumbs
   const routeMap: Record<string, { name: string; path: string }> = {
-    '/': { name: translations[language].home, path: '/' },
-    '/despre-noi': { name: translations[language].about, path: '/despre-noi' },
-    '/servicii-oferite': { name: translations[language].services, path: '/servicii-oferite' },
-    '/magazin-piese-auto': { name: translations[language].shop, path: '/magazin-piese-auto' },
-    '/galerie': { name: translations[language].gallery, path: '/galerie' },
-    '/clienti': { name: translations[language].clients, path: '/clienti' },
-    '/contact': { name: translations[language].contact, path: '/contact' },
+    '/': { name: t.home, path: '/' },
+    '/despre-noi': { name: t.about, path: '/despre-noi' },
+    '/servicii-oferite': { name: t.services, path: '/servicii-oferite' },
+    '/magazin-piese-auto': { name: t.shop, path: '/magazin-piese-auto' },
+    '/galerie': { name: t.gallery, path: '/galerie' },
+    '/clienti': { name: t.clients, path: '/clienti' },
+    '/contact': { name: t.contact, path: '/contact' },
   };
   
   // Generate breadcrumb path
@@ -65,7 +36,7 @@ const Header = () => {
     
     if (paths.length === 0) return [];
     
-    const breadcrumbs = [{ name: translations[language].home, path: '/' }];
+    const breadcrumbs = [{ name: t.home, path: '/' }];
     
     let currentPath = '';
     for (const segment of paths) {
@@ -77,7 +48,7 @@ const Header = () => {
     }
     
     return breadcrumbs;
-  }, [location.pathname, language, routeMap]);
+  }, [location.pathname, routeMap, t.home]);
   
   const breadcrumbs = getBreadcrumbs();
   
@@ -110,9 +81,6 @@ const Header = () => {
       behavior: 'smooth'
     });
   };
-
-  // Get translations based on current language
-  const t = translations[language];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">

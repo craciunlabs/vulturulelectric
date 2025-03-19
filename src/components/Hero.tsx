@@ -1,8 +1,9 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ImageLoaderProps {
   src: string;
@@ -32,6 +33,8 @@ const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
 };
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-32 pb-16 md:pb-24">
       <div className="absolute inset-0 z-0 opacity-20">
@@ -50,26 +53,26 @@ const Hero = () => {
               <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Service Auto Electric Autorizat</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              REPARAȚII<br/>
-              <span className="text-gradient">ELECTROMOTOARE</span><br/>
-              ALTERNATOARE
+              {t.heroTitle1}<br/>
+              <span className="text-gradient">{t.heroTitle2}</span><br/>
+              {t.heroTitle3}
             </h1>
             <p className="text-gray-300 mb-8 max-w-lg">
-              RECONDIȚIONĂRI INSTALAȚII ELECTRICE, MONTAJ ALARME, ÎNCHIDERI CENTRALIZATE, CASETOFOANE AUTO, REMEDIERI SCURT LA INSTALAȚIA ELECTRICĂ
+              {t.heroDesc}
             </p>
             <div className="flex flex-wrap gap-4">
               <a 
                 href="/contact" 
                 className="inline-flex items-center px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white"
               >
-                Contactează-ne acum
+                {t.contactUs}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
               <a 
                 href="/servicii-oferite" 
                 className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark"
               >
-                Vezi serviciile
+                {t.seeServices}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -82,15 +85,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-3 absolute -bottom-6 left-0 right-0">
               <div className="bg-white p-3 rounded-lg shadow-lg text-center">
                 <div className="text-vultur-red font-bold text-xl md:text-2xl">30+</div>
-                <div className="text-gray-800 text-sm">ani de experiență</div>
+                <div className="text-gray-800 text-sm">{t.yearsExperience}</div>
               </div>
               <div className="bg-white p-3 rounded-lg shadow-lg text-center">
                 <div className="text-vultur-red font-bold text-xl md:text-2xl">2000+</div>
-                <div className="text-gray-800 text-sm">clienți fericiți</div>
+                <div className="text-gray-800 text-sm">{t.happyClients}</div>
               </div>
               <div className="bg-white p-3 rounded-lg shadow-lg text-center">
                 <div className="text-vultur-red font-bold text-xl md:text-2xl">Webasto</div>
-                <div className="text-gray-800 text-sm">instalări și service</div>
+                <div className="text-gray-800 text-sm">{t.webastoInstall}</div>
               </div>
             </div>
           </div>

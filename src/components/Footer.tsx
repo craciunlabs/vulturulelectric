@@ -1,7 +1,12 @@
+
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-vultur-dark text-white pt-12 pb-6">
       <div className="container">
@@ -19,7 +24,7 @@ const Footer = () => {
                 }}
               />
               <p className="text-gray-300 text-sm">
-                Cu o experiență de peste 15 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.
+                {t.footerDesc}
               </p>
             </div>
             <div className="flex space-x-4 mt-auto">
@@ -37,7 +42,7 @@ const Footer = () => {
           
           {/* Column 2 */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Informații de contact</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.contactInfo}</h3>
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-start">
                 <Phone className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
@@ -45,29 +50,26 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
-                <span>DE 79, Nr. 229, Vârt, 215400, Gorj, Romania</span>
+                <span>{t.address}</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
-                <div>
-                  <div>Luni - Vineri: 09<sup>00</sup> - 18<sup>00</sup></div>
-                  <div>Sâmbătă - Duminică: Închis</div>
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: t.schedule }}></div>
               </li>
             </ul>
           </div>
           
           {/* Column 3 */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Link-uri rapide</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.quickLinks}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/" className="hover:text-vultur-red transition-colors">Acasa</Link></li>
-              <li><Link to="/despre-noi" className="hover:text-vultur-red transition-colors">Despre noi</Link></li>
-              <li><Link to="/servicii-oferite" className="hover:text-vultur-red transition-colors">Servicii oferite</Link></li>
-              <li><Link to="/magazin-piese-auto" className="hover:text-vultur-red transition-colors">Magazin Piese Auto</Link></li>
-              <li><Link to="/galerie" className="hover:text-vultur-red transition-colors">Galerie</Link></li>
-              <li><Link to="/clienti" className="hover:text-vultur-red transition-colors">Clienți</Link></li>
-              <li><Link to="/contact" className="hover:text-vultur-red transition-colors">Contact</Link></li>
+              <li><Link to="/" className="hover:text-vultur-red transition-colors">{t.home}</Link></li>
+              <li><Link to="/despre-noi" className="hover:text-vultur-red transition-colors">{t.about}</Link></li>
+              <li><Link to="/servicii-oferite" className="hover:text-vultur-red transition-colors">{t.services}</Link></li>
+              <li><Link to="/magazin-piese-auto" className="hover:text-vultur-red transition-colors">{t.shop}</Link></li>
+              <li><Link to="/galerie" className="hover:text-vultur-red transition-colors">{t.gallery}</Link></li>
+              <li><Link to="/clienti" className="hover:text-vultur-red transition-colors">{t.clients}</Link></li>
+              <li><Link to="/contact" className="hover:text-vultur-red transition-colors">{t.contact}</Link></li>
             </ul>
           </div>
         </div>
@@ -75,11 +77,11 @@ const Footer = () => {
         {/* Bottom footer */}
         <div className="pt-6 border-t border-gray-800 mt-6 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
           <div>
-            &copy; {new Date().getFullYear()} Vulturul Electric. Toate drepturile rezervate.
+            &copy; {currentYear} Vulturul Electric. {t.allRights}
           </div>
           <div className="mt-4 md:mt-0 flex space-x-4">
-            <Link to="/conditii-utilizare" className="hover:text-white transition-colors">Condiții utilizare</Link>
-            <Link to="/politica-de-confidentialitate" className="hover:text-white transition-colors">Politica de confidențialitate</Link>
+            <Link to="/conditii-utilizare" className="hover:text-white transition-colors">{t.termsOfUse}</Link>
+            <Link to="/politica-de-confidentialitate" className="hover:text-white transition-colors">{t.privacyPolicy}</Link>
           </div>
         </div>
       </div>

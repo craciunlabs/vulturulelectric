@@ -1,18 +1,22 @@
+
 import { MapPin, Navigation, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const MapSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-12 bg-gray-50">
       <div className="container">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-3">
             <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-            <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Locație</span>
+            <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">{t.location}</span>
             <div className="h-0.5 w-10 bg-vultur-red ml-3"></div>
           </div>
-          <h2 className="text-3xl font-bold mb-2">Unde ne găsești</h2>
+          <h2 className="text-3xl font-bold mb-2">{t.findUs}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Suntem situați pe DE 79, Nr. 229, în localitatea Vârt, Gorj. Te așteptăm să ne vizitezi!
+            {t.findUsDesc}
           </p>
         </div>
 
@@ -45,7 +49,7 @@ const MapSection = () => {
                 className="inline-flex items-center text-sm font-medium text-vultur-red hover:text-red-800 transition-colors"
               >
                 <Navigation className="h-4 w-4 mr-1" />
-                Indicații rutiere
+                {t.directions}
               </a>
             </div>
           </div>
@@ -58,10 +62,8 @@ const MapSection = () => {
                 <Clock className="h-4 w-4 text-white" />
               </div>
               <div>
-                <h3 className="font-medium mb-1">Program de lucru</h3>
-                <p className="text-sm text-gray-600">
-                  Luni - Vineri: 09<sup>00</sup> - 18<sup>00</sup> | Sâmbătă - Duminică: Închis
-                </p>
+                <h3 className="font-medium mb-1">{t.workSchedule}</h3>
+                <p className="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: t.workHours }}></p>
               </div>
             </div>
           </div>

@@ -1,7 +1,9 @@
 
 import React from 'react';
-import { User, Star, Quote } from 'lucide-react';
+import { User, Star, Quote, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
+import { Button } from './ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Testimonial {
   id: string;
@@ -42,13 +44,19 @@ const initialTestimonials: Testimonial[] = [
 ];
 
 const TestimonialsSection: React.FC = () => {
+  const { t } = useLanguage();
+  
+  const handleWriteReview = () => {
+    window.open('https://g.page/r/CXaJGdDCBZbEEAI/review', '_blank');
+  };
+
   return (
     <section id="testimonials" className="py-16 bg-gray-50">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-3">Clienții Noștri Mulțumiți</h2>
+          <h2 className="text-3xl font-bold mb-3">{t.testimonialsTitle}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Descoperă experiențele clienților noștri cu serviciile Vulturul Electric. Satisfacția lor este prioritatea noastră!
+            {t.testimonialsDesc}
           </p>
         </div>
         
@@ -95,9 +103,18 @@ const TestimonialsSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 space-y-6">
+          <Button 
+            onClick={handleWriteReview} 
+            variant="outline" 
+            className="border-vultur-red text-vultur-red hover:bg-vultur-red hover:text-white transition-colors"
+          >
+            {t.writeReview}
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+          
           <p className="text-gray-500 italic">
-            Aceste testimoniale reprezintă experiențele reale ale clienților noștri.
+            {t.realExperiences}
           </p>
         </div>
       </div>
