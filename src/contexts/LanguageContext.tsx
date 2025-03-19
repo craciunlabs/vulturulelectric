@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type Language = 'ro' | 'en';
 
@@ -58,7 +58,36 @@ const translations = {
     quickLinks: 'Link-uri rapide',
     allRights: 'Toate drepturile rezervate.',
     termsOfUse: 'Condiții utilizare',
-    privacyPolicy: 'Politica de confidențialitate'
+    privacyPolicy: 'Politica de confidențialitate',
+    
+    // NotFound page
+    notFoundTitle: '404',
+    notFoundMessage: 'Pagina nu a fost găsită',
+    notFoundDesc: 'Ne pare rău, pagina pe care o căutați nu există sau a fost mutată.',
+    backToHome: 'Înapoi la pagina principală',
+    
+    // About page
+    aboutUs: 'Despre Noi',
+    aboutHeroTitle: 'Cu pasiune și experiență în servicii auto',
+    aboutHeroDesc: 'Cu o experiență de peste 15 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
+    historyTitle: 'Istoria și misiunea noastră',
+    historyDesc1: 'Vulturul Electric a luat ființă din pasiunea pentru automobile și dorința de a oferi servicii de cea mai înaltă calitate în domeniul electric auto.',
+    historyDesc2: 'Cu peste 15 ani de experiență în spate, am crescut constant, investind în tehnologie de ultimă generație și în pregătirea echipei noastre.',
+    historyDesc3: 'Misiunea noastră este de a oferi servicii rapide, eficiente și de calitate pentru toate tipurile de vehicule, de la autoturisme până la camioane și autocare.',
+    teamAlt: 'Echipa noastră',
+    values: 'Valorile noastre',
+    valuesPrinciples: 'Principiile care ne ghidează',
+    valuesDesc: 'Ne mândrim cu valori solide care ne-au ajutat să câștigăm încrederea clienților noștri de-a lungul anilor',
+    valueQuality: 'Calitate',
+    valueQualityDesc: 'Suntem dedicați calității în tot ceea ce facem. Utilizăm doar piese de calitate și oferim servicii impecabile.',
+    valueIntegrity: 'Integritate',
+    valueIntegrityDesc: 'Acționăm cu onestitate și transparență în toate interacțiunile cu clienții noștri, construind relații de încredere durabile.',
+    valueProfessionalism: 'Profesionalism',
+    valueProfessionalismDesc: 'Echipa noastră este formată din profesioniști cu experiență, dedicați excelenței în serviciile auto electrice.',
+    statsYears: 'Ani de experiență',
+    statsClients: 'Clienți mulțumiți',
+    statsProjects: 'Proiecte finalizate',
+    statsPartnerships: 'Parteneriate'
   },
   en: {
     // Header translations
@@ -107,7 +136,36 @@ const translations = {
     quickLinks: 'Quick Links',
     allRights: 'All rights reserved.',
     termsOfUse: 'Terms of Use',
-    privacyPolicy: 'Privacy Policy'
+    privacyPolicy: 'Privacy Policy',
+    
+    // NotFound page
+    notFoundTitle: '404',
+    notFoundMessage: 'Page Not Found',
+    notFoundDesc: 'Sorry, the page you are looking for does not exist or has been moved.',
+    backToHome: 'Back to homepage',
+    
+    // About page
+    aboutUs: 'About Us',
+    aboutHeroTitle: 'With passion and experience in automotive services',
+    aboutHeroDesc: 'With over 15 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',
+    historyTitle: 'Our History & Mission',
+    historyDesc1: 'Vulturul Electric was born from the passion for automobiles and the desire to offer the highest quality services in the automotive electrical field.',
+    historyDesc2: 'With over 15 years of experience behind us, we have grown constantly, investing in cutting-edge technology and in training our team.',
+    historyDesc3: 'Our mission is to provide fast, efficient, and quality services for all types of vehicles, from cars to trucks and coaches.',
+    teamAlt: 'Our Team',
+    values: 'Our Values',
+    valuesPrinciples: 'The principles that guide us',
+    valuesDesc: 'We take pride in solid values that have helped us earn our clients\' trust over the years',
+    valueQuality: 'Quality',
+    valueQualityDesc: 'We are dedicated to quality in everything we do. We use only quality parts and offer impeccable services.',
+    valueIntegrity: 'Integrity',
+    valueIntegrityDesc: 'We act with honesty and transparency in all interactions with our clients, building lasting relationships of trust.',
+    valueProfessionalism: 'Professionalism',
+    valueProfessionalismDesc: 'Our team consists of experienced professionals, dedicated to excellence in automotive electrical services.',
+    statsYears: 'Years of experience',
+    statsClients: 'Happy clients',
+    statsProjects: 'Completed projects',
+    statsPartnerships: 'Partnerships'
   }
 };
 
@@ -118,6 +176,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   
   // Get translations for current language
   const t = translations[language];
+  
+  // Update HTML lang attribute when language changes
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
   
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
