@@ -38,6 +38,26 @@ const translations = {
     happyClients: 'clienți fericiți',
     webastoInstall: 'instalări și service',
     
+    // Services Section
+    serviceTitle: 'SERVICE',
+    serviceHighlight: 'AutoELECTRICĂ',
+    serviceDesc: 'Pe lângă toate aceste dispunem de propriul magazin de piese auto.',
+    serviceCars: 'Autoturisme',
+    serviceCarsDesc: 'Servicii complete de diagnoză și reparații electrice pentru autoturisme de toate mărcile.',
+    serviceVans: 'Autoutilitare',
+    serviceVansDesc: 'Soluții specializate pentru probleme electrice la autoutilitare și vehicule comerciale ușoare.',
+    serviceCoaches: 'Autocare',
+    serviceCoachesDesc: 'Mentenanță și reparații pentru sistemele electrice complexe ale autocarelor și autobuzelor.',
+    serviceTrucks: 'Autocamioane',
+    serviceTrucksDesc: 'Diagnosticare și remediere probleme electrice pentru flote de camioane și vehicule grele.',
+    serviceOffers: 'Servicii-ul VULTURUL ELECTRIC vă pune la dispoziție:',
+    serviceOffer1: 'Service autoturisme, autoutilitare, autocamioane, autocare, remorci și semiremorci',
+    serviceOffer2: 'Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, montaj alarme, închideri centralizate, etc.)',
+    serviceOffer3: 'Diagnoză / Computerizată a sistemelor electrico-electronice și pneumatice pentru toate mărcile de autoturisme, autocamioane, autocare.',
+    serviceOffer4: 'Diagnoză cu sistem de citire memorii-chei',
+    serviceOffer5: 'Diagnoză / sistem frânare semiremorci ABS-EBS',
+    authorizedPartner: 'Partener autorizat',
+    
     // Testimonials section
     testimonialsTitle: 'Clienții Noștri Mulțumiți',
     testimonialsDesc: 'Descoperă experiențele clienților noștri cu serviciile Vulturul Electric. Satisfacția lor este prioritatea noastră!',
@@ -116,6 +136,26 @@ const translations = {
     happyClients: 'happy clients',
     webastoInstall: 'installations and service',
     
+    // Services Section
+    serviceTitle: 'AUTO',
+    serviceHighlight: 'ELECTRICAL SERVICE',
+    serviceDesc: 'In addition to all these, we have our own auto parts store.',
+    serviceCars: 'Cars',
+    serviceCarsDesc: 'Complete diagnostic and electrical repair services for cars of all makes.',
+    serviceVans: 'Vans',
+    serviceVansDesc: 'Specialized solutions for electrical problems in vans and light commercial vehicles.',
+    serviceCoaches: 'Coaches',
+    serviceCoachesDesc: 'Maintenance and repairs for the complex electrical systems of coaches and buses.',
+    serviceTrucks: 'Trucks',
+    serviceTrucksDesc: 'Diagnosis and remediation of electrical problems for truck fleets and heavy vehicles.',
+    serviceOffers: 'VULTURUL ELECTRIC Service offers you:',
+    serviceOffer1: 'Service for cars, vans, trucks, coaches, trailers and semi-trailers',
+    serviceOffer2: 'Electrical installations service (starter repairs, alternators, electrical installations reconditioning, electrical short circuit repairs, alarm installation, central locking, etc.)',
+    serviceOffer3: 'Diagnosis / Computerized diagnosis of electro-electronic and pneumatic systems for all makes of cars, trucks, coaches.',
+    serviceOffer4: 'Diagnosis with key memory reading system',
+    serviceOffer5: 'Diagnosis / semi-trailer braking system ABS-EBS',
+    authorizedPartner: 'Authorized partner',
+    
     // Testimonials section
     testimonialsTitle: 'Our Happy Clients',
     testimonialsDesc: 'Discover our clients\' experiences with Vulturul Electric services. Their satisfaction is our priority!',
@@ -172,7 +212,18 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ro');
+  // Try to get stored language preference from localStorage
+  const getInitialLanguage = (): Language => {
+    if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage === 'ro' || storedLanguage === 'en') {
+        return storedLanguage;
+      }
+    }
+    return 'ro'; // Default language
+  };
+  
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
   
   // Get translations for current language
   const t = translations[language];
@@ -180,6 +231,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   // Update HTML lang attribute when language changes
   useEffect(() => {
     document.documentElement.lang = language;
+    // Store language preference
+    localStorage.setItem('language', language);
   }, [language]);
   
   return (
