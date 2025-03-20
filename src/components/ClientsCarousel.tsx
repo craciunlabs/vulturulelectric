@@ -75,7 +75,7 @@ const ClientsCarousel = () => {
     
     let animationId: number;
     let position = 0;
-    const speed = 1; // Setting back to 1
+    const speed = 0.5; // Reduced speed from 1 to 0.5
     
     const scroll = () => {
       if (!scrollContainer || isPaused) return;
