@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronRight, Phone, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -49,18 +48,18 @@ const StarRating = ({ rating }: { rating: number }) => {
   return (
     <div className="flex space-x-1 animate-fade-in">
       {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="h-5 w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
+        <Star key={`full-${i}`} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
       ))}
       {hasHalfStar && (
         <span className="relative">
-          <Star className="h-5 w-5 text-gray-300 fill-gray-300" />
+          <Star className="h-4 w-4 sm:h-5 sm:w-5 text-gray-300 fill-gray-300" />
           <span className="absolute top-0 left-0 overflow-hidden w-1/2">
-            <Star className="h-5 w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
+            <Star className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
           </span>
         </span>
       )}
       {[...Array(emptyStars)].map((_, i) => (
-        <Star key={`empty-${i}`} className="h-5 w-5 text-gray-300 fill-gray-300" />
+        <Star key={`empty-${i}`} className="h-4 w-4 sm:h-5 sm:w-5 text-gray-300 fill-gray-300" />
       ))}
     </div>
   );
@@ -71,7 +70,7 @@ const Hero = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-28 md:pt-32 pb-16 md:pb-24">
+    <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-24 md:pt-32 pb-12 md:pb-24">
       <div className="absolute inset-0 z-0 opacity-20">
         <ImageLoader
           src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop"
@@ -90,60 +89,69 @@ const Hero = () => {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
-            <div className="flex items-center mb-3">
-              <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-              <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICE AUTO ELECTRIC AUTORIZAT</span>
+            <div className="flex items-center mb-2">
+              <div className="h-0.5 w-6 sm:w-10 bg-vultur-red mr-2 sm:mr-3"></div>
+              <span className="text-xs sm:text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICE AUTO ELECTRIC AUTORIZAT</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t.heroTitle1}<br/>
-              <span className="text-gradient">{t.heroTitle2}</span><br/>
-              {t.heroTitle3}
-            </h1>
+            
+            {isMobile ? (
+              <h1 className="text-3xl font-bold mb-3 leading-tight">
+                <div className="text-white">REPARAȚII</div>
+                <div className="text-vultur-red">ELECTROMOTOARE</div>
+                <div className="text-white">ALTERNATOARE</div>
+              </h1>
+            ) : (
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                {t.heroTitle1}<br/>
+                <span className="text-gradient">{t.heroTitle2}</span><br/>
+                {t.heroTitle3}
+              </h1>
+            )}
 
-            <div className="flex flex-col md:flex-row md:items-center mb-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-4 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
               <div className="flex items-center">
                 <StarRating rating={4.6} />
-                <span className="ml-2 text-white font-medium">4.6 / 5</span>
+                <span className="ml-2 text-white font-medium text-sm sm:text-base">4.6 / 5</span>
               </div>
-              <div className="md:ml-3 flex items-center mt-1 md:mt-0">
-                <Badge variant="outline" className="bg-vultur-red/20 text-white border-vultur-red/30">
+              <div className="sm:ml-3 flex items-center mt-1 sm:mt-0">
+                <Badge variant="outline" className="text-xs sm:text-sm bg-vultur-red/20 text-white border-vultur-red/30">
                   31 recenzii pe Google
                 </Badge>
-                <span className="ml-2 text-gray-200 text-sm">Clienții ne recomandă</span>
+                <span className="ml-2 text-gray-200 text-xs sm:text-sm">Clienții ne recomandă</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-2 sm:gap-4">
               <a 
                 href="/contact" 
-                className="inline-flex items-center px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
               >
-                {t.contactUs}
-                <ChevronRight className="ml-2 h-4 w-4" />
+                {isMobile ? "Contactează-ne acum" : t.contactUs}
+                <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />
               </a>
               <a 
                 href="/servicii-oferite" 
-                className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
               >
-                {t.seeServices}
-                <ChevronRight className="ml-2 h-4 w-4" />
+                {isMobile ? "Vezi serviciile" : t.seeServices}
+                <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />
               </a>
             </div>
 
             {isMobile && (
-              <div className="mt-8 grid grid-cols-3 gap-2 animate-fade-up">
-                <MetricsBox 
-                  value="30+" 
-                  label={t.yearsExperience} 
-                />
-                <MetricsBox 
-                  value="2000+" 
-                  label={t.happyClients} 
-                />
-                <MetricsBox 
-                  value="Webasto" 
-                  label={t.webastoInstall} 
-                />
+              <div className="mt-5 grid grid-cols-3 gap-1.5 animate-fade-up">
+                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
+                  <div className="text-vultur-red font-bold text-lg">30+</div>
+                  <div className="text-gray-800 text-xs">ani de experiență</div>
+                </div>
+                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
+                  <div className="text-vultur-red font-bold text-lg">2000+</div>
+                  <div className="text-gray-800 text-xs">clienți fericiți</div>
+                </div>
+                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
+                  <div className="text-vultur-red font-bold text-lg">Webasto</div>
+                  <div className="text-gray-800 text-xs">instalări</div>
+                </div>
               </div>
             )}
           </div>
@@ -176,7 +184,7 @@ const Hero = () => {
           className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow hover:bg-red-800 transition-colors"
           aria-label="Call us"
         >
-          <Phone className="h-6 w-6" />
+          <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
         </a>
       )}
     </div>

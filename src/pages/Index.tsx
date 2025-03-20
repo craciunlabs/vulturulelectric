@@ -13,9 +13,11 @@ import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const isMobile = useIsMobile();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -55,17 +57,18 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Back to top button */}
+      {/* Back to top button - smaller on mobile */}
       <Button
         onClick={scrollToTop}
         className={cn(
           "fixed z-50 bottom-5 right-5 rounded-full shadow-lg transition-all duration-300 transform bg-vultur-red hover:bg-vultur-red/90",
+          isMobile ? "w-9 h-9" : "w-10 h-10",
           showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
         )}
         size="icon"
         aria-label="Back to top"
       >
-        <ChevronUp className="h-5 w-5" />
+        <ChevronUp className={isMobile ? "h-4 w-4" : "h-5 w-5"} />
       </Button>
     </div>
   );
