@@ -72,15 +72,16 @@ const ClientsCarousel = () => {
   const positionRef = useRef(0);
   const animationRef = useRef<number | null>(null);
   const isMobile = useIsMobile();
+  const [isReady, setIsReady] = useState(false);
   
   // Function to handle the animation scroll
   const scrollAnimation = () => {
     const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    if (!scrollContainer || !isReady) return;
     
     if (!isPaused) {
-      // Extremely slow scroll speed on mobile devices
-      const scrollSpeed = isMobile ? 0.05 : 0.5;
+      // Super slow scroll speed on mobile devices (0.02 is 10x slower than desktop)
+      const scrollSpeed = isMobile ? 0.02 : 0.5;
       positionRef.current += scrollSpeed;
       scrollContainer.scrollLeft = positionRef.current;
       
@@ -94,7 +95,18 @@ const ClientsCarousel = () => {
     animationRef.current = requestAnimationFrame(scrollAnimation);
   };
   
+  // Add a delay to make sure the mobile detection happens before animation starts
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  useEffect(() => {
+    if (!isReady) return;
+    
     // Start the scrolling animation
     animationRef.current = requestAnimationFrame(scrollAnimation);
     
@@ -104,7 +116,7 @@ const ClientsCarousel = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isPaused]);
+  }, [isPaused, isReady, isMobile]);
   
   const handleMouseEnter = () => {
     setIsPaused(true);

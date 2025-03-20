@@ -83,7 +83,7 @@ const ServicesSection = () => {
               </div>
               <div className="relative h-48 sm:h-64 md:h-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1486262322291-6f4dbcd69bbf?q=80&w=1024&auto=format&fit=crop"
+                  src="https://i.imgur.com/78J38c9.jpeg"
                   alt="Service Auto"
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={(e) => {
@@ -92,9 +92,11 @@ const ServicesSection = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
-                <div className="absolute bottom-3 left-3 md:bottom-10 md:left-10 text-white">
-                  <div className="text-xs sm:text-sm font-medium mb-1">{t.authorizedPartner}</div>
-                  <div className="text-xl sm:text-2xl font-bold">Webasto</div>
+                
+                {/* Webasto badge */}
+                <div className="absolute bottom-3 right-3 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[150px]">
+                  <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
+                  <div className="text-lg font-bold">Webasto</div>
                 </div>
               </div>
             </div>
