@@ -5,23 +5,28 @@ const MOBILE_BREAKPOINT = 768
 const MEDIUM_BREAKPOINT = 1024
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+  const [isMobile, setIsMobile] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
-    const onChange = () => {
+    const checkMobile = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     }
-    mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    return () => mql.removeEventListener("change", onChange)
+    
+    // Check immediately
+    checkMobile()
+    
+    // Add event listener
+    window.addEventListener('resize', checkMobile)
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  return !!isMobile
+  return isMobile
 }
 
 export function useBreakpoint() {
-  const [breakpoint, setBreakpoint] = React.useState<'mobile' | 'tablet' | 'desktop' | undefined>(undefined)
+  const [breakpoint, setBreakpoint] = React.useState<'mobile' | 'tablet' | 'desktop'>('desktop')
 
   React.useEffect(() => {
     const updateBreakpoint = () => {
