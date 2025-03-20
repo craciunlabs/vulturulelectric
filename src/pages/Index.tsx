@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import AuthorizedPartnerSection from '@/components/AuthorizedPartnerSection';
 import ClientsCarousel from '@/components/ClientsCarousel';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
@@ -24,6 +25,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow overflow-hidden">
         <Hero />
+        <AuthorizedPartnerSection />
         <ClientsCarousel />
         <ServicesSection />
         <AboutSection />

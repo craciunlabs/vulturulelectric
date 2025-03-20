@@ -41,23 +41,6 @@ const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, labe
   </div>
 );
 
-const CertificationBadge = ({ name, logo }: { name: string, logo: string }) => (
-  <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-lg text-center flex flex-col items-center">
-    <img 
-      src={logo} 
-      alt={name} 
-      className="h-10 mb-1" 
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.src = 'https://placehold.co/100x40/ffffff/c41e1e?text=Logo';
-      }}
-    />
-    <Badge variant="outline" className="text-xs bg-gray-100 border-gray-200">
-      {name}
-    </Badge>
-  </div>
-);
-
 const Hero = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
@@ -142,32 +125,6 @@ const Hero = () => {
               />
             </div>
           </div>
-        </div>
-      </div>
-      
-      {/* Certification Badges Row - Both Mobile and Desktop */}
-      <div className="container mt-12 relative z-10">
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 animate-fade-up">
-          <CertificationBadge 
-            name="Webasto" 
-            logo="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
-          />
-          <CertificationBadge 
-            name="Eberspächer" 
-            logo="https://www.eberspaecher.com/typo3conf/ext/eberspaecher/Resources/Public/Images/logo.svg" 
-          />
-          <CertificationBadge 
-            name="Bosch" 
-            logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png" 
-          />
-          <CertificationBadge 
-            name="Magneti Marelli" 
-            logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Magneti_Marelli_logo.svg/1200px-Magneti_Marelli_logo.svg.png" 
-          />
-          <CertificationBadge 
-            name="Delphi" 
-            logo="https://1000logos.net/wp-content/uploads/2020/04/Delphi-Logo-1998.jpg" 
-          />
         </div>
       </div>
       
