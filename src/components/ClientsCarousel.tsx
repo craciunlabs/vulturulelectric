@@ -69,26 +69,30 @@ const ClientsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [animationId, setAnimationId] = useState<number | null>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
   
   const startScrolling = () => {
     if (!scrollRef.current || isPaused) return;
     
     const scrollContainer = scrollRef.current;
-    let scrollAmount = 0;
-    // Slow down the speed for a smoother scroll
-    const speed = 0.2; // Reduced from 0.5 to 0.2
-    const step = 0.5; // Reduced from 1 to 0.5 for smoother movement
+    // Reset the animation if we've reached the end
+    if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+      setScrollPosition(0);
+      scrollContainer.scrollLeft = 0;
+    }
+    
+    const speed = 0.5; // Restored speed to a more reasonable value
+    const step = 1;
     
     const scroll = () => {
-      if (!scrollContainer) return;
+      if (!scrollContainer || isPaused) return;
       
-      scrollAmount += step;
-      scrollContainer.scrollLeft = scrollAmount * speed;
+      // Update our position state
+      const newPosition = scrollPosition + step;
+      setScrollPosition(newPosition);
       
-      if (scrollAmount * speed >= (scrollContainer.scrollWidth - scrollContainer.clientWidth)) {
-        scrollContainer.scrollLeft = 0;
-        scrollAmount = 0;
-      }
+      // Apply the scroll
+      scrollContainer.scrollLeft = newPosition * speed;
       
       const id = requestAnimationFrame(scroll);
       setAnimationId(id);
@@ -105,6 +109,18 @@ const ClientsCarousel = () => {
     }
   };
   
+  const handleMouseEnter = () => {
+    // Store current scroll position when mouse enters
+    if (scrollRef.current) {
+      setScrollPosition(scrollRef.current.scrollLeft / 0.5); // Adjust by the speed factor
+    }
+    setIsPaused(true);
+  };
+  
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+  
   useEffect(() => {
     if (isPaused) {
       stopScrolling();
@@ -115,7 +131,7 @@ const ClientsCarousel = () => {
     return () => {
       stopScrolling();
     };
-  }, [isPaused]);
+  }, [isPaused, scrollPosition]);
   
   useEffect(() => {
     startScrolling();
@@ -138,8 +154,8 @@ const ClientsCarousel = () => {
         ref={scrollRef}
         className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap py-6 px-8 scrollbar-hide"
         style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
@@ -156,7 +172,7 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-500 group-hover:scale-110" 
+                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-300 group-hover:scale-110" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
