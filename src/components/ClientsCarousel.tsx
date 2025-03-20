@@ -135,7 +135,7 @@ const ClientsCarousel = () => {
       
       <div 
         ref={scrollRef}
-        className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap pb-4 scrollbar-hide"
+        className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap pb-6 px-6 scrollbar-hide"
         style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -143,14 +143,14 @@ const ClientsCarousel = () => {
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
-            className="shrink-0 h-16 md:h-20 px-4 py-2 bg-white rounded-lg shadow-sm flex items-center justify-center transition hover:shadow-md"
+            className="shrink-0 h-16 md:h-20 px-4 py-2 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
           >
             <a 
               href={client.url} 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label={client.name}
-              className="h-full flex items-center group"
+              className="h-full flex items-center"
             >
               <img 
                 src={client.logo} 
