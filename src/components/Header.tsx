@@ -159,12 +159,12 @@ const Header = () => {
         toggleLanguage={toggleLanguage} 
       />
       
-      {/* Floating Navigation Button - now completely removed */}
-      {/* <FloatingNavButton 
+      {/* Floating Navigation Button */}
+      <FloatingNavButton 
         showMobileNav={showMobileNav} 
         scrollToLocation={scrollToLocation} 
         isMobile={isMobile} 
-      /> */}
+      />
     </header>
   );
 };
