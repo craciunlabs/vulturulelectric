@@ -34,7 +34,7 @@ const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
 };
 
 const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, label: string }) => (
-  <div className="bg-white p-3 rounded-lg shadow-lg text-center">
+  <div className="bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-lg text-center flex flex-col items-center">
     <div className="text-vultur-red font-bold text-xl md:text-2xl">{value}</div>
     <div className="text-gray-800 text-sm">{label}</div>
   </div>
@@ -45,7 +45,7 @@ const Hero = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-32 pb-16 md:pb-24">
+    <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-28 md:pt-32 pb-16 md:pb-24">
       <div className="absolute inset-0 z-0 opacity-20">
         <ImageLoader
           src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop"
@@ -55,21 +55,23 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-10">
-        {/* Mobile Metrics Display - Visible only on mobile */}
+        {/* Mobile Metrics Display - Enhanced for readability */}
         {isMobile && (
-          <div className="mb-6 grid grid-cols-3 gap-2 animate-fade-down">
-            <MetricsBox 
-              value="30+" 
-              label={t.yearsExperience} 
-            />
-            <MetricsBox 
-              value="2000+" 
-              label={t.happyClients} 
-            />
-            <MetricsBox 
-              value="Webasto" 
-              label={t.webastoInstall} 
-            />
+          <div className="px-2 mb-8 animate-fade-down">
+            <div className="grid grid-cols-3 gap-2">
+              <MetricsBox 
+                value="30+" 
+                label={t.yearsExperience} 
+              />
+              <MetricsBox 
+                value="2000+" 
+                label={t.happyClients} 
+              />
+              <MetricsBox 
+                value="Webasto" 
+                label={t.webastoInstall} 
+              />
+            </div>
           </div>
         )}
         

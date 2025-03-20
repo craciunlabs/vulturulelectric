@@ -14,6 +14,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showTopBar, setShowTopBar] = useState(true);
   
   const { language, setLanguage, t } = useLanguage();
   const isMobile = useIsMobile();
@@ -56,11 +57,16 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       setShowScrollToTop(window.scrollY > 300);
+      
+      // Hide top bar on scroll for mobile
+      if (isMobile) {
+        setShowTopBar(window.scrollY < 10);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -84,8 +90,11 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      {/* Top bar */}
-      <div className="bg-vultur-red text-white text-sm py-2">
+      {/* Top bar - now conditionally hidden on mobile scroll */}
+      <div className={cn(
+        "bg-vultur-red text-white text-sm transition-all duration-300",
+        isMobile ? (showTopBar ? "max-h-16 py-1 opacity-100" : "max-h-0 py-0 opacity-0 overflow-hidden") : "py-2"
+      )}>
         <div className="container flex flex-wrap justify-between items-center">
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
@@ -106,18 +115,21 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Main navigation */}
+      {/* Main navigation - adjusted for cleaner mobile view */}
       <div 
         className={cn(
           "transition-all duration-300 backdrop-blur-layer", 
           isScrolled 
             ? "bg-white/95 shadow-md py-2" 
-            : "bg-white/80 py-4"
+            : "bg-white/90 py-3"
         )}
+        style={{
+          paddingTop: isMobile && !showTopBar ? '0.75rem' : undefined
+        }}
       >
         <div className="container flex justify-between items-center">
           <Link to="/" className="relative block animate-fade-down">
-            <BrandLogo variant="dark" size="md" showText={false} />
+            <BrandLogo variant="dark" size={isMobile ? "sm" : "md"} showText={false} />
           </Link>
           
           {/* Desktop Navigation */}
@@ -155,6 +167,15 @@ const Header = () => {
           
           {/* Mobile menu toggle */}
           <div className="flex md:hidden items-center space-x-2">
+            <a 
+              href="tel:+40721407727" 
+              className="p-2 text-sm text-vultur-red flex items-center mr-1" 
+              aria-label="Call us"
+            >
+              <Phone className="h-4 w-4 mr-1" />
+              <span className="hidden xs:inline">+40 721 407 727</span>
+            </a>
+            
             <Button 
               variant="ghost" 
               size="icon" 
@@ -232,7 +253,7 @@ const Header = () => {
       {/* Mobile Navigation Menu */}
       {isMobile && (
         <div className={cn(
-          "fixed inset-0 top-[125px] bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
+          "fixed inset-0 top-[60px] bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}>
           <nav className="flex flex-col pt-5 px-8">
@@ -329,15 +350,7 @@ const Header = () => {
         </Button>
       </div>
       
-      {/* Call now floating button for mobile */}
-      <div className="md:hidden fixed left-5 bottom-5 z-50">
-        <a
-          href="tel:+40721407727"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white shadow-lg"
-        >
-          <Phone className="h-5 w-5" />
-        </a>
-      </div>
+      {/* Call now floating button for mobile - now moved to Header toolbar */}
     </header>
   );
 };
