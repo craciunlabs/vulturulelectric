@@ -43,24 +43,21 @@ const sliderItems = [
 const HeroCarousel = () => {
   const [autoplay, setAutoplay] = useState(true);
   const [api, setApi] = useState<{ scrollNext: () => void } | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   useEffect(() => {
     if (!api || !autoplay) return;
     
-    // Start sliding immediately with the first delay set to a shorter time
-    const initialDelay = setTimeout(() => {
+    // Start sliding immediately
+    const interval = setInterval(() => {
       api.scrollNext();
       
-      // After the first slide, set up the regular interval
-      const interval = setInterval(() => {
-        api.scrollNext();
-      }, 3500); // Slightly faster than before for all slides
-      
-      return () => clearInterval(interval);
-    }, 2000); // Reduced initial delay to 2 seconds
+      // Update the current index
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderItems.length);
+    }, 3000); // Consistent 3-second interval for all slides
     
-    return () => clearTimeout(initialDelay);
-  }, [api, autoplay]);
+    return () => clearInterval(interval);
+  }, [api, autoplay, sliderItems.length]);
 
   return (
     <div className="w-full">
