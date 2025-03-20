@@ -75,12 +75,12 @@ const ClientsCarousel = () => {
     
     let animationId: number;
     let position = 0;
-    const speed = 1.5; // Increased speed
+    const speed = 1; // Setting back to 1
     
     const scroll = () => {
       if (!scrollContainer || isPaused) return;
       
-      position += 1;
+      position += speed;
       scrollContainer.scrollLeft = position;
       
       // Reset when we reach the end of the first set
