@@ -47,11 +47,19 @@ const HeroCarousel = () => {
   useEffect(() => {
     if (!api || !autoplay) return;
     
-    const interval = setInterval(() => {
+    // Start sliding immediately with the first delay set to a shorter time
+    const initialDelay = setTimeout(() => {
       api.scrollNext();
-    }, 4000); // Changed from 5000 to 4000 to make the slider a bit faster
+      
+      // After the first slide, set up the regular interval
+      const interval = setInterval(() => {
+        api.scrollNext();
+      }, 3500); // Slightly faster than before for all slides
+      
+      return () => clearInterval(interval);
+    }, 2000); // Reduced initial delay to 2 seconds
     
-    return () => clearInterval(interval);
+    return () => clearTimeout(initialDelay);
   }, [api, autoplay]);
 
   return (
