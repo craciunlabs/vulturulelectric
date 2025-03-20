@@ -9,6 +9,7 @@ import {
   type CarouselApi
 } from "@/components/ui/carousel";
 import { Zap, Car, Wrench, Battery, Cpu } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const sliderItems = [
   {
@@ -44,6 +45,8 @@ const sliderItems = [
 const HeroCarousel = () => {
   const [autoplay, setAutoplay] = useState(true);
   const [api, setApi] = useState<CarouselApi | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     if (!api || !autoplay) return;
@@ -54,6 +57,21 @@ const HeroCarousel = () => {
     
     return () => clearInterval(timer);
   }, [api, autoplay]);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    // Update current slide index when carousel changes
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <div className="w-full">
@@ -69,7 +87,7 @@ const HeroCarousel = () => {
         <CarouselContent>
           {sliderItems.map((item) => (
             <CarouselItem key={item.id} className="md:basis-1/1">
-              <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl">
+              <div className="relative h-[340px] sm:h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl">
                 <img 
                   src={item.image} 
                   alt={item.title}
@@ -79,19 +97,38 @@ const HeroCarousel = () => {
                     target.src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center px-8 md:px-12">
-                  <div className="bg-vultur-red/90 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center px-6 sm:px-8 md:px-12">
+                  <div className="bg-vultur-red/90 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     {item.icon}
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{item.title}</h2>
-                  <p className="text-white/90 max-w-lg text-lg md:text-xl">{item.description}</p>
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">{item.title}</h2>
+                  <p className="text-white/90 max-w-lg text-sm sm:text-lg md:text-xl line-clamp-3 sm:line-clamp-none">{item.description}</p>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
-        <CarouselNext className="right-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
+        
+        {/* Mobile optimized controls - dots indicator */}
+        {isMobile ? (
+          <div className="flex justify-center mt-3 gap-1.5">
+            {sliderItems.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentIndex === index ? "bg-vultur-red scale-125" : "bg-gray-300"
+                }`}
+                onClick={() => api?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        ) : (
+          <>
+            <CarouselPrevious className="left-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
+            <CarouselNext className="right-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
+          </>
+        )}
       </Carousel>
     </div>
   );
