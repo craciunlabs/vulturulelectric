@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ChevronUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AuthorizedPartnerSection from '@/components/AuthorizedPartnerSection';
@@ -68,7 +68,7 @@ const Index = () => {
         size="icon"
         aria-label="Back to top"
       >
-        <ArrowUp className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
+        <ChevronUp className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
       </Button>
     </div>
   );
