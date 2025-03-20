@@ -1,10 +1,11 @@
 
 import { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Badge } from './ui/badge';
 
 interface ImageLoaderProps {
   src: string;
@@ -40,6 +41,23 @@ const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, labe
   </div>
 );
 
+const CertificationBadge = ({ name, logo }: { name: string, logo: string }) => (
+  <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-lg text-center flex flex-col items-center">
+    <img 
+      src={logo} 
+      alt={name} 
+      className="h-10 mb-1" 
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.src = 'https://placehold.co/100x40/ffffff/c41e1e?text=Logo';
+      }}
+    />
+    <Badge variant="outline" className="text-xs bg-gray-100 border-gray-200">
+      {name}
+    </Badge>
+  </div>
+);
+
 const Hero = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
@@ -55,21 +73,21 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-10">
-        {/* Mobile Metrics Display - Enhanced for readability */}
+        {/* Mobile Certification Badges Display */}
         {isMobile && (
           <div className="px-2 mb-8 animate-fade-down">
             <div className="grid grid-cols-3 gap-2">
-              <MetricsBox 
-                value="30+" 
-                label={t.yearsExperience} 
+              <CertificationBadge 
+                name="Webasto" 
+                logo="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
               />
-              <MetricsBox 
-                value="2000+" 
-                label={t.happyClients} 
+              <CertificationBadge 
+                name="Bosch" 
+                logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png" 
               />
-              <MetricsBox 
-                value="Webasto" 
-                label={t.webastoInstall} 
+              <CertificationBadge 
+                name="Magneti Marelli" 
+                logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Magneti_Marelli_logo.svg/1200px-Magneti_Marelli_logo.svg.png" 
               />
             </div>
           </div>
@@ -128,6 +146,17 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Floating Call Button for Mobile */}
+      {isMobile && (
+        <a 
+          href="tel:+40721407727" 
+          className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow"
+          aria-label="Call us"
+        >
+          <Phone className="h-6 w-6" />
+        </a>
+      )}
     </div>
   );
 };
