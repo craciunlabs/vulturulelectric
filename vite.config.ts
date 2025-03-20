@@ -29,7 +29,6 @@ export default defineConfig(({ mode }) => ({
           'vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui': [
             '@radix-ui/react-slot',
-            '@radix-ui/react-breadcrumb',
             '@radix-ui/react-collapsible'
           ]
         }
