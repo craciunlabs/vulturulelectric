@@ -79,8 +79,8 @@ const ClientsCarousel = () => {
     if (!scrollContainer) return;
     
     if (!isPaused) {
-      // Slower scroll speed on mobile devices
-      const scrollSpeed = isMobile ? 0.2 : 0.5;
+      // Much slower scroll speed on mobile devices
+      const scrollSpeed = isMobile ? 0.1 : 0.5;
       positionRef.current += scrollSpeed;
       scrollContainer.scrollLeft = positionRef.current;
       
