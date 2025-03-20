@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { ChevronRight, Phone, Star, StarHalf } from 'lucide-react';
+import { ChevronRight, Phone, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -41,6 +40,31 @@ const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, labe
   </div>
 );
 
+const StarRating = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.3 && rating % 1 <= 0.7;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  
+  return (
+    <div className="flex">
+      {[...Array(fullStars)].map((_, i) => (
+        <Star key={`full-${i}`} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+      ))}
+      {hasHalfStar && (
+        <span className="relative">
+          <Star className="h-5 w-5 text-gray-300 fill-gray-300" />
+          <span className="absolute top-0 left-0 overflow-hidden w-1/2">
+            <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+          </span>
+        </span>
+      )}
+      {[...Array(emptyStars)].map((_, i) => (
+        <Star key={`empty-${i}`} className="h-5 w-5 text-gray-300 fill-gray-300" />
+      ))}
+    </div>
+  );
+};
+
 const Hero = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
@@ -68,19 +92,17 @@ const Hero = () => {
               {t.heroTitle3}
             </h1>
 
-            {/* Google Rating instead of description */}
-            <div className="flex items-center mb-6">
-              <div className="flex">
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                <StarHalf className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+            <div className="flex flex-col md:flex-row md:items-center mb-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+              <div className="flex items-center">
+                <StarRating rating={4.6} />
+                <span className="ml-2 text-white font-medium">4.6 / 5</span>
               </div>
-              <span className="ml-2 text-gray-200 font-medium">4.6 / 5</span>
-              <span className="ml-2 text-gray-300">
-                (31 recenzii pe Google)
-              </span>
+              <div className="md:ml-3 flex items-center mt-1 md:mt-0">
+                <Badge variant="outline" className="bg-vultur-red/20 text-white border-vultur-red/30">
+                  31 recenzii pe Google
+                </Badge>
+                <span className="ml-2 text-gray-200 text-sm">Clienții ne recomandă</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-4">
@@ -100,7 +122,6 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Mobile Metrics Display */}
             {isMobile && (
               <div className="mt-8 grid grid-cols-3 gap-2 animate-fade-up">
                 <MetricsBox 
@@ -141,7 +162,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Floating Call Button for Mobile */}
       {isMobile && (
         <a 
           href="tel:+40721407727" 

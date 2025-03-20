@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 interface ClientLogo {
@@ -9,12 +8,6 @@ interface ClientLogo {
 }
 
 const clientsData: ClientLogo[] = [
-  {
-    id: 1,
-    name: "AKTA",
-    logo: "/lovable-uploads/e10e9592-a3d7-4572-a32c-8691158e5baf.png",
-    url: "https://www.akta.ro"
-  },
   {
     id: 2,
     name: "CE OLTENIA",
@@ -88,7 +81,6 @@ const ClientsCarousel = () => {
       scrollAmount += step;
       scrollContainer.scrollLeft = scrollAmount * speed;
       
-      // Reset when reaching the end to create continuous scroll effect
       if (scrollAmount * speed >= (scrollContainer.scrollWidth - scrollContainer.clientWidth)) {
         scrollContainer.scrollLeft = 0;
         scrollAmount = 0;
@@ -118,7 +110,6 @@ const ClientsCarousel = () => {
         className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap pb-4 scrollbar-hide"
         style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
       >
-        {/* Duplicate the logos to make it seem infinite */}
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
