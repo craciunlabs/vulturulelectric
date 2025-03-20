@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin, Search, ArrowRight, Navigation } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile, useBreakpoint } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
 import { Button } from './ui/button';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from './ui/breadcrumb';
@@ -14,12 +13,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showTopBar, setShowTopBar] = useState(true);
+  const [showMobileNav, setShowMobileNav] = useState(false);
   
   const { language, setLanguage, t } = useLanguage();
   const isMobile = useIsMobile();
+  const breakpoint = useBreakpoint();
   const location = useLocation();
   
-  // Set up route map for breadcrumbs
   const routeMap: Record<string, { name: string; path: string }> = {
     '/': { name: t.home, path: '/' },
     '/despre-noi': { name: t.about, path: '/despre-noi' },
@@ -30,7 +30,6 @@ const Header = () => {
     '/contact': { name: t.contact, path: '/contact' },
   };
   
-  // Generate breadcrumb path
   const getBreadcrumbs = useCallback(() => {
     const paths = location.pathname.split('/').filter(Boolean);
     
@@ -54,11 +53,17 @@ const Header = () => {
   
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 20);
       
       // Hide top bar on scroll for mobile
       if (isMobile) {
-        setShowTopBar(window.scrollY < 10);
+        setShowTopBar(scrollPosition < 10);
+      }
+      
+      // Show floating navigation after scrolling down on mobile
+      if (isMobile) {
+        setShowMobileNav(scrollPosition > 300);
       }
     };
     
@@ -123,18 +128,20 @@ const Header = () => {
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
               <span>{t.address}</span>
             </div>
-            <button 
-              onClick={scrollToLocation} 
-              className="hidden sm:flex items-center text-white text-xs hover:underline"
-            >
-              <Navigation className="h-3.5 w-3.5 mr-1.5" />
-              <span>Indicații rutiere</span>
-            </button>
+            {breakpoint !== 'desktop' && (
+              <button 
+                onClick={scrollToLocation} 
+                className="flex items-center text-white text-xs hover:underline"
+              >
+                <Navigation className="h-3.5 w-3.5 mr-1.5" />
+                <span>Indicații rutiere</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
       
-      {/* Main navigation - adjusted for cleaner mobile view */}
+      {/* Main navigation */}
       <div 
         className={cn(
           "transition-all duration-300 backdrop-blur-layer", 
@@ -269,7 +276,7 @@ const Header = () => {
         )}
       </div>
       
-      {/* Mobile Navigation Menu - Updated with a clear close button */}
+      {/* Mobile Navigation Menu */}
       {isMobile && (
         <div className={cn(
           "fixed inset-0 top-0 bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
@@ -376,6 +383,19 @@ const Header = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+      
+      {/* Persistent Mobile Navigation Button */}
+      {isMobile && showMobileNav && (
+        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+          <Button
+            onClick={scrollToLocation}
+            className="rounded-full shadow-lg bg-vultur-red hover:bg-vultur-red/90 p-4 h-14 w-14 flex items-center justify-center"
+            aria-label="Indicații rutiere"
+          >
+            <Navigation className="h-6 w-6" />
+          </Button>
         </div>
       )}
     </header>
