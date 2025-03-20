@@ -49,7 +49,7 @@ const HeroCarousel = () => {
     
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 5000);
+    }, 4000); // Changed from 5000 to 4000 to make the slider a bit faster
     
     return () => clearInterval(interval);
   }, [api, autoplay]);
