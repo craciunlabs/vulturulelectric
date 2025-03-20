@@ -1,14 +1,15 @@
 
-import { MapPin, Navigation, Clock } from 'lucide-react';
+import { MapPin, Navigation, Clock, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
 
 const MapSection = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   
   return (
-    <section className="py-8 sm:py-12 bg-gray-50">
+    <section className="py-8 sm:py-12 bg-gray-50" id="location">
       <div className="container px-3 sm:px-6 md:px-8">
         <div className="text-center mb-4 sm:mb-8">
           <div className="flex items-center justify-center mb-2 sm:mb-3">
@@ -77,7 +78,7 @@ const MapSection = () => {
                 className="inline-flex w-full justify-center items-center p-2 sm:p-3 text-sm font-medium text-white bg-vultur-red rounded-lg hover:bg-red-700 transition-colors"
               >
                 <Navigation className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                {t.directions}
+                Indicații rutiere
               </a>
             </div>
           )}

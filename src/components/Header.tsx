@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Clock, MapPin, Search } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Search, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
@@ -88,6 +89,15 @@ const Header = () => {
       top: 0,
       behavior: 'smooth'
     });
+  };
+
+  const scrollToLocation = () => {
+    closeMenu();
+    // Smooth scroll to the location section
+    const locationSection = document.getElementById('location');
+    if (locationSection) {
+      locationSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -323,6 +333,15 @@ const Header = () => {
               >
                 {t.contact}
               </Link>
+              
+              {/* Added Directions Link */}
+              <button 
+                onClick={scrollToLocation}
+                className="py-4 border-b border-gray-100 text-lg font-medium text-vultur-red flex items-center"
+              >
+                Indicații rutiere
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
             </nav>
             
             <div className="mt-auto py-4 border-t border-gray-100">
