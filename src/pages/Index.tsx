@@ -17,16 +17,12 @@ const Index = () => {
     
     // Update document title
     document.title = "Vulturul Electric - Service Auto Electric Professional";
-    
-    // Implement performance optimization with code splitting
-    import('@/components/CtaSection').catch(err => console.error('Failed to preload CtaSection:', err));
-    import('@/components/MapSection').catch(err => console.error('Failed to preload MapSection:', err));
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow overflow-hidden">
         <Hero />
         <ClientsCarousel />
         <ServicesSection />
