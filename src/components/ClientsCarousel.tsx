@@ -172,7 +172,7 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-300 group-hover:scale-110" 
+                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-300 group-hover:scale-125" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
