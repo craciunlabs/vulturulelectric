@@ -1,7 +1,5 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Pause, Play } from 'lucide-react';
-import { Button } from './ui/button';
 
 interface ClientLogo {
   id: number;
@@ -106,10 +104,6 @@ const ClientsCarousel = () => {
     }
   };
   
-  const togglePause = () => {
-    setIsPaused(!isPaused);
-  };
-  
   useEffect(() => {
     if (isPaused) {
       stopScrolling();
@@ -133,20 +127,9 @@ const ClientsCarousel = () => {
   return (
     <section className="py-8 bg-gray-50 overflow-hidden relative">
       <div className="container">
-        <div className="text-center mb-6 relative">
+        <div className="text-center mb-6">
           <h2 className="text-xl font-bold">Parteneri de Încredere</h2>
           <p className="text-gray-600">Soluții electrice auto pentru companii de top din România</p>
-          
-          <Button
-            onClick={togglePause}
-            variant="outline"
-            size="sm"
-            className="absolute right-0 top-0 md:right-2 md:top-1/2 md:-translate-y-1/2"
-            aria-label={isPaused ? "Continuă derularea" : "Oprește derularea"}
-          >
-            {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
-            <span className="ml-1 hidden sm:inline">{isPaused ? "Continuă" : "Oprește"}</span>
-          </Button>
         </div>
       </div>
       
@@ -154,6 +137,8 @@ const ClientsCarousel = () => {
         ref={scrollRef}
         className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap pb-4 scrollbar-hide"
         style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
