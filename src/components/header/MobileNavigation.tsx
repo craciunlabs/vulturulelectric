@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Search, Menu, MapPin } from 'lucide-react';
+import { Phone, Search, Menu, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface MobileNavigationProps {
@@ -33,7 +33,7 @@ const MobileNavigation = ({
         className="p-2 text-sm text-vultur-red flex items-center"
         aria-label="Navigate to location"
       >
-        <MapPin className="h-4 w-4" />
+        <Send className="h-4 w-4 transform rotate-45" />
       </button>
       
       <Button 
