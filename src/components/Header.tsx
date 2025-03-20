@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Clock, MapPin, Search, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Search, ArrowRight, Navigation } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
@@ -123,6 +123,13 @@ const Header = () => {
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
               <span>{t.address}</span>
             </div>
+            <button 
+              onClick={scrollToLocation} 
+              className="hidden sm:flex items-center text-white text-xs hover:underline"
+            >
+              <Navigation className="h-3.5 w-3.5 mr-1.5" />
+              <span>Indicații rutiere</span>
+            </button>
           </div>
         </div>
       </div>
