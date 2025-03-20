@@ -73,26 +73,6 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-10">
-        {/* Mobile Certification Badges Display */}
-        {isMobile && (
-          <div className="px-2 mb-8 animate-fade-down">
-            <div className="grid grid-cols-3 gap-2">
-              <CertificationBadge 
-                name="Webasto" 
-                logo="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
-              />
-              <CertificationBadge 
-                name="Bosch" 
-                logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png" 
-              />
-              <CertificationBadge 
-                name="Magneti Marelli" 
-                logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Magneti_Marelli_logo.svg/1200px-Magneti_Marelli_logo.svg.png" 
-              />
-            </div>
-          </div>
-        )}
-        
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
             <div className="flex items-center mb-3">
@@ -123,6 +103,24 @@ const Hero = () => {
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
             </div>
+
+            {/* Mobile Metrics Display */}
+            {isMobile && (
+              <div className="mt-8 grid grid-cols-3 gap-2 animate-fade-up">
+                <MetricsBox 
+                  value="30+" 
+                  label={t.yearsExperience} 
+                />
+                <MetricsBox 
+                  value="2000+" 
+                  label={t.happyClients} 
+                />
+                <MetricsBox 
+                  value="Webasto" 
+                  label={t.webastoInstall} 
+                />
+              </div>
+            )}
           </div>
           
           <div className="hidden md:block relative animate-fade-up">
@@ -144,6 +142,32 @@ const Hero = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+      
+      {/* Certification Badges Row - Both Mobile and Desktop */}
+      <div className="container mt-12 relative z-10">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 animate-fade-up">
+          <CertificationBadge 
+            name="Webasto" 
+            logo="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
+          />
+          <CertificationBadge 
+            name="Eberspächer" 
+            logo="https://www.eberspaecher.com/typo3conf/ext/eberspaecher/Resources/Public/Images/logo.svg" 
+          />
+          <CertificationBadge 
+            name="Bosch" 
+            logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png" 
+          />
+          <CertificationBadge 
+            name="Magneti Marelli" 
+            logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Magneti_Marelli_logo.svg/1200px-Magneti_Marelli_logo.svg.png" 
+          />
+          <CertificationBadge 
+            name="Delphi" 
+            logo="https://1000logos.net/wp-content/uploads/2020/04/Delphi-Logo-1998.jpg" 
+          />
         </div>
       </div>
       
