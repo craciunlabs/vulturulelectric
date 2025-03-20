@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Phone, MapPin, Navigation2 } from 'lucide-react';
+import { Clock, Phone, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,14 +11,6 @@ interface TopBarProps {
 
 const TopBar = ({ showTopBar, isMobile }: TopBarProps) => {
   const { t } = useLanguage();
-  
-  const scrollToLocation = () => {
-    // Smooth scroll to the location section
-    const locationSection = document.getElementById('location');
-    if (locationSection) {
-      locationSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
   
   return (
     <div className={cn(
@@ -33,10 +25,6 @@ const TopBar = ({ showTopBar, isMobile }: TopBarProps) => {
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-4">
-          <div className="flex items-center cursor-pointer" onClick={scrollToLocation}>
-            <Navigation2 className="h-3.5 w-3.5 mr-1.5" />
-            <span>{t.directions}</span>
-          </div>
           <div className="flex items-center">
             <Phone className="h-3.5 w-3.5 mr-1.5" />
             <span>{t.callUs}</span>

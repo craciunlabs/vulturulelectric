@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Search, Menu } from 'lucide-react';
+import { Phone, Search, Menu, Navigation2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface MobileNavigationProps {
@@ -27,6 +27,14 @@ const MobileNavigation = ({
       >
         <Phone className="h-4 w-4" />
       </a>
+      
+      <button
+        onClick={scrollToLocation}
+        className="p-2 text-sm text-vultur-red flex items-center"
+        aria-label="Navigate to location"
+      >
+        <Navigation2 className="h-4 w-4" />
+      </button>
       
       <Button 
         variant="ghost" 
