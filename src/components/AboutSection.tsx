@@ -11,7 +11,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1024&auto=format&fit=crop" 
+                  src="https://i.imgur.com/cU2nn7w.jpeg" 
                   alt="Service Auto Electric" 
                   className="w-full h-[500px] object-cover"
                   onError={(e) => {
