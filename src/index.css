@@ -216,6 +216,11 @@
   background-size: 200% 100%;
   animation: spark 2s infinite;
   box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  position: relative;
+  z-index: 5;
+  will-change: opacity, background-position;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @keyframes glow {
@@ -233,11 +238,21 @@
 
 .glow-animation {
   animation: glow 1.5s ease-in-out infinite;
+  position: relative;
+  z-index: 5;
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .glow-text {
   text-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
   animation: pulse 2s infinite;
+  position: relative;
+  z-index: 5;
+  will-change: text-shadow;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @keyframes pulse {
