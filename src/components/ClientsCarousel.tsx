@@ -68,81 +68,44 @@ const clientsData: ClientLogo[] = [
 const ClientsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [animationId, setAnimationId] = useState<number | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
   
-  const startScrolling = () => {
-    if (!scrollRef.current || isPaused) return;
-    
+  useEffect(() => {
     const scrollContainer = scrollRef.current;
-    // Reset the animation if we've reached the end
-    if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-      setScrollPosition(0);
-      scrollContainer.scrollLeft = 0;
-    }
+    if (!scrollContainer) return;
     
-    const speed = 1; // Increased speed from 0.75 to 1
-    const step = 1;
+    let animationId: number;
+    let position = 0;
+    const speed = 1.5; // Increased speed
     
     const scroll = () => {
       if (!scrollContainer || isPaused) return;
       
-      // Update our position state
-      const newPosition = scrollPosition + step;
-      setScrollPosition(newPosition);
+      position += 1;
+      scrollContainer.scrollLeft = position;
       
-      // Apply the scroll
-      scrollContainer.scrollLeft = newPosition * speed;
+      // Reset when we reach the end of the first set
+      if (position >= scrollContainer.scrollWidth / 2) {
+        position = 0;
+        scrollContainer.scrollLeft = 0;
+      }
       
-      const id = requestAnimationFrame(scroll);
-      setAnimationId(id);
+      animationId = requestAnimationFrame(scroll);
     };
     
-    const id = requestAnimationFrame(scroll);
-    setAnimationId(id);
-  };
-  
-  const stopScrolling = () => {
-    if (animationId !== null) {
-      cancelAnimationFrame(animationId);
-      setAnimationId(null);
-    }
-  };
-  
-  const handleMouseEnter = () => {
-    // Store current scroll position when mouse enters
-    if (scrollRef.current) {
-      // Just store the exact current scroll position
-      setScrollPosition(scrollRef.current.scrollLeft);
-    }
-    setIsPaused(true);
-    stopScrolling();
-  };
-  
-  const handleMouseLeave = () => {
-    // When user moves mouse away, resume from the current position
-    setIsPaused(false);
-  };
-  
-  useEffect(() => {
-    if (isPaused) {
-      stopScrolling();
-    } else {
-      startScrolling();
-    }
+    animationId = requestAnimationFrame(scroll);
     
     return () => {
-      stopScrolling();
+      cancelAnimationFrame(animationId);
     };
   }, [isPaused]);
   
-  useEffect(() => {
-    startScrolling();
-    
-    return () => {
-      stopScrolling();
-    };
-  }, []);
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+  
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
   
   return (
     <section className="py-8 bg-gray-50 overflow-hidden relative">
