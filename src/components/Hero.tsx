@@ -79,7 +79,7 @@ const Hero = () => {
               </div>
               <span className="ml-2 text-gray-200 font-medium">4.6 / 5</span>
               <span className="ml-2 text-gray-300">
-                (31 {t.language === 'ro' ? 'recenzii pe Google' : 'Google reviews'})
+                (31 recenzii pe Google)
               </span>
             </div>
 

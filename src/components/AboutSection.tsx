@@ -2,23 +2,6 @@
 import { Check, Award, Wrench, ShieldCheck } from 'lucide-react';
 import { Badge } from './ui/badge';
 
-const CertificationBadge = ({ name, logo }: { name: string, logo: string }) => (
-  <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
-    <img 
-      src={logo} 
-      alt={name} 
-      className="h-10 mb-2" 
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.src = 'https://placehold.co/100x40/ffffff/c41e1e?text=Logo';
-      }}
-    />
-    <Badge variant="outline" className="mt-1 bg-gray-50">
-      {name}
-    </Badge>
-  </div>
-);
-
 const AboutSection = () => {
   return (
     <section className="py-16">
@@ -61,22 +44,6 @@ const AboutSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Certifications Grid */}
-            <div className="mt-16 grid grid-cols-3 gap-3">
-              <CertificationBadge 
-                name="Webasto" 
-                logo="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
-              />
-              <CertificationBadge 
-                name="Bosch" 
-                logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png" 
-              />
-              <CertificationBadge 
-                name="Magneti Marelli" 
-                logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Magneti_Marelli_logo.svg/1200px-Magneti_Marelli_logo.svg.png" 
-              />
             </div>
           </div>
           
