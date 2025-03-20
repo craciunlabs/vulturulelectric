@@ -4,6 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ImageLoaderProps {
   src: string;
@@ -32,8 +33,16 @@ const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
   );
 };
 
+const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, label: string }) => (
+  <div className="bg-white p-3 rounded-lg shadow-lg text-center">
+    <div className="text-vultur-red font-bold text-xl md:text-2xl">{value}</div>
+    <div className="text-gray-800 text-sm">{label}</div>
+  </div>
+);
+
 const Hero = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   
   return (
     <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-32 pb-16 md:pb-24">
@@ -46,6 +55,24 @@ const Hero = () => {
       </div>
       
       <div className="container relative z-10">
+        {/* Mobile Metrics Display - Visible only on mobile */}
+        {isMobile && (
+          <div className="mb-6 grid grid-cols-3 gap-2 animate-fade-down">
+            <MetricsBox 
+              value="30+" 
+              label={t.yearsExperience} 
+            />
+            <MetricsBox 
+              value="2000+" 
+              label={t.happyClients} 
+            />
+            <MetricsBox 
+              value="Webasto" 
+              label={t.webastoInstall} 
+            />
+          </div>
+        )}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
             <div className="flex items-center mb-3">
@@ -83,18 +110,18 @@ const Hero = () => {
               <HeroCarousel />
             </div>
             <div className="grid grid-cols-3 gap-3 absolute -bottom-6 left-0 right-0">
-              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
-                <div className="text-vultur-red font-bold text-xl md:text-2xl">30+</div>
-                <div className="text-gray-800 text-sm">{t.yearsExperience}</div>
-              </div>
-              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
-                <div className="text-vultur-red font-bold text-xl md:text-2xl">2000+</div>
-                <div className="text-gray-800 text-sm">{t.happyClients}</div>
-              </div>
-              <div className="bg-white p-3 rounded-lg shadow-lg text-center">
-                <div className="text-vultur-red font-bold text-xl md:text-2xl">Webasto</div>
-                <div className="text-gray-800 text-sm">{t.webastoInstall}</div>
-              </div>
+              <MetricsBox 
+                value="30+" 
+                label={t.yearsExperience} 
+              />
+              <MetricsBox 
+                value="2000+" 
+                label={t.happyClients} 
+              />
+              <MetricsBox 
+                value="Webasto" 
+                label={t.webastoInstall} 
+              />
             </div>
           </div>
         </div>
