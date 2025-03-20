@@ -129,7 +129,7 @@ const DespreNoi = () => {
                 <div className="mb-3">
                   <Calendar className="h-8 w-8 text-vultur-red mx-auto" />
                 </div>
-                <div className="text-4xl font-bold mb-2">15+</div>
+                <div className="text-4xl font-bold mb-2">30+</div>
                 <div className="text-gray-600">{t.statsYears}</div>
               </div>
               

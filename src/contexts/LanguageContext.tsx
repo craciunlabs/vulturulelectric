@@ -72,7 +72,7 @@ const translations = {
     workHours: 'Luni - Vineri: 09<sup>00</sup> - 18<sup>00</sup> | Sâmbătă - Duminică: Închis',
     
     // Footer
-    footerDesc: 'Cu o experiență de peste 15 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
+    footerDesc: 'Cu o experiență de peste 30 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
     contactInfo: 'Informații de contact',
     quickLinks: 'Link-uri rapide',
     allRights: 'Toate drepturile rezervate.',
@@ -88,10 +88,10 @@ const translations = {
     // About page
     aboutUs: 'Despre Noi',
     aboutHeroTitle: 'Cu pasiune și experiență în servicii auto',
-    aboutHeroDesc: 'Cu o experiență de peste 15 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
+    aboutHeroDesc: 'Cu o experiență de peste 30 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
     historyTitle: 'Istoria și misiunea noastră',
     historyDesc1: 'Vulturul Electric a luat ființă din pasiunea pentru automobile și dorința de a oferi servicii de cea mai înaltă calitate în domeniul electric auto.',
-    historyDesc2: 'Cu peste 15 ani de experiență în spate, am crescut constant, investind în tehnologie de ultimă generație și în pregătirea echipei noastre.',
+    historyDesc2: 'Cu peste 30 ani de experiență în spate, am crescut constant, investind în tehnologie de ultimă generație și în pregătirea echipei noastre.',
     historyDesc3: 'Misiunea noastră este de a oferi servicii rapide, eficiente și de calitate pentru toate tipurile de vehicule, de la autoturisme până la camioane și autocare.',
     teamAlt: 'Echipa noastră',
     values: 'Valorile noastre',
@@ -170,7 +170,7 @@ const translations = {
     workHours: 'Monday - Friday: 09<sup>00</sup> - 18<sup>00</sup> | Saturday - Sunday: Closed',
     
     // Footer
-    footerDesc: 'With over 15 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',
+    footerDesc: 'With over 30 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',
     contactInfo: 'Contact Information',
     quickLinks: 'Quick Links',
     allRights: 'All rights reserved.',
@@ -186,10 +186,10 @@ const translations = {
     // About page
     aboutUs: 'About Us',
     aboutHeroTitle: 'With passion and experience in automotive services',
-    aboutHeroDesc: 'With over 15 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',
+    aboutHeroDesc: 'With over 30 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',
     historyTitle: 'Our History & Mission',
     historyDesc1: 'Vulturul Electric was born from the passion for automobiles and the desire to offer the highest quality services in the automotive electrical field.',
-    historyDesc2: 'With over 15 years of experience behind us, we have grown constantly, investing in cutting-edge technology and in training our team.',
+    historyDesc2: 'With over 30 years of experience behind us, we have grown constantly, investing in cutting-edge technology and in training our team.',
     historyDesc3: 'Our mission is to provide fast, efficient, and quality services for all types of vehicles, from cars to trucks and coaches.',
     teamAlt: 'Our Team',
     values: 'Our Values',

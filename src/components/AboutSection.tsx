@@ -56,7 +56,7 @@ const AboutSection = () => {
               Experiență și calitate în domeniul auto
             </h2>
             <p className="text-gray-600 mb-8">
-              Cu o experiență de peste 25 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri. Pe lângă toate acestea dispunem de propriul magazin de piese auto.
+              Cu o experiență de peste 30 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri. Pe lângă toate acestea dispunem de propriul magazin de piese auto.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -66,7 +66,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Experiență dovedită</h3>
-                  <p className="text-sm text-gray-600">Peste 25 ani de experiență în domeniul auto electric</p>
+                  <p className="text-sm text-gray-600">Peste 30 ani de experiență în domeniul auto electric</p>
                 </div>
               </div>
               <div className="flex items-start">

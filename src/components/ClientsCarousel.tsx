@@ -81,7 +81,7 @@ const ClientsCarousel = () => {
       scrollContainer.scrollLeft = 0;
     }
     
-    const speed = 0.5; // Restored speed to a more reasonable value
+    const speed = 0.75; // Increased speed from 0.5 to 0.75
     const step = 1;
     
     const scroll = () => {
