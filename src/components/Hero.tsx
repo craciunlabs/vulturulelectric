@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ChevronRight, Phone } from 'lucide-react';
+import { ChevronRight, Phone, Star, StarHalf } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -60,16 +60,29 @@ const Hero = () => {
           <div className="text-white animate-fade-down">
             <div className="flex items-center mb-3">
               <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-              <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Service Auto Electric Autorizat</span>
+              <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICE AUTO ELECTRIC AUTORIZAT</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t.heroTitle1}<br/>
               <span className="text-gradient">{t.heroTitle2}</span><br/>
               {t.heroTitle3}
             </h1>
-            <p className="text-gray-300 mb-8 max-w-lg">
-              {t.heroDesc}
-            </p>
+
+            {/* Google Rating instead of description */}
+            <div className="flex items-center mb-6">
+              <div className="flex">
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <StarHalf className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+              </div>
+              <span className="ml-2 text-gray-200 font-medium">4.6 / 5</span>
+              <span className="ml-2 text-gray-300">
+                (31 {t.language === 'ro' ? 'recenzii pe Google' : 'Google reviews'})
+              </span>
+            </div>
+
             <div className="flex flex-wrap gap-4">
               <a 
                 href="/contact" 
