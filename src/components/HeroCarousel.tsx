@@ -1,10 +1,12 @@
+
 import { useState, useEffect } from 'react';
 import { 
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
-  CarouselNext
+  CarouselNext,
+  type CarouselApi
 } from "@/components/ui/carousel";
 import { Zap, Car, Wrench, Battery, Cpu } from 'lucide-react';
 
@@ -41,19 +43,13 @@ const sliderItems = [
 
 const HeroCarousel = () => {
   const [autoplay, setAutoplay] = useState(true);
-  const [api, setApi] = useState<{ scrollNext: () => void, scrollTo: (index: number) => void } | null>(null);
+  const [api, setApi] = useState<CarouselApi | null>(null);
   
   useEffect(() => {
     if (!api || !autoplay) return;
     
     const timer = setInterval(() => {
-      const canScrollNext = api.canScrollNext?.();
-      
-      if (!canScrollNext) {
-        api.scrollTo(0);
-      } else {
-        api.scrollNext();
-      }
+      api.scrollNext();
     }, 3000);
     
     return () => clearInterval(timer);
