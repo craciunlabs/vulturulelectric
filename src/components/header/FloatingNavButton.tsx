@@ -60,7 +60,7 @@ const FloatingNavButton = ({ showMobileNav, scrollToLocation, isMobile }: Floati
   
   // The button should only be visible when scrolled down a bit (showMobileNav) or when we're at the top of the page
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-6 right-6 z-50">
       {(showMobileNav || atTop) && (
         <button 
           onClick={handleClick} 
