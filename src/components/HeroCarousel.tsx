@@ -87,7 +87,7 @@ const HeroCarousel = () => {
         <CarouselContent>
           {sliderItems.map((item) => (
             <CarouselItem key={item.id} className="md:basis-1/1">
-              <div className="relative h-[340px] sm:h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl">
+              <div className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full overflow-hidden rounded-xl">
                 <img 
                   src={item.image} 
                   alt={item.title}
@@ -97,12 +97,12 @@ const HeroCarousel = () => {
                     target.src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center px-6 sm:px-8 md:px-12">
-                  <div className="bg-vultur-red/90 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center px-4 sm:px-8 md:px-12">
+                  <div className="bg-vultur-red/90 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-6">
                     {item.icon}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">{item.title}</h2>
-                  <p className="text-white/90 max-w-lg text-sm sm:text-lg md:text-xl line-clamp-3 sm:line-clamp-none">{item.description}</p>
+                  <h2 className="text-xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">{item.title}</h2>
+                  <p className="text-white/90 max-w-lg text-xs sm:text-lg md:text-xl line-clamp-2 sm:line-clamp-none">{item.description}</p>
                 </div>
               </div>
             </CarouselItem>
@@ -111,7 +111,7 @@ const HeroCarousel = () => {
         
         {/* Mobile optimized controls - dots indicator */}
         {isMobile ? (
-          <div className="flex justify-center mt-3 gap-1.5">
+          <div className="flex justify-center mt-2 gap-1.5">
             {sliderItems.map((_, index) => (
               <button
                 key={index}

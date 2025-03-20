@@ -1,5 +1,6 @@
 
 import { Zap } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface BrandLogoProps {
   variant?: 'default' | 'white' | 'dark';
@@ -8,20 +9,25 @@ interface BrandLogoProps {
 }
 
 const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: BrandLogoProps) => {
+  const isMobile = useIsMobile();
+  
+  // Adjust size for mobile
+  const adjustedSize = isMobile && size === 'md' ? 'sm' : size;
+  
   const logoSizes = {
     sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-    xl: 'w-24 h-24',
-    '2xl': 'w-32 h-32'
+    md: 'w-10 h-10 sm:w-12 sm:h-12',
+    lg: 'w-12 h-12 sm:w-16 sm:h-16',
+    xl: 'w-16 h-16 sm:w-24 sm:h-24',
+    '2xl': 'w-20 h-20 sm:w-32 sm:h-32'
   };
   
   const textSizes = {
-    sm: 'text-lg',
-    md: 'text-xl',
-    lg: 'text-2xl',
-    xl: 'text-3xl',
-    '2xl': 'text-4xl'
+    sm: 'text-base sm:text-lg',
+    md: 'text-lg sm:text-xl',
+    lg: 'text-xl sm:text-2xl',
+    xl: 'text-2xl sm:text-3xl',
+    '2xl': 'text-3xl sm:text-4xl'
   };
   
   const textColors = {
@@ -37,8 +43,8 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
   };
 
   return (
-    <div className="flex items-center gap-3">
-      <div className={`${logoSizes[size]} ${bgColors[variant]} flex items-center justify-center relative overflow-hidden`}>
+    <div className="flex items-center gap-2 sm:gap-3">
+      <div className={`${logoSizes[adjustedSize]} ${bgColors[variant]} flex items-center justify-center relative overflow-hidden`}>
         <img 
           src="/lovable-uploads/b446f6d8-2e22-41a8-8b00-dfe21e94d6a9.png" 
           alt="Vulturul Electric Logo" 
@@ -49,7 +55,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
             const container = target.parentElement;
             if (container) {
               const zap = document.createElement('div');
-              zap.innerHTML = '<div class="absolute inset-0 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>';
+              zap.innerHTML = '<div class="absolute inset-0 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>';
               container.appendChild(zap.firstChild!);
             }
           }}
@@ -57,7 +63,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
       </div>
       
       {showText && (
-        <div className={`${textSizes[size]} font-bold tracking-wide ${textColors[variant]}`}>
+        <div className={`${textSizes[adjustedSize]} font-bold tracking-wide ${textColors[variant]}`}>
           <span>Vulturul</span>
           <span className="block">Electric</span>
         </div>
