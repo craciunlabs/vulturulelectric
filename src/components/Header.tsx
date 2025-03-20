@@ -77,6 +77,11 @@ const Header = () => {
     }
   };
   
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+  
   const toggleLanguage = () => {
     setLanguage(language === 'ro' ? 'en' : 'ro');
   };
@@ -250,85 +255,104 @@ const Header = () => {
         )}
       </div>
       
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Updated with a clear close button */}
       {isMobile && (
         <div className={cn(
-          "fixed inset-0 top-[60px] bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
+          "fixed inset-0 top-0 bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}>
-          <nav className="flex flex-col pt-5 px-8">
-            <Link 
-              to="/" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.home}
-            </Link>
-            <Link 
-              to="/despre-noi" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.about}
-            </Link>
-            <Link 
-              to="/servicii-oferite" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.services}
-            </Link>
-            <Link 
-              to="/magazin-piese-auto" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.shop}
-            </Link>
-            <Link 
-              to="/galerie" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.gallery}
-            </Link>
-            <Link 
-              to="/clienti" 
-              className="py-4 border-b border-gray-100 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.clients}
-            </Link>
-            <Link 
-              to="/contact" 
-              className="py-4 text-lg font-medium" 
-              onClick={toggleMenu}
-            >
-              {t.contact}
-            </Link>
+          <div className="flex flex-col pt-3 px-6 h-full">
+            {/* Close button header */}
+            <div className="flex justify-between items-center border-b border-gray-100 py-4 mb-4">
+              <BrandLogo variant="dark" size="sm" showText={false} />
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={closeMenu}
+                className="text-vultur-red hover:bg-gray-100"
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
             
-            <div className="mt-6 py-4 border-t border-gray-100">
+            <nav className="flex flex-col">
+              <Link 
+                to="/" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.home}
+              </Link>
+              <Link 
+                to="/despre-noi" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.about}
+              </Link>
+              <Link 
+                to="/servicii-oferite" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.services}
+              </Link>
+              <Link 
+                to="/magazin-piese-auto" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.shop}
+              </Link>
+              <Link 
+                to="/galerie" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.gallery}
+              </Link>
+              <Link 
+                to="/clienti" 
+                className="py-4 border-b border-gray-100 text-lg font-medium" 
+                onClick={closeMenu}
+              >
+                {t.clients}
+              </Link>
+              <Link 
+                to="/contact" 
+                className="py-4 text-lg font-medium border-b border-gray-100" 
+                onClick={closeMenu}
+              >
+                {t.contact}
+              </Link>
+            </nav>
+            
+            <div className="mt-auto py-4 border-t border-gray-100">
               <div className="flex items-center mb-3">
                 <Phone className="h-4 w-4 mr-2 text-vultur-red" />
                 <span>+40 721 407 727</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center mb-4">
                 <MapPin className="h-4 w-4 mr-2 text-vultur-red" />
                 <span className="text-sm">{t.address}</span>
               </div>
               
-              <div className="flex items-center mt-6">
+              <div className="flex items-center">
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  onClick={toggleLanguage}
+                  onClick={() => {
+                    toggleLanguage();
+                    closeMenu();
+                  }}
                   className="flex-1"
                 >
                   {language === 'ro' ? 'English' : 'Română'}
                 </Button>
               </div>
             </div>
-          </nav>
+          </div>
         </div>
       )}
       
@@ -349,8 +373,6 @@ const Header = () => {
           <ChevronUp className="h-5 w-5" />
         </Button>
       </div>
-      
-      {/* Call now floating button for mobile - now moved to Header toolbar */}
     </header>
   );
 };

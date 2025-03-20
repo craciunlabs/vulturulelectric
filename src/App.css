@@ -11,6 +11,12 @@
   }
 }
 
+/* Backdrop blur for navigation */
+.backdrop-blur-layer {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
