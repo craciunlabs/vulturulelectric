@@ -57,7 +57,7 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Back to top button - smaller on mobile */}
+      {/* Back to top button - smaller on mobile and positioned to not overlap with navigation button */}
       <Button
         onClick={scrollToTop}
         className={cn(

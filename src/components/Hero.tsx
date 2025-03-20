@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { ChevronRight, Phone, Star } from 'lucide-react';
+import { ChevronRight, Phone, Star, Navigation } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -68,6 +69,18 @@ const StarRating = ({ rating }: { rating: number }) => {
 const Hero = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  
+  const openDirections = () => {
+    // Coordinates for Vulturul Electric
+    const destination = "44.946058,23.139883";
+    const label = "Vulturul Electric";
+    
+    // Create the Google Maps directions URL
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${destination}&destination_place_id=${label}`;
+    
+    // Open in a new tab
+    window.open(url, '_blank');
+  };
   
   return (
     <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-24 md:pt-32 pb-12 md:pb-24">
@@ -179,13 +192,25 @@ const Hero = () => {
       </div>
       
       {isMobile && (
-        <a 
-          href="tel:+40721407727" 
-          className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow hover:bg-red-800 transition-colors"
-          aria-label="Call us"
-        >
-          <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
-        </a>
+        <>
+          <a 
+            href="tel:+40721407727" 
+            className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow hover:bg-red-800 transition-colors"
+            aria-label="Call us"
+          >
+            <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+          </a>
+          
+          {/* New Navigation Button */}
+          <button 
+            onClick={openDirections}
+            className="fixed bottom-20 left-5 z-50 bg-white text-vultur-red p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center"
+            aria-label="Deschide navigația către noi"
+          >
+            <Navigation className="h-5 w-5 sm:h-6 sm:w-6" />
+            <span className="ml-2 text-xs font-medium hidden xs:inline whitespace-nowrap">Deschide navigația</span>
+          </button>
+        </>
       )}
     </div>
   );
