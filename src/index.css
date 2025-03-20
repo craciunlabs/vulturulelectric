@@ -264,6 +264,25 @@
   }
 }
 
+/* Mobile hero styles to fix z-index issues */
+.mobile-hero-content {
+  position: relative;
+  z-index: 30; /* Higher than the header's z-index */
+  isolation: isolate; /* Creates a stacking context */
+}
+
+/* Push the mobile hero content down to avoid header overlap */
+@media (max-width: 767px) {
+  .hero-clip {
+    padding-top: 5.5rem; /* Increase padding at top to push content down */
+  }
+  
+  /* Make the electric line and text more visible */
+  .glow-text, .spark-animation, .glow-animation {
+    filter: drop-shadow(0 0 3px rgba(255, 200, 0, 0.7));
+  }
+}
+
 /* Hover effects */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

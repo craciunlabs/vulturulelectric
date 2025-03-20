@@ -14,7 +14,7 @@ const TopBar = ({ showTopBar, isMobile }: TopBarProps) => {
   
   return (
     <div className={cn(
-      "bg-vultur-red text-white text-sm transition-all duration-300",
+      "bg-vultur-red text-white text-sm transition-all duration-300 z-40",
       isMobile ? (showTopBar ? "max-h-16 py-1 opacity-100" : "max-h-0 py-0 opacity-0 overflow-hidden") : "py-2"
     )}>
       <div className="container flex flex-wrap justify-between items-center">

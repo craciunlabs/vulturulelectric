@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronRight, Phone, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -67,7 +66,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 const ElectricLine = () => (
-  <div className="relative z-10">
+  <div className="relative z-20">
     <div className="h-0.5 w-6 sm:w-10 bg-gradient-to-r from-yellow-300 via-orange-400 to-vultur-red mr-2 sm:mr-3 spark-animation"></div>
     <div className="absolute -top-0.5 left-0 h-1.5 w-1.5 rounded-full bg-yellow-200 glow-animation"></div>
   </div>
@@ -107,14 +106,14 @@ const Hero = () => {
       
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-          <div className="text-white animate-fade-down">
-            <div className="flex items-center mb-2 relative z-20">
+          <div className="text-white animate-fade-down mobile-hero-content">
+            <div className="flex items-center mb-2 relative z-30">
               <ElectricLine />
-              <span className="text-xs sm:text-sm uppercase tracking-wider font-medium bg-gradient-to-r from-orange-300 to-white text-transparent bg-clip-text glow-text relative z-10">SERVICE AUTO ELECTRIC AUTORIZAT</span>
+              <span className="text-xs sm:text-sm uppercase tracking-wider font-medium bg-gradient-to-r from-orange-300 to-white text-transparent bg-clip-text glow-text relative z-30">SERVICE AUTO ELECTRIC AUTORIZAT</span>
             </div>
             
             {isMobile ? (
-              <h1 className="text-3xl font-bold mb-3 leading-tight relative z-10">
+              <h1 className="text-3xl font-bold mb-3 leading-tight relative z-20">
                 <div className="text-white">REPARAȚII</div>
                 <div className="text-vultur-red">ELECTROMOTOARE</div>
                 <div className="text-white">ALTERNATOARE</div>
@@ -127,7 +126,7 @@ const Hero = () => {
               </h1>
             )}
 
-            <div className="flex flex-col sm:flex-row sm:items-center mb-4 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15 relative z-10">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-4 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15 relative z-20">
               <div className="flex items-center">
                 <StarRating rating={4.6} />
                 <span className="ml-2 text-white font-medium text-sm sm:text-base">4.6 / 5</span>
@@ -140,7 +139,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex gap-2 sm:gap-4 relative z-10">
+            <div className="flex gap-2 sm:gap-4 relative z-20">
               <a 
                 href="/contact" 
                 className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
@@ -158,7 +157,7 @@ const Hero = () => {
             </div>
 
             {isMobile && (
-              <div className="mt-5 grid grid-cols-3 gap-1.5 animate-fade-up relative z-10">
+              <div className="mt-5 grid grid-cols-3 gap-1.5 animate-fade-up relative z-20">
                 <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
                   <div className="text-vultur-red font-bold text-lg">30+</div>
                   <div className="text-gray-800 text-xs">ani de experiență</div>
