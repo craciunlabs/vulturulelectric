@@ -1,4 +1,7 @@
-import { useEffect, useRef } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
+import { Pause, Play } from 'lucide-react';
+import { Button } from './ui/button';
 
 interface ClientLogo {
   id: number;
@@ -66,9 +69,11 @@ const clientsData: ClientLogo[] = [
 
 const ClientsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [animationId, setAnimationId] = useState<number | null>(null);
   
-  useEffect(() => {
-    if (!scrollRef.current) return;
+  const startScrolling = () => {
+    if (!scrollRef.current || isPaused) return;
     
     const scrollContainer = scrollRef.current;
     let scrollAmount = 0;
@@ -86,22 +91,62 @@ const ClientsCarousel = () => {
         scrollAmount = 0;
       }
       
-      requestAnimationFrame(scroll);
+      const id = requestAnimationFrame(scroll);
+      setAnimationId(id);
     };
     
-    const animationId = requestAnimationFrame(scroll);
+    const id = requestAnimationFrame(scroll);
+    setAnimationId(id);
+  };
+  
+  const stopScrolling = () => {
+    if (animationId !== null) {
+      cancelAnimationFrame(animationId);
+      setAnimationId(null);
+    }
+  };
+  
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+  };
+  
+  useEffect(() => {
+    if (isPaused) {
+      stopScrolling();
+    } else {
+      startScrolling();
+    }
     
     return () => {
-      cancelAnimationFrame(animationId);
+      stopScrolling();
+    };
+  }, [isPaused]);
+  
+  useEffect(() => {
+    startScrolling();
+    
+    return () => {
+      stopScrolling();
     };
   }, []);
   
   return (
-    <section className="py-8 bg-gray-50 overflow-hidden">
+    <section className="py-8 bg-gray-50 overflow-hidden relative">
       <div className="container">
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 relative">
           <h2 className="text-xl font-bold">Parteneri de Încredere</h2>
           <p className="text-gray-600">Soluții electrice auto pentru companii de top din România</p>
+          
+          <Button
+            onClick={togglePause}
+            variant="outline"
+            size="sm"
+            className="absolute right-0 top-0 md:right-2 md:top-1/2 md:-translate-y-1/2"
+            aria-label={isPaused ? "Continuă derularea" : "Oprește derularea"}
+          >
+            {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+            <span className="ml-1 hidden sm:inline">{isPaused ? "Continuă" : "Oprește"}</span>
+          </Button>
         </div>
       </div>
       
@@ -120,12 +165,12 @@ const ClientsCarousel = () => {
               target="_blank" 
               rel="noopener noreferrer"
               aria-label={client.name}
-              className="h-full flex items-center"
+              className="h-full flex items-center group"
             >
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[150px]" 
+                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-300 group-hover:scale-110" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;

@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { ChevronRight, Phone, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -34,7 +35,7 @@ const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
 };
 
 const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, label: string }) => (
-  <div className="bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-lg text-center flex flex-col items-center">
+  <div className="bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <div className="text-vultur-red font-bold text-xl md:text-2xl">{value}</div>
     <div className="text-gray-800 text-sm">{label}</div>
   </div>
@@ -46,15 +47,15 @@ const StarRating = ({ rating }: { rating: number }) => {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
   
   return (
-    <div className="flex">
+    <div className="flex space-x-1 animate-fade-in">
       {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+        <Star key={`full-${i}`} className="h-5 w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
       ))}
       {hasHalfStar && (
         <span className="relative">
           <Star className="h-5 w-5 text-gray-300 fill-gray-300" />
           <span className="absolute top-0 left-0 overflow-hidden w-1/2">
-            <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+            <Star className="h-5 w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
           </span>
         </span>
       )}
@@ -79,6 +80,13 @@ const Hero = () => {
         />
       </div>
       
+      {/* Subtle background pattern overlay */}
+      <div className="absolute inset-0 z-0 opacity-10" 
+           style={{ 
+             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+           }}
+      ></div>
+      
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
@@ -92,7 +100,7 @@ const Hero = () => {
               {t.heroTitle3}
             </h1>
 
-            <div className="flex flex-col md:flex-row md:items-center mb-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+            <div className="flex flex-col md:flex-row md:items-center mb-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
               <div className="flex items-center">
                 <StarRating rating={4.6} />
                 <span className="ml-2 text-white font-medium">4.6 / 5</span>
@@ -108,14 +116,14 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <a 
                 href="/contact" 
-                className="inline-flex items-center px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white"
+                className="inline-flex items-center px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
               >
                 {t.contactUs}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
               <a 
                 href="/servicii-oferite" 
-                className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark"
+                className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
               >
                 {t.seeServices}
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -165,7 +173,7 @@ const Hero = () => {
       {isMobile && (
         <a 
           href="tel:+40721407727" 
-          className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow"
+          className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow hover:bg-red-800 transition-colors"
           aria-label="Call us"
         >
           <Phone className="h-6 w-6" />
