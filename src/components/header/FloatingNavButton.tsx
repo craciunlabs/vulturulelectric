@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin } from 'lucide-react';
+import { Navigation } from 'lucide-react';
 
 interface FloatingNavButtonProps {
   showMobileNav: boolean;
@@ -15,10 +15,10 @@ const FloatingNavButton = ({ showMobileNav, scrollToLocation, isMobile }: Floati
     <button 
       onClick={scrollToLocation}
       className="fixed bottom-5 left-5 z-50 bg-white text-vultur-red p-3 rounded-full shadow-lg border-2 border-vultur-red hover:bg-gray-100 transition-colors flex items-center"
-      aria-label="Deschide navigația către noi"
+      aria-label="Indicații rutiere către noi"
     >
-      <MapPin className="h-5 w-5" />
-      <span className="ml-2 text-xs font-medium hidden xs:inline whitespace-nowrap">Deschide navigația</span>
+      <Navigation className="h-5 w-5" />
+      <span className="ml-2 text-xs font-medium hidden xs:inline whitespace-nowrap">Indicații rutiere</span>
     </button>
   );
 };

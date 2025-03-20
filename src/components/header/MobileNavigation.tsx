@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Search, Menu, ChevronRight } from 'lucide-react';
+import { Phone, Search, Menu, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface MobileNavigationProps {
@@ -33,7 +33,7 @@ const MobileNavigation = ({
         className="p-2 text-sm text-vultur-red flex items-center"
         aria-label="Indicații rutiere"
       >
-        <ChevronRight className="h-4 w-4" />
+        <Navigation className="h-4 w-4" />
       </button>
       
       <Button 
