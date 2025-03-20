@@ -68,25 +68,27 @@ const clientsData: ClientLogo[] = [
 const ClientsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const positionRef = useRef(0);
   
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
     
     let animationId: number;
-    let position = 0;
-    const speed = 0.5; // Reduced speed from 1 to 0.5
+    const speed = 0.5; // Keeping the reduced speed
     
     const scroll = () => {
-      if (!scrollContainer || isPaused) return;
+      if (!scrollContainer) return;
       
-      position += speed;
-      scrollContainer.scrollLeft = position;
-      
-      // Reset when we reach the end of the first set
-      if (position >= scrollContainer.scrollWidth / 2) {
-        position = 0;
-        scrollContainer.scrollLeft = 0;
+      if (!isPaused) {
+        positionRef.current += speed;
+        scrollContainer.scrollLeft = positionRef.current;
+        
+        // Reset when we reach the end of the first set
+        if (positionRef.current >= scrollContainer.scrollWidth / 2) {
+          positionRef.current = 0;
+          scrollContainer.scrollLeft = 0;
+        }
       }
       
       animationId = requestAnimationFrame(scroll);
