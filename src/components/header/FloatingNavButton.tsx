@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { ChevronUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface FloatingNavButtonProps {
   showMobileNav: boolean;
@@ -8,8 +10,28 @@ interface FloatingNavButtonProps {
 }
 
 const FloatingNavButton = ({ showMobileNav, scrollToLocation, isMobile }: FloatingNavButtonProps) => {
-  // Component is now empty as per client request
-  return null;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
+  if (!showMobileNav) return null;
+  
+  return (
+    <div className="fixed bottom-6 right-6 z-50">
+      <button 
+        onClick={scrollToTop} 
+        className={cn(
+          "float-nav-button p-3 rounded-full bg-vultur-red text-white shadow-lg transform transition-all duration-300 hover:scale-110",
+        )}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp size={24} />
+      </button>
+    </div>
+  );
 };
 
 export default FloatingNavButton;
