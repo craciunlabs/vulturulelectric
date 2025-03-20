@@ -43,21 +43,18 @@ const sliderItems = [
 const HeroCarousel = () => {
   const [autoplay, setAutoplay] = useState(true);
   const [api, setApi] = useState<{ scrollNext: () => void } | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
   
+  // Force consistent timing regardless of slide position
   useEffect(() => {
     if (!api || !autoplay) return;
     
-    // Start sliding immediately
-    const interval = setInterval(() => {
+    // Set a consistent interval for all slides
+    const timer = setInterval(() => {
       api.scrollNext();
-      
-      // Update the current index
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderItems.length);
-    }, 3000); // Consistent 3-second interval for all slides
+    }, 3000);
     
-    return () => clearInterval(interval);
-  }, [api, autoplay, sliderItems.length]);
+    return () => clearInterval(timer);
+  }, [api, autoplay]);
 
   return (
     <div className="w-full">
