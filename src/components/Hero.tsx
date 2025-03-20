@@ -1,69 +1,17 @@
-import { useState } from 'react';
-import { ChevronRight, Phone, Star } from 'lucide-react';
+
+import { Phone } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Badge } from './ui/badge';
 
-interface ImageLoaderProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
-
-const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className={cn(
-        "lazy-image transition-opacity duration-500",
-        loaded ? "opacity-100 blur-none" : "opacity-60 blur-sm",
-        className
-      )}
-      onLoad={() => setLoaded(true)}
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop';
-      }}
-    />
-  );
-};
-
-const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, label: string }) => (
-  <div className="bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-    <div className="text-vultur-red font-bold text-xl md:text-2xl">{value}</div>
-    <div className="text-gray-800 text-sm">{label}</div>
-  </div>
-);
-
-const StarRating = ({ rating }: { rating: number }) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.3 && rating % 1 <= 0.7;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-  
-  return (
-    <div className="flex space-x-1 animate-fade-in">
-      {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
-      ))}
-      {hasHalfStar && (
-        <span className="relative">
-          <Star className="h-4 w-4 sm:h-5 sm:w-5 text-gray-300 fill-gray-300" />
-          <span className="absolute top-0 left-0 overflow-hidden w-1/2">
-            <Star className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
-          </span>
-        </span>
-      )}
-      {[...Array(emptyStars)].map((_, i) => (
-        <Star key={`empty-${i}`} className="h-4 w-4 sm:h-5 sm:w-5 text-gray-300 fill-gray-300" />
-      ))}
-    </div>
-  );
-};
+// Import extracted components
+import ImageLoader from './hero/ImageLoader';
+import MetricsBox from './hero/MetricsBox';
+import StarRating from './hero/StarRating';
+import MobileMetrics from './hero/MobileMetrics';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -150,20 +98,11 @@ const Hero = () => {
             </div>
 
             {isMobile && (
-              <div className="mt-5 grid grid-cols-3 gap-1.5 animate-fade-up">
-                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
-                  <div className="text-vultur-red font-bold text-lg">30+</div>
-                  <div className="text-gray-800 text-xs">ani de experiență</div>
-                </div>
-                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
-                  <div className="text-vultur-red font-bold text-lg">2000+</div>
-                  <div className="text-gray-800 text-xs">clienți fericiți</div>
-                </div>
-                <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
-                  <div className="text-vultur-red font-bold text-lg">Webasto</div>
-                  <div className="text-gray-800 text-xs">instalări</div>
-                </div>
-              </div>
+              <MobileMetrics 
+                yearsExperience="ani de experiență"
+                clientsCount="clienți fericiți"
+                specialFeature="instalări"
+              />
             )}
           </div>
           
