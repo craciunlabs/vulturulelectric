@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronRight, Phone, Star, Navigation } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -201,13 +200,12 @@ const Hero = () => {
             <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
           </a>
           
-          {/* New Navigation Button */}
           <button 
             onClick={openDirections}
-            className="fixed bottom-20 left-5 z-50 bg-white text-vultur-red p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center"
+            className="fixed bottom-5 left-5 z-50 bg-white text-vultur-red p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center"
             aria-label="Deschide navigația către noi"
           >
-            <Navigation className="h-5 w-5 sm:h-6 sm:w-6" />
+            <Navigation className="h-5 w-5" />
             <span className="ml-2 text-xs font-medium hidden xs:inline whitespace-nowrap">Deschide navigația</span>
           </button>
         </>

@@ -57,11 +57,11 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Back to top button - smaller on mobile and positioned to not overlap with navigation button */}
+      {/* Back to top button - positioned in top-right to avoid overlap with navigation */}
       <Button
         onClick={scrollToTop}
         className={cn(
-          "fixed z-50 bottom-5 right-5 rounded-full shadow-lg transition-all duration-300 transform bg-vultur-red hover:bg-vultur-red/90",
+          "fixed z-50 bottom-20 right-5 rounded-full shadow-lg transition-all duration-300 transform bg-vultur-red hover:bg-vultur-red/90",
           isMobile ? "w-9 h-9" : "w-10 h-10",
           showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
         )}
