@@ -75,8 +75,9 @@ const ClientsCarousel = () => {
     
     const scrollContainer = scrollRef.current;
     let scrollAmount = 0;
-    const speed = 0.5;
-    const step = 1;
+    // Slow down the speed for a smoother scroll
+    const speed = 0.2; // Reduced from 0.5 to 0.2
+    const step = 0.5; // Reduced from 1 to 0.5 for smoother movement
     
     const scroll = () => {
       if (!scrollContainer) return;
@@ -135,7 +136,7 @@ const ClientsCarousel = () => {
       
       <div 
         ref={scrollRef}
-        className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap pb-6 px-6 scrollbar-hide"
+        className="flex items-center space-x-12 overflow-x-auto whitespace-nowrap py-6 px-8 scrollbar-hide"
         style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -143,7 +144,7 @@ const ClientsCarousel = () => {
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
-            className="shrink-0 h-16 md:h-20 px-4 py-2 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
+            className="shrink-0 h-16 md:h-20 px-6 py-3 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
           >
             <a 
               href={client.url} 
@@ -155,7 +156,7 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-300 group-hover:scale-110" 
+                className="h-full w-auto object-contain max-w-[150px] transition-transform duration-500 group-hover:scale-110" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
