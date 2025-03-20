@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -66,8 +67,9 @@ const Header = () => {
         setShowTopBar(scrollPosition < 10);
       }
       
-      // Show floating navigation after scrolling down on both mobile and desktop
-      setShowMobileNav(scrollPosition > 300);
+      // Show floating navigation after scrolling a bit
+      // We still set this even at top so the FloatingNavButton can control its own visibility
+      setShowMobileNav(scrollPosition > 100);
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -156,7 +158,7 @@ const Header = () => {
         toggleLanguage={toggleLanguage} 
       />
       
-      {/* Floating Navigation Button - Now visible on both mobile and desktop */}
+      {/* Smart Floating Navigation Button - always passes the showMobileNav value and handles visibility internally */}
       <FloatingNavButton 
         showMobileNav={showMobileNav} 
         scrollToLocation={scrollToLocation} 
