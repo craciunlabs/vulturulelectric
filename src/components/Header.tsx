@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -67,10 +66,8 @@ const Header = () => {
         setShowTopBar(scrollPosition < 10);
       }
       
-      // Show floating navigation after scrolling down on mobile
-      if (isMobile) {
-        setShowMobileNav(scrollPosition > 300);
-      }
+      // Show floating navigation after scrolling down on both mobile and desktop
+      setShowMobileNav(scrollPosition > 300);
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -159,7 +156,7 @@ const Header = () => {
         toggleLanguage={toggleLanguage} 
       />
       
-      {/* Floating Navigation Button */}
+      {/* Floating Navigation Button - Now visible on both mobile and desktop */}
       <FloatingNavButton 
         showMobileNav={showMobileNav} 
         scrollToLocation={scrollToLocation} 
