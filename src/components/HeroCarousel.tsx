@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { 
   Carousel,
@@ -42,15 +41,19 @@ const sliderItems = [
 
 const HeroCarousel = () => {
   const [autoplay, setAutoplay] = useState(true);
-  const [api, setApi] = useState<{ scrollNext: () => void } | null>(null);
+  const [api, setApi] = useState<{ scrollNext: () => void, scrollTo: (index: number) => void } | null>(null);
   
-  // Force consistent timing regardless of slide position
   useEffect(() => {
     if (!api || !autoplay) return;
     
-    // Set a consistent interval for all slides
     const timer = setInterval(() => {
-      api.scrollNext();
+      const canScrollNext = api.canScrollNext?.();
+      
+      if (!canScrollNext) {
+        api.scrollTo(0);
+      } else {
+        api.scrollNext();
+      }
     }, 3000);
     
     return () => clearInterval(timer);
@@ -63,6 +66,9 @@ const HeroCarousel = () => {
         className="w-full"
         onMouseEnter={() => setAutoplay(false)}
         onMouseLeave={() => setAutoplay(true)}
+        opts={{
+          loop: true
+        }}
       >
         <CarouselContent>
           {sliderItems.map((item) => (

@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -71,9 +72,16 @@ const Carousel = React.forwardRef<
         return
       }
 
+      // If loop is enabled, always allow scrolling
+      if (opts?.loop) {
+        setCanScrollPrev(true)
+        setCanScrollNext(true)
+        return
+      }
+
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
-    }, [])
+    }, [opts?.loop])
 
     const scrollPrev = React.useCallback(() => {
       api?.scrollPrev()
