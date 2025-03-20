@@ -79,7 +79,9 @@ const ClientsCarousel = () => {
     if (!scrollContainer) return;
     
     if (!isPaused) {
-      positionRef.current += 0.5;
+      // Slower scroll speed on mobile devices
+      const scrollSpeed = isMobile ? 0.2 : 0.5;
+      positionRef.current += scrollSpeed;
       scrollContainer.scrollLeft = positionRef.current;
       
       // Reset when we reach the end of the first set
