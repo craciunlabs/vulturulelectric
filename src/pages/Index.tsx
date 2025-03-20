@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { ChevronUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AuthorizedPartnerSection from '@/components/AuthorizedPartnerSection';
@@ -57,18 +57,18 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Back to top button - positioned in top-right to avoid overlap with navigation */}
+      {/* Back to top button - positioned in bottom-right */}
       <Button
         onClick={scrollToTop}
         className={cn(
-          "fixed z-50 bottom-20 right-5 rounded-full shadow-lg transition-all duration-300 transform bg-vultur-red hover:bg-vultur-red/90",
-          isMobile ? "w-9 h-9" : "w-10 h-10",
+          "fixed z-50 bottom-5 right-5 rounded-full shadow-lg transition-all duration-300 transform bg-vultur-red hover:bg-vultur-red/90",
+          isMobile ? "w-10 h-10" : "w-12 h-12",
           showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
         )}
         size="icon"
         aria-label="Back to top"
       >
-        <ChevronUp className={isMobile ? "h-4 w-4" : "h-5 w-5"} />
+        <ArrowUp className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
       </Button>
     </div>
   );
