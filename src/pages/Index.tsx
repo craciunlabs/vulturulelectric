@@ -57,7 +57,7 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Back to top button - positioned in bottom-right */}
+      {/* Single back to top button */}
       <Button
         onClick={scrollToTop}
         className={cn(

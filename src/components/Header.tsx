@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Clock, MapPin, ChevronUp, Search } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
@@ -12,7 +11,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showTopBar, setShowTopBar] = useState(true);
   
@@ -56,7 +54,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      setShowScrollToTop(window.scrollY > 300);
       
       // Hide top bar on scroll for mobile
       if (isMobile) {
@@ -355,24 +352,6 @@ const Header = () => {
           </div>
         </div>
       )}
-      
-      {/* Back to top button */}
-      <div
-        className={cn(
-          "fixed right-5 bottom-5 z-50 transition-all duration-300",
-          showScrollToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
-        )}
-      >
-        <Button
-          variant="default"
-          size="icon"
-          onClick={scrollToTop}
-          className="rounded-full shadow-md bg-vultur-red hover:bg-vultur-red/90"
-          aria-label="Back to top"
-        >
-          <ChevronUp className="h-5 w-5" />
-        </Button>
-      </div>
     </header>
   );
 };
