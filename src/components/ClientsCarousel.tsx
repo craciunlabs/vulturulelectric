@@ -146,7 +146,7 @@ const ClientsCarousel = () => {
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
-            className="shrink-0 h-12 sm:h-16 md:h-20 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
+            className="shrink-0 h-16 sm:h-16 md:h-20 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
           >
             <a 
               href={client.url} 
@@ -158,7 +158,7 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[100px] sm:max-w-[150px] transition-transform duration-300 group-hover:scale-125" 
+                className="h-full w-auto object-contain max-w-[160px] sm:max-w-[150px] transition-transform duration-300 group-hover:scale-125" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
