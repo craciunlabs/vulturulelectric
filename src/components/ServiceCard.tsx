@@ -13,13 +13,6 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, description, icon, className }: ServiceCardProps) => {
   const isMobile = useIsMobile();
   
-  // Function to truncate text to a certain number of words
-  const truncateText = (text: string, wordLimit: number) => {
-    const words = text.split(' ');
-    if (words.length <= wordLimit) return text;
-    return words.slice(0, wordLimit).join(' ') + '...';
-  };
-  
   return (
     <div className={cn(
       "service-card bg-white rounded-xl p-3 sm:p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden group",
@@ -30,7 +23,7 @@ const ServiceCard = ({ title, description, icon, className }: ServiceCardProps) 
       </div>
       <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-1 sm:mb-2 transition-colors duration-300 group-hover:text-vultur-red">{title}</h3>
       <p className="text-gray-600 text-xs sm:text-sm">
-        {isMobile ? truncateText(description, 12) : description}
+        {isMobile ? description.split(' ').slice(0, 10).join(' ') + (description.split(' ').length > 10 ? '...' : '') : description}
       </p>
     </div>
   );
