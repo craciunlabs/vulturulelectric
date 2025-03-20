@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { ChevronRight, Phone, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -65,6 +66,13 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
+const ElectricLine = () => (
+  <div className="relative">
+    <div className="h-0.5 w-6 sm:w-10 bg-gradient-to-r from-yellow-300 via-orange-400 to-vultur-red mr-2 sm:mr-3 spark-animation"></div>
+    <div className="absolute -top-0.5 left-0 h-1.5 w-1.5 rounded-full bg-yellow-200 glow-animation"></div>
+  </div>
+);
+
 const Hero = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
@@ -101,8 +109,8 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <div className="text-white animate-fade-down">
             <div className="flex items-center mb-2">
-              <div className="h-0.5 w-6 sm:w-10 bg-vultur-red mr-2 sm:mr-3"></div>
-              <span className="text-xs sm:text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICE AUTO ELECTRIC AUTORIZAT</span>
+              <ElectricLine />
+              <span className="text-xs sm:text-sm uppercase tracking-wider font-medium bg-gradient-to-r from-orange-300 to-white text-transparent bg-clip-text glow-text">SERVICE AUTO ELECTRIC AUTORIZAT</span>
             </div>
             
             {isMobile ? (
