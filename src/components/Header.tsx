@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Clock, MapPin, Search, ArrowRight, Navigation } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Search, Navigation } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile, useBreakpoint } from '@/hooks/use-mobile';
 import BrandLogo from './BrandLogo';
@@ -128,15 +129,6 @@ const Header = () => {
               <MapPin className="h-3.5 w-3.5 mr-1.5" />
               <span>{t.address}</span>
             </div>
-            {breakpoint !== 'desktop' && (
-              <button 
-                onClick={scrollToLocation} 
-                className="flex items-center text-white text-xs hover:underline"
-              >
-                <Navigation className="h-3.5 w-3.5 mr-1.5" />
-                <span>Indicații rutiere</span>
-              </button>
-            )}
           </div>
         </div>
       </div>
@@ -191,16 +183,24 @@ const Header = () => {
             </Button>
           </div>
           
-          {/* Mobile menu toggle */}
+          {/* Mobile tools with Directions */}
           <div className="flex md:hidden items-center space-x-2">
             <a 
               href="tel:+40721407727" 
-              className="p-2 text-sm text-vultur-red flex items-center mr-1" 
+              className="p-2 text-sm text-vultur-red flex items-center" 
               aria-label="Call us"
             >
-              <Phone className="h-4 w-4 mr-1" />
-              <span className="hidden xs:inline">+40 721 407 727</span>
+              <Phone className="h-4 w-4" />
             </a>
+            
+            {/* Navigation Button - positioned here in the middle stripe */}
+            <button
+              onClick={scrollToLocation}
+              className="p-2 text-sm text-vultur-red flex items-center"
+              aria-label="Indicații rutiere"
+            >
+              <Navigation className="h-4 w-4" />
+            </button>
             
             <Button 
               variant="ghost" 
@@ -276,7 +276,7 @@ const Header = () => {
         )}
       </div>
       
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - removed Indicații rutiere from here */}
       {isMobile && (
         <div className={cn(
           "fixed inset-0 top-0 bg-white/95 backdrop-blur-layer z-40 transform transition-transform duration-300 ease-in-out",
@@ -347,15 +347,6 @@ const Header = () => {
               >
                 {t.contact}
               </Link>
-              
-              {/* Added Directions Link */}
-              <button 
-                onClick={scrollToLocation}
-                className="py-4 border-b border-gray-100 text-lg font-medium text-vultur-red flex items-center"
-              >
-                Indicații rutiere
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
             </nav>
             
             <div className="mt-auto py-4 border-t border-gray-100">
@@ -388,7 +379,7 @@ const Header = () => {
       
       {/* Persistent Mobile Navigation Button */}
       {isMobile && showMobileNav && (
-        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 float-nav-button">
           <Button
             onClick={scrollToLocation}
             className="rounded-full shadow-lg bg-vultur-red hover:bg-vultur-red/90 p-4 h-14 w-14 flex items-center justify-center"
