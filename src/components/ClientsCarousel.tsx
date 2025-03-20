@@ -81,7 +81,7 @@ const ClientsCarousel = () => {
       scrollContainer.scrollLeft = 0;
     }
     
-    const speed = 0.75; // Increased speed from 0.5 to 0.75
+    const speed = 1; // Increased speed from 0.75 to 1
     const step = 1;
     
     const scroll = () => {
@@ -112,12 +112,15 @@ const ClientsCarousel = () => {
   const handleMouseEnter = () => {
     // Store current scroll position when mouse enters
     if (scrollRef.current) {
-      setScrollPosition(scrollRef.current.scrollLeft / 0.5); // Adjust by the speed factor
+      // Just store the exact current scroll position
+      setScrollPosition(scrollRef.current.scrollLeft);
     }
     setIsPaused(true);
+    stopScrolling();
   };
   
   const handleMouseLeave = () => {
+    // When user moves mouse away, resume from the current position
     setIsPaused(false);
   };
   
@@ -131,7 +134,7 @@ const ClientsCarousel = () => {
     return () => {
       stopScrolling();
     };
-  }, [isPaused, scrollPosition]);
+  }, [isPaused]);
   
   useEffect(() => {
     startScrolling();
