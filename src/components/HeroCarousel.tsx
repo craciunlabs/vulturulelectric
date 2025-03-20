@@ -50,7 +50,7 @@ const HeroCarousel = () => {
     
     const timer = setInterval(() => {
       api.scrollNext();
-    }, 3000);
+    }, 4000); // Increased from 3000 to 4000 ms (4 seconds)
     
     return () => clearInterval(timer);
   }, [api, autoplay]);
