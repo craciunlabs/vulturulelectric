@@ -109,7 +109,7 @@ const HeroCarousel = () => {
           ))}
         </CarouselContent>
         
-        {/* Mobile optimized controls */}
+        {/* Only show one type of navigation control based on device */}
         {isMobile ? (
           <div className="flex justify-center mt-2 gap-1.5">
             {sliderItems.map((_, index) => (
