@@ -69,35 +69,36 @@ const ClientsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const positionRef = useRef(0);
+  const animationRef = useRef<number | null>(null);
   
-  useEffect(() => {
+  // Function to handle the animation scroll
+  const scrollAnimation = () => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
     
-    let animationId: number;
-    const speed = 0.5; // Keeping the reduced speed
-    
-    const scroll = () => {
-      if (!scrollContainer) return;
+    if (!isPaused) {
+      positionRef.current += 0.5;
+      scrollContainer.scrollLeft = positionRef.current;
       
-      if (!isPaused) {
-        positionRef.current += speed;
-        scrollContainer.scrollLeft = positionRef.current;
-        
-        // Reset when we reach the end of the first set
-        if (positionRef.current >= scrollContainer.scrollWidth / 2) {
-          positionRef.current = 0;
-          scrollContainer.scrollLeft = 0;
-        }
+      // Reset when we reach the end of the first set
+      if (positionRef.current >= scrollContainer.scrollWidth / 2) {
+        positionRef.current = 0;
+        scrollContainer.scrollLeft = 0;
       }
-      
-      animationId = requestAnimationFrame(scroll);
-    };
+    }
     
-    animationId = requestAnimationFrame(scroll);
+    animationRef.current = requestAnimationFrame(scrollAnimation);
+  };
+  
+  useEffect(() => {
+    // Start the scrolling animation
+    animationRef.current = requestAnimationFrame(scrollAnimation);
     
+    // Clean up animation frame on unmount
     return () => {
-      cancelAnimationFrame(animationId);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, [isPaused]);
   
@@ -125,6 +126,7 @@ const ClientsCarousel = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+        {/* Duplicate the items to create a seamless loop effect */}
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
