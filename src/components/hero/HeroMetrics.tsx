@@ -11,17 +11,17 @@ const HeroMetrics = ({ isMobile }: HeroMetricsProps) => {
   
   if (isMobile) {
     return (
-      <div className="grid grid-cols-3 gap-2 animate-fade-up metrics-container">
-        <div className="bg-white/95 backdrop-blur-sm p-2.5 rounded-lg shadow-lg text-center flex flex-col items-center">
-          <div className="text-vultur-red font-bold text-lg leading-tight">30+</div>
+      <div className="mt-5 grid grid-cols-3 gap-1.5 animate-fade-up metrics-container">
+        <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
+          <div className="text-vultur-red font-bold text-lg">30+</div>
           <div className="text-gray-800 text-xs">ani de experiență</div>
         </div>
-        <div className="bg-white/95 backdrop-blur-sm p-2.5 rounded-lg shadow-lg text-center flex flex-col items-center">
-          <div className="text-vultur-red font-bold text-lg leading-tight">2000+</div>
+        <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
+          <div className="text-vultur-red font-bold text-lg">2000+</div>
           <div className="text-gray-800 text-xs">clienți fericiți</div>
         </div>
-        <div className="bg-white/95 backdrop-blur-sm p-2.5 rounded-lg shadow-lg text-center flex flex-col items-center webasto-metric">
-          <div className="text-vultur-red font-bold text-lg leading-tight">Webasto</div>
+        <div className="bg-white/95 backdrop-blur-sm p-2 py-3 rounded-lg shadow-md text-center webasto-metric">
+          <div className="text-vultur-red font-bold text-lg">Webasto</div>
           <div className="text-gray-800 text-[10px] leading-tight">instalări și service</div>
         </div>
       </div>
