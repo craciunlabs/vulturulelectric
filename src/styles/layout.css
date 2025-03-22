@@ -42,4 +42,12 @@
 .rating-badge-container {
   display: inline-flex;
   max-width: fit-content;
+  align-items: center;
+}
+
+/* Mobile star rating styles */
+@media (max-width: 768px) {
+  .rating-badge-container {
+    margin-bottom: 1rem;
+  }
 }

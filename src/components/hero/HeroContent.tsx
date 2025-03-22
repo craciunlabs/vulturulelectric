@@ -34,17 +34,31 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
         </h1>
       )}
 
-      <div className="flex items-center mb-4 w-fit bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
-        <div className="flex items-center">
-          <StarRating rating={4.6} />
-          <span className="ml-2 text-white font-medium text-sm sm:text-base">4.6 / 5</span>
+      {isMobile ? (
+        <div className="mb-4 rating-badge-container">
+          <div className="flex items-center bg-black/50 backdrop-blur-sm py-1.5 px-3 rounded-lg">
+            <StarRating rating={4.6} />
+            <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.6 / 5</span>
+          </div>
+          <div className="ml-2">
+            <Badge variant="outline" className="bg-vultur-red/90 text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
+              31 recenzii pe<br/>Google
+            </Badge>
+          </div>
         </div>
-        <div className="ml-3 flex items-center">
-          <Badge variant="outline" className="text-xs sm:text-sm bg-vultur-red/20 text-white border-vultur-red/30">
-            31 recenzii pe Google
-          </Badge>
+      ) : (
+        <div className="flex items-center mb-4 w-fit bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
+          <div className="flex items-center">
+            <StarRating rating={4.6} />
+            <span className="ml-2 text-white font-medium text-sm sm:text-base">4.6 / 5</span>
+          </div>
+          <div className="ml-3 flex items-center">
+            <Badge variant="outline" className="text-xs sm:text-sm bg-vultur-red/20 text-white border-vultur-red/30">
+              31 recenzii pe Google
+            </Badge>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="flex gap-2 sm:gap-4">
         <a 
