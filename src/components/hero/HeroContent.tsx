@@ -1,10 +1,8 @@
-
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElectricLine from './ElectricLine';
 import StarRating from './StarRating';
-import HeroMetrics from './HeroMetrics';
 
 interface HeroContentProps {
   isMobile: boolean;
@@ -21,18 +19,20 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       </div>
       
       {isMobile && (
-        <div className="grid grid-cols-3 gap-2 mb-4 animate-fade-up mobile-metrics-row">
-          <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
-            <div className="text-vultur-red font-bold text-lg">30+</div>
-            <div className="text-gray-800 text-xs">ani de experiență</div>
-          </div>
-          <div className="bg-white/95 backdrop-blur-sm p-2 rounded-lg shadow-md text-center">
-            <div className="text-vultur-red font-bold text-lg">2000+</div>
-            <div className="text-gray-800 text-xs">clienți fericiți</div>
-          </div>
-          <div className="bg-white/95 backdrop-blur-sm p-2 py-3 rounded-lg shadow-md text-center">
-            <div className="text-vultur-red font-bold text-lg">Webasto</div>
-            <div className="text-gray-800 text-[10px] leading-tight">instalări și service</div>
+        <div className="flex items-center justify-between mb-4 animate-fade-up">
+          <div className="flex space-x-2">
+            <div className="text-white text-sm">
+              <span className="text-vultur-red font-bold text-xl leading-none">30+</span>
+              <span className="text-xs block mt-0.5 opacity-90">ani exp.</span>
+            </div>
+            <div className="text-white text-sm">
+              <span className="text-vultur-red font-bold text-xl leading-none">2000+</span>
+              <span className="text-xs block mt-0.5 opacity-90">clienți</span>
+            </div>
+            <div className="text-white text-sm">
+              <span className="text-vultur-red font-bold text-xl leading-none">Webasto</span>
+              <span className="text-xs block mt-0.5 opacity-90">service</span>
+            </div>
           </div>
         </div>
       )}
@@ -52,14 +52,14 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       )}
 
       {isMobile ? (
-        <div className="mb-4 rating-badge-container">
+        <div className="mb-5 rating-badge-container">
           <div className="flex items-center bg-black/50 backdrop-blur-sm py-1.5 px-3 rounded-lg">
             <StarRating rating={4.6} />
             <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.6 / 5</span>
           </div>
-          <div className="ml-2">
+          <div className="ml-2 inline-block">
             <Badge variant="outline" className="bg-vultur-red/90 text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
-              31 recenzii pe<br/>Google
+              31 recenzii pe Google
             </Badge>
           </div>
         </div>
@@ -77,20 +77,20 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
         </div>
       )}
 
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+      <div className="grid grid-cols-2 gap-2 mb-1">
         <a 
           href="/contact" 
-          className="w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base mb-2 sm:mb-0"
+          className="w-full inline-flex items-center justify-center py-2.5 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
         >
-          {isMobile ? "Contactează-ne acum" : t.contactUs}
-          <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />
+          {isMobile ? "Contactează-ne" : t.contactUs}
+          <ChevronRight className="ml-1 h-4 w-4" />
         </a>
         <a 
           href="/servicii-oferite" 
-          className="w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
+          className="w-full inline-flex items-center justify-center py-2.5 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
         >
           {isMobile ? "Vezi serviciile" : t.seeServices}
-          <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />
+          <ChevronRight className="ml-1 h-4 w-4" />
         </a>
       </div>
     </div>
