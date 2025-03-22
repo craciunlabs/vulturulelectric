@@ -9,7 +9,7 @@ const ServicesSection = () => {
   const isMobile = useIsMobile();
   
   return (
-    <section className="py-10 sm:py-16 bg-gray-50">
+    <section className="py-10 sm:py-16 bg-gray-50 overflow-x-hidden">
       <div className="container px-3 sm:px-6">
         <div className="text-center mb-8 sm:mb-16 animate-fade-down">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
@@ -43,7 +43,7 @@ const ServicesSection = () => {
           />
         </div>
         
-        <div className="mt-8 sm:mt-16">
+        <div className="mt-8 sm:mt-16 pb-2">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-5 sm:p-8 md:p-10">
@@ -93,8 +93,8 @@ const ServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
                 
-                {/* Webasto badge */}
-                <div className="absolute bottom-3 right-3 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[150px]">
+                {/* Webasto badge - repositioned */}
+                <div className="absolute bottom-3 right-3 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[150px] z-10">
                   <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
                   <div className="text-lg font-bold">Webasto</div>
                 </div>

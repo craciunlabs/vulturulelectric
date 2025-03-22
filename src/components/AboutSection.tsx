@@ -4,8 +4,8 @@ import { Badge } from './ui/badge';
 
 const AboutSection = () => {
   return (
-    <section className="py-16">
-      <div className="container">
+    <section className="py-16 overflow-hidden">
+      <div className="container px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-right">
             <div className="relative">
@@ -21,21 +21,21 @@ const AboutSection = () => {
                 />
               </div>
               
-              {/* Enhanced partner badge with Webasto logo */}
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-vultur-red to-vultur-dark p-6 rounded-xl shadow-lg max-w-[280px] transform hover:scale-105 transition-transform duration-300">
+              {/* Repositioned partner badge with Webasto logo */}
+              <div className="absolute -bottom-6 -right-6 md:-bottom-5 md:-right-5 bg-gradient-to-r from-vultur-red to-vultur-dark p-4 sm:p-6 rounded-xl shadow-lg max-w-[260px] z-10 transform hover:scale-105 transition-transform duration-300">
                 <div className="text-white">
-                  <div className="flex items-center mb-3">
-                    <Award className="h-10 w-10 text-white mr-4" />
+                  <div className="flex items-center mb-2 sm:mb-3">
+                    <Award className="h-8 w-8 sm:h-10 sm:w-10 text-white mr-3 sm:mr-4" />
                     <div>
-                      <div className="font-bold text-xl">Partener</div>
-                      <div className="text-lg">Autorizat</div>
+                      <div className="font-bold text-lg sm:text-xl">Partener</div>
+                      <div className="text-base sm:text-lg">Autorizat</div>
                     </div>
                   </div>
-                  <div className="mt-2 flex items-center">
+                  <div className="mt-1 sm:mt-2 flex items-center">
                     <img 
                       src="https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png" 
                       alt="Webasto" 
-                      className="h-8 mr-2"
+                      className="h-6 sm:h-8 mr-2"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = 'https://placehold.co/120x30/ffffff/c41e1e?text=Webasto';
