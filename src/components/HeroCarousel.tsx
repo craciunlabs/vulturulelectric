@@ -43,8 +43,8 @@ const sliderItems = [
   {
     id: 5,
     title: "SERVICE PENTRU REMORCI ȘI SEMIREMORCI",
-    description: "Diagnosticare și reparare sisteme electrice, reparații suspensii pneumatice",
-    image: "public/lovable-uploads/c459bc56-3090-4ee5-acb4-9687214b1ebf.png",
+    description: "Diagnosticare și reparare sisteme electrice și suspensii pneumatice pentru remorci",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
   }
 ];
