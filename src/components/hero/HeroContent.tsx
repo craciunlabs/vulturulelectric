@@ -1,3 +1,4 @@
+
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -19,19 +20,19 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       </div>
       
       {isMobile && (
-        <div className="flex items-center justify-between mb-4 animate-fade-up">
-          <div className="flex space-x-2">
-            <div className="text-white text-sm">
+        <div className="flex items-center space-x-4 mb-4 mobile-metrics-container animate-fade-up">
+          <div className="flex space-x-4">
+            <div className="metrics-item">
               <span className="text-vultur-red font-bold text-xl leading-none">30+</span>
-              <span className="text-xs block mt-0.5 opacity-90">ani exp.</span>
+              <span className="text-xs block mt-0.5 opacity-90 whitespace-nowrap">ani exp.</span>
             </div>
-            <div className="text-white text-sm">
+            <div className="metrics-item">
               <span className="text-vultur-red font-bold text-xl leading-none">2000+</span>
-              <span className="text-xs block mt-0.5 opacity-90">clienți</span>
+              <span className="text-xs block mt-0.5 opacity-90 whitespace-nowrap">clienți</span>
             </div>
-            <div className="text-white text-sm">
+            <div className="metrics-item">
               <span className="text-vultur-red font-bold text-xl leading-none">Webasto</span>
-              <span className="text-xs block mt-0.5 opacity-90">service</span>
+              <span className="text-xs block mt-0.5 opacity-90 whitespace-nowrap">service</span>
             </div>
           </div>
         </div>
@@ -58,7 +59,7 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
             <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.6 / 5</span>
           </div>
           <div className="ml-2 inline-block">
-            <Badge variant="outline" className="bg-vultur-red/90 text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
+            <Badge variant="outline" className="bg-vultur-red text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
               31 recenzii pe Google
             </Badge>
           </div>
