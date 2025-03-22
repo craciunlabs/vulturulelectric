@@ -8,7 +8,7 @@ import {
   CarouselNext,
   type CarouselApi
 } from "@/components/ui/carousel";
-import { Zap, Car, Wrench, Battery, Cpu } from 'lucide-react';
+import { Zap, Car, Wrench, Battery, Cpu, Truck } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const sliderItems = [
@@ -39,6 +39,13 @@ const sliderItems = [
     description: "Montaj alarme, închideri centralizate, sisteme audio și navigație pentru confort și siguranță",
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Car className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+  },
+  {
+    id: 5,
+    title: "SERVICE PENTRU REMORCI ȘI SEMIREMORCI",
+    description: "Diagnosticare și reparare sisteme electrice, reparații suspensii pneumatice",
+    image: "public/lovable-uploads/c459bc56-3090-4ee5-acb4-9687214b1ebf.png",
+    icon: <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
   }
 ];
 

@@ -17,11 +17,11 @@ const Index = () => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = "Vulturul Electric - Service Auto Electric Professional";
+    document.title = "Vulturul Electric - Service Auto Electric Professional | Remorci și Semiremorci";
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         <Hero />
