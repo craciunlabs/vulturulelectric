@@ -100,16 +100,16 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <>
             <a 
               href="/contact" 
-              className="inline-flex items-center justify-center py-3.5 px-8 bg-vultur-red hover:bg-red-800 transition-colors rounded-md font-medium text-white text-base w-[230px]"
+              className="inline-flex items-center justify-center py-3 px-8 bg-vultur-red text-white rounded-sm font-medium text-base"
             >
-              {t.contactUs}
+              Contactează-ne acum
               <ChevronRight className="ml-2 h-5 w-5" />
             </a>
             <a 
               href="/servicii-oferite" 
-              className="inline-flex items-center justify-center py-3.5 px-8 bg-white hover:bg-gray-100 transition-colors rounded-md font-medium text-vultur-dark text-base w-[230px]"
+              className="inline-flex items-center justify-center py-3 px-8 bg-white text-vultur-dark rounded-sm font-medium text-base"
             >
-              {t.seeServices}
+              Vezi serviciile
               <ChevronRight className="ml-2 h-5 w-5" />
             </a>
           </>
