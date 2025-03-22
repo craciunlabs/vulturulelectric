@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <HeroAction />
+      {!isMobile && <HeroAction />}
     </div>
   );
 };
