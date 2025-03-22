@@ -20,8 +20,8 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       </div>
       
       {isMobile && (
-        <div className="flex items-center space-x-4 mb-4 mobile-metrics-container animate-fade-up">
-          <div className="flex space-x-4">
+        <div className="flex items-center mb-4 mobile-metrics-container animate-fade-up">
+          <div className="flex items-center justify-between w-full">
             <div className="metrics-item">
               <span className="text-vultur-red font-bold text-xl leading-none">30+</span>
               <span className="text-xs block mt-0.5 opacity-90 whitespace-nowrap">ani exp.</span>
@@ -79,20 +79,41 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       )}
 
       <div className="grid grid-cols-2 gap-2 mb-1">
-        <a 
-          href="/contact" 
-          className="w-full inline-flex items-center justify-center py-2.5 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
-        >
-          {isMobile ? "Contactează-ne" : t.contactUs}
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </a>
-        <a 
-          href="/servicii-oferite" 
-          className="w-full inline-flex items-center justify-center py-2.5 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
-        >
-          {isMobile ? "Vezi serviciile" : t.seeServices}
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </a>
+        {isMobile ? (
+          <>
+            <a 
+              href="/contact" 
+              className="w-full inline-flex items-center justify-center py-2.5 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
+            >
+              Contactează-ne
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </a>
+            <a 
+              href="/servicii-oferite" 
+              className="w-full inline-flex items-center justify-center py-2.5 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
+            >
+              Vezi serviciile
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </a>
+          </>
+        ) : (
+          <>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center justify-center py-2.5 px-6 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
+            >
+              {t.contactUs}
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </a>
+            <a 
+              href="/servicii-oferite" 
+              className="inline-flex items-center justify-center py-2.5 px-6 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
+            >
+              {t.seeServices}
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </a>
+          </>
+        )}
       </div>
     </div>
   );
