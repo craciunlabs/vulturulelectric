@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElectricLine from './ElectricLine';
 import StarRating from './StarRating';
+import { Button } from '@/components/ui/button';
 
 interface HeroContentProps {
   isMobile: boolean;
@@ -100,14 +101,14 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <>
             <a 
               href="/contact" 
-              className="inline-flex items-center justify-center py-3 px-8 bg-vultur-red text-white rounded-sm font-medium text-base"
+              className="inline-flex items-center justify-center py-3 px-8 bg-vultur-red text-white rounded-sm font-medium text-base w-[230px]"
             >
               Contactează-ne acum
               <ChevronRight className="ml-2 h-5 w-5" />
             </a>
             <a 
               href="/servicii-oferite" 
-              className="inline-flex items-center justify-center py-3 px-8 bg-white text-vultur-dark rounded-sm font-medium text-base"
+              className="inline-flex items-center justify-center py-3 px-6 bg-white text-vultur-dark rounded-sm font-medium text-base w-[160px]"
             >
               Vezi serviciile
               <ChevronRight className="ml-2 h-5 w-5" />
