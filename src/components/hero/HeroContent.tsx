@@ -100,17 +100,17 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <>
             <a 
               href="/contact" 
-              className="inline-flex items-center justify-center py-3 px-10 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm min-w-[200px]"
+              className="inline-flex items-center justify-center py-3.5 px-8 bg-vultur-red hover:bg-red-800 transition-colors rounded-md font-medium text-white text-base w-[230px]"
             >
               {t.contactUs}
-              <ChevronRight className="ml-1 h-4 w-4" />
+              <ChevronRight className="ml-2 h-5 w-5" />
             </a>
             <a 
               href="/servicii-oferite" 
-              className="inline-flex items-center justify-center py-3 px-10 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm min-w-[200px]"
+              className="inline-flex items-center justify-center py-3.5 px-8 bg-white hover:bg-gray-100 transition-colors rounded-md font-medium text-vultur-dark text-base w-[230px]"
             >
               {t.seeServices}
-              <ChevronRight className="ml-1 h-4 w-4" />
+              <ChevronRight className="ml-2 h-5 w-5" />
             </a>
           </>
         )}
