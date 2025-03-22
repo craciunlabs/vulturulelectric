@@ -8,7 +8,7 @@ import {
   CarouselNext,
   type CarouselApi
 } from "@/components/ui/carousel";
-import { Zap, Car, Wrench, Battery, Cpu, Truck } from 'lucide-react';
+import { Zap, Car, Wrench, Battery, Cpu, Truck, Thermometer } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const sliderItems = [
@@ -46,6 +46,13 @@ const sliderItems = [
     description: "Diagnosticare și reparare sisteme electrice și suspensii pneumatice pentru remorci",
     image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+  },
+  {
+    id: 6,
+    title: "SISTEME DE ÎNCĂLZIRE ȘI CLIMATIZARE",
+    description: "Instalare și service pentru sisteme Webasto de încălzire și aer condiționat pentru autovehicule",
+    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    icon: <Thermometer className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
   }
 ];
 

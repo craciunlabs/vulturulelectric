@@ -93,8 +93,8 @@ const ServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
                 
-                {/* Webasto badge - repositioned */}
-                <div className="absolute bottom-3 right-3 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[150px] z-10">
+                {/* Webasto badge - repositioned with more space and better visibility */}
+                <div className="absolute bottom-5 right-5 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[160px] z-10">
                   <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
                   <div className="text-lg font-bold">Webasto</div>
                 </div>
