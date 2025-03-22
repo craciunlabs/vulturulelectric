@@ -4,6 +4,7 @@
   position: relative;
   z-index: 1;
   margin-bottom: 1.5rem; /* Increased margin bottom */
+  width: 100%;
 }
 
 .badge-container {
@@ -21,9 +22,16 @@
   }
 }
 
-/* Ensure the hero section has enough height */
+/* Ensure the hero section has enough height but constrained width */
 .hero-section {
   padding-bottom: 4rem;
+}
+
+/* Constrain width of hero content to match design */
+@media (min-width: 768px) {
+  .hero-content {
+    max-width: 90%;
+  }
 }
 
 /* Adjust metrics boxes to prevent text overflow */

@@ -24,7 +24,7 @@ const Hero = () => {
     <div className="relative overflow-hidden hero-clip bg-gradient-to-r from-vultur-dark to-vultur-gray pt-24 md:pt-32 pb-16 md:pb-32 hero-section">
       <HeroBackground />
       
-      <div className="container relative z-10 content-container">
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 content-container">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
           <HeroContent isMobile={isMobile} />
           <HeroCarouselWrapper />
