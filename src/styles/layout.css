@@ -37,3 +37,9 @@
 .webasto-metric {
   padding-bottom: 0.5rem;
 }
+
+/* Make the rating band more compact */
+.rating-badge-container {
+  display: inline-flex;
+  max-width: fit-content;
+}
