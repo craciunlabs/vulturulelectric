@@ -1,4 +1,3 @@
-
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -21,7 +20,7 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       </div>
       
       {isMobile ? (
-        <h1 className="text-3xl font-bold mb-3 leading-tight">
+        <h1 className="text-3xl font-bold mb-4 leading-tight">
           <div className="text-white">REPARAȚII</div>
           <div className="text-vultur-red">ELECTROMOTOARE</div>
           <div className="text-white">ALTERNATOARE</div>
@@ -35,13 +34,13 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       )}
 
       {isMobile ? (
-        <div className="mb-4 rating-badge-container">
-          <div className="flex items-center bg-black/50 backdrop-blur-sm py-1.5 px-3 rounded-lg">
+        <div className="mb-5 rating-badge-container">
+          <div className="flex items-center bg-black/60 backdrop-blur-sm py-2 px-3 rounded-lg shadow-md">
             <StarRating rating={4.6} />
             <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.6 / 5</span>
           </div>
           <div className="ml-2">
-            <Badge variant="outline" className="bg-vultur-red/90 text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
+            <Badge variant="outline" className="bg-vultur-red hover:bg-vultur-red text-white border-vultur-red/30 px-3 py-1.5 text-xs whitespace-nowrap shadow-md">
               31 recenzii pe<br/>Google
             </Badge>
           </div>
@@ -60,17 +59,17 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
         </div>
       )}
 
-      <div className="flex gap-2 sm:gap-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
         <a 
           href="/contact" 
-          className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
         >
-          {isMobile ? "Contactează-ne acum" : t.contactUs}
+          {isMobile ? "Contactează-ne" : t.contactUs}
           <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />
         </a>
         <a 
           href="/servicii-oferite" 
-          className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-3 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm sm:text-base"
         >
           {isMobile ? "Vezi serviciile" : t.seeServices}
           <ChevronRight className="ml-1 sm:ml-2 h-4 w-4" />

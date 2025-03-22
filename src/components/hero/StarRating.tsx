@@ -11,7 +11,7 @@ const StarRating = ({ rating }: StarRatingProps) => {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
   
   return (
-    <div className="flex space-x-1 animate-fade-in">
+    <div className="flex space-x-0.5 animate-fade-in">
       {[...Array(fullStars)].map((_, i) => (
         <Star key={`full-${i}`} className="h-4 w-4 text-yellow-400 fill-yellow-400 filter drop-shadow-sm" />
       ))}
