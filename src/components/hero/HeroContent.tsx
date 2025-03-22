@@ -43,7 +43,6 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <Badge variant="outline" className="text-xs sm:text-sm bg-vultur-red/20 text-white border-vultur-red/30">
             31 recenzii pe Google
           </Badge>
-          <span className="ml-2 text-gray-200 text-xs sm:text-sm">Clienții ne recomandă</span>
         </div>
       </div>
 
