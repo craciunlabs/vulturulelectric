@@ -14,7 +14,7 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
   const { t } = useLanguage();
   
   return (
-    <div className="text-white animate-fade-down hero-content">
+    <div className="text-white animate-fade-down">
       <div className="flex items-center mb-2">
         <ElectricLine />
         <span className="text-xs sm:text-sm uppercase tracking-wider font-medium bg-gradient-to-r from-orange-300 to-white text-transparent bg-clip-text glow-text">SERVICE AUTO ELECTRIC AUTORIZAT</span>
