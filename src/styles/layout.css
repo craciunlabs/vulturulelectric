@@ -1,0 +1,12 @@
+
+/* Fix for content being cut off */
+.content-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.badge-container {
+  position: relative;
+  z-index: 2;
+}
