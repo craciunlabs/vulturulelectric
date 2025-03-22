@@ -34,7 +34,7 @@ const DesktopNavigation = ({ toggleLanguage, setShowSearch, showSearch }: Deskto
           className="rounded-full"
           aria-label="Search"
         >
-          <Search className="h-5 w-5" />
+          <Search className="h-5 w-5" strokeWidth={2.5} />
         </Button>
         
         <Button 

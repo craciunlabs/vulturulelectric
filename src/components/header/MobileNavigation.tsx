@@ -19,13 +19,13 @@ const MobileNavigation = ({
   scrollToLocation 
 }: MobileNavigationProps) => {
   return (
-    <div className="flex md:hidden items-center space-x-2">
+    <div className="flex md:hidden items-center space-x-3">
       <a 
         href="tel:+40721407727" 
         className="p-2 text-sm text-vultur-red flex items-center" 
         aria-label="Call us"
       >
-        <Phone className="h-4 w-4" />
+        <Phone className="h-5 w-5" strokeWidth={2.5} />
       </a>
       
       <button
@@ -33,7 +33,7 @@ const MobileNavigation = ({
         className="p-2 text-sm text-vultur-red flex items-center"
         aria-label="Navigate to location"
       >
-        <Navigation className="h-4 w-4" />
+        <Navigation className="h-5 w-5" strokeWidth={2.5} />
       </button>
       
       <Button 
@@ -43,7 +43,7 @@ const MobileNavigation = ({
         className="rounded-full"
         aria-label="Search"
       >
-        <Search className="h-5 w-5" />
+        <Search className="h-5 w-5" strokeWidth={2.5} />
       </Button>
       
       <button 
@@ -54,7 +54,7 @@ const MobileNavigation = ({
         {isMenuOpen ? (
           <span className="sr-only">Close menu</span>
         ) : (
-          <Menu className="h-6 w-6 text-vultur-red" />
+          <Menu className="h-6 w-6 text-vultur-red" strokeWidth={2.5} />
         )}
       </button>
     </div>

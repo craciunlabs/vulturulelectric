@@ -37,7 +37,7 @@ const ImageLoader = ({ src, alt, className }: ImageLoaderProps) => {
 const MetricsBox = ({ icon, value, label }: { icon?: string, value: string, label: string }) => (
   <div className="bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-lg text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <div className="text-vultur-red font-bold text-xl md:text-2xl">{value}</div>
-    <div className="text-gray-800 text-sm">{label}</div>
+    <div className="text-gray-800 text-sm md:text-base">{label}</div>
   </div>
 );
 
@@ -204,7 +204,7 @@ const Hero = () => {
             className="fixed bottom-20 right-5 z-50 bg-vultur-red text-white p-3 rounded-full shadow-lg animate-bounce-slow hover:bg-red-800 transition-colors"
             aria-label="Call us"
           >
-            <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+            <Phone className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
           </a>
         </>
       )}
