@@ -51,7 +51,7 @@ const sliderItems = [
     id: 6,
     title: "SISTEME DE ÎNCĂLZIRE ȘI CLIMATIZARE",
     description: "Instalare și service pentru sisteme Webasto de încălzire și aer condiționat pentru autovehicule",
-    image: "public/lovable-uploads/65789f8c-1e97-43be-9aed-7cf5a8f4e8d8.png",
+    image: "/lovable-uploads/d78d16ae-f869-4ec4-84c4-27f375411a4b.png",
     icon: <Thermometer className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
   }
 ];
