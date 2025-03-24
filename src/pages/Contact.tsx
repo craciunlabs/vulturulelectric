@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,6 +5,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapError, setMapError] = useState(false);
   
   useEffect(() => {
     // On page load, scroll to top
@@ -14,7 +14,16 @@ const Contact = () => {
 
   const handleMapLoad = () => {
     setMapLoaded(true);
+    setMapError(false);
   };
+  
+  const handleMapError = () => {
+    setMapError(true);
+    console.log("Map failed to load on Contact page, possibly blocked by browser or antivirus");
+  };
+
+  // Use a more secure map URL with additional parameters
+  const secureMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1387.7548536429198!2d23.13978444727798!3d44.94609351744701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475272722a35768d%3A0x30dab34d9c1b536e!2sVulturul%20Electric%20-%20AUTO%20SERVICE!5e0!3m2!1sro!2sro!4v1719596219764!5m2!1sro!2sro&output=embed";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -196,18 +205,36 @@ const Contact = () => {
         <section className="py-8">
           <div className="container">
             <div className="rounded-xl overflow-hidden shadow-lg h-[400px] relative">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1387.7548536429198!2d23.13978444727798!3d44.94609351744701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475272722a35768d%3A0x30dab34d9c1b536e!2sVulturul%20Electric%20-%20AUTO%20SERVICE!5e0!3m2!1sro!2sro!4v1719596219764!5m2!1sro!2sro"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Locație Vulturul Electric"
-                onLoad={handleMapLoad}
-              ></iframe>
-              {!mapLoaded && (
+              {!mapError ? (
+                <iframe
+                  src={secureMapUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Locație Vulturul Electric"
+                  onLoad={handleMapLoad}
+                  onError={handleMapError}
+                  sandbox="allow-scripts allow-same-origin allow-popups"
+                ></iframe>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-100 p-4">
+                  <div className="text-center">
+                    <p className="text-gray-500 mb-2">Harta nu poate fi încărcată</p>
+                    <a 
+                      href="https://www.google.com/maps/place/Vulturul+Electric+-+AUTO+SERVICE/@44.9460418,23.1382941,17z/data=!3m1!4b1!4m6!3m5!1s0x475272722a35768d:0x30dab34d9c1b536e!8m2!3d44.9460418!4d23.1404828!16s%2Fg%2F11h462090p?entry=ttu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-vultur-red hover:text-red-800 transition-colors"
+                    >
+                      Vezi locația pe Google Maps
+                    </a>
+                  </div>
+                </div>
+              )}
+              {!mapLoaded && !mapError && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                   <p className="text-gray-500">Încărcare hartă...</p>
                 </div>
@@ -222,3 +249,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
