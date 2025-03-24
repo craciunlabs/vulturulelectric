@@ -72,7 +72,7 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
             <span className="ml-2 text-white font-medium text-base">4.6 / 5</span>
           </div>
           <div className="ml-3 flex items-center">
-            <Badge variant="outline" className="text-sm bg-transparent text-white border-white/30">
+            <Badge variant="outline" className="text-sm bg-vultur-red text-white border-vultur-red/30">
               31 recenzii pe Google
             </Badge>
           </div>
