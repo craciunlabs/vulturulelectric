@@ -72,7 +72,7 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
             <span className="ml-2 text-white font-medium text-base">4.6 / 5</span>
           </div>
           <div className="ml-3 flex items-center">
-            <Badge variant="outline" className="text-sm bg-black/50 text-white border-white/30">
+            <Badge variant="outline" className="text-sm bg-transparent text-white border-white/30">
               31 recenzii pe Google
             </Badge>
           </div>
@@ -84,14 +84,14 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <>
             <a 
               href="/contact" 
-              className="w-full inline-flex items-center justify-center py-3 px-5 bg-vultur-red hover:bg-red-800 transition-colors rounded-md font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center py-2.5 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
             >
               Contactează-ne
               <ChevronRight className="ml-1 h-4 w-4" />
             </a>
             <a 
               href="/servicii-oferite" 
-              className="w-full inline-flex items-center justify-center py-3 px-5 bg-white hover:bg-gray-100 transition-colors rounded-md font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center py-2.5 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
             >
               Vezi serviciile
               <ChevronRight className="ml-1 h-4 w-4" />
