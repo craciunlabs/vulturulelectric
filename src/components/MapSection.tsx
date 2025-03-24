@@ -3,10 +3,17 @@ import { MapPin, Navigation, Clock, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const MapSection = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const [mapLoaded, setMapLoaded] = useState(false);
+  
+  // Handle iframe load event
+  const handleMapLoad = () => {
+    setMapLoaded(true);
+  };
   
   return (
     <section className="py-8 sm:py-12 bg-gray-50" id="location">
@@ -36,7 +43,13 @@ const MapSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Locație Vulturul Electric"
                 className="w-full h-full"
+                onLoad={handleMapLoad}
               ></iframe>
+              {!mapLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                  <p className="text-gray-500">Încărcare hartă...</p>
+                </div>
+              )}
             </div>
 
             {!isMobile && (

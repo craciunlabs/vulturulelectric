@@ -1,13 +1,20 @@
-import { useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
+  const [mapLoaded, setMapLoaded] = useState(false);
+  
   useEffect(() => {
     // On page load, scroll to top
     window.scrollTo(0, 0);
   }, []);
+
+  const handleMapLoad = () => {
+    setMapLoaded(true);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -188,7 +195,7 @@ const Contact = () => {
         {/* Map */}
         <section className="py-8">
           <div className="container">
-            <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
+            <div className="rounded-xl overflow-hidden shadow-lg h-[400px] relative">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1387.7548536429198!2d23.13978444727798!3d44.94609351744701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475272722a35768d%3A0x30dab34d9c1b536e!2sVulturul%20Electric%20-%20AUTO%20SERVICE!5e0!3m2!1sro!2sro!4v1719596219764!5m2!1sro!2sro"
                 width="100%"
@@ -198,7 +205,13 @@ const Contact = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Locație Vulturul Electric"
+                onLoad={handleMapLoad}
               ></iframe>
+              {!mapLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                  <p className="text-gray-500">Încărcare hartă...</p>
+                </div>
+              )}
             </div>
           </div>
         </section>
