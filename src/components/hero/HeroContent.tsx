@@ -66,20 +66,20 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           </div>
         </div>
       ) : (
-        <div className="flex items-center mb-4 w-fit bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg transform transition-all duration-300 hover:bg-white/15">
+        <div className="flex items-center mb-8 w-fit bg-black/50 backdrop-blur-sm p-2 rounded-lg">
           <div className="flex items-center">
             <StarRating rating={4.6} />
-            <span className="ml-2 text-white font-medium text-sm sm:text-base">4.6 / 5</span>
+            <span className="ml-2 text-white font-medium text-base">4.6 / 5</span>
           </div>
           <div className="ml-3 flex items-center">
-            <Badge variant="outline" className="text-xs sm:text-sm bg-vultur-red/20 text-white border-vultur-red/30">
+            <Badge variant="outline" className="text-sm bg-transparent text-white border-white/30">
               31 recenzii pe Google
             </Badge>
           </div>
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-2 mb-1">
+      <div className="flex flex-col md:flex-row gap-4">
         {isMobile ? (
           <>
             <a 
@@ -101,17 +101,17 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
           <>
             <a 
               href="/contact" 
-              className="inline-flex items-center justify-center py-3 px-8 bg-vultur-red text-white rounded-sm font-medium text-base w-[230px]"
+              className="inline-flex items-center justify-center py-3 px-5 bg-vultur-red text-white rounded-sm font-medium text-base hover:bg-red-700 transition-colors"
             >
               Contactează-ne acum
-              <ChevronRight className="ml-2 h-5 w-5" />
+              <ChevronRight className="ml-1.5 h-5 w-5" />
             </a>
             <a 
               href="/servicii-oferite" 
-              className="inline-flex items-center justify-center py-3 px-6 bg-white text-vultur-dark rounded-sm font-medium text-base w-[160px]"
+              className="inline-flex items-center justify-center py-3 px-5 bg-white text-vultur-dark rounded-sm font-medium text-base hover:bg-gray-100 transition-colors"
             >
               Vezi serviciile
-              <ChevronRight className="ml-2 h-5 w-5" />
+              <ChevronRight className="ml-1.5 h-5 w-5" />
             </a>
           </>
         )}
