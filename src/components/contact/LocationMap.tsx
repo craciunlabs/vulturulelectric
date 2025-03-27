@@ -1,30 +1,41 @@
 
-import { Navigation } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const LocationMap = () => {
-  // Static map image URL - using a placeholder service
-  const staticMapImageUrl = "https://placehold.co/1200x400/e0e0e0/c41e1e?text=Vulturul+Electric+Location";
+  // Using a static local placeholder instead of external service
+  const staticMapImageUrl = "/placeholder.svg";
 
   return (
-    <div className="rounded-xl overflow-hidden shadow-lg h-[400px] relative">
-      <a 
-        href="https://www.google.com/maps/place/Vulturul+Electric+-+AUTO+SERVICE/@44.9460418,23.1382941,17z/data=!3m1!4b1!4m6!3m5!1s0x475272722a35768d:0x30dab34d9c1b536e!8m2!3d44.9460418!4d23.1404828!16s%2Fg%2F11h462090p?entry=ttu"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full h-full"
-      >
-        <img 
-          src={staticMapImageUrl} 
-          alt="Locație Vulturul Electric"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-          <span className="bg-white/90 text-vultur-red px-6 py-3 rounded-lg font-medium flex items-center">
-            <Navigation className="h-5 w-5 mr-2" />
-            Vezi locația pe Google Maps
-          </span>
+    <div className="rounded-xl overflow-hidden shadow-lg h-[400px] relative bg-gray-100">
+      <div className="w-full h-full flex flex-col items-center justify-center">
+        <MapPin className="h-16 w-16 text-vultur-red mb-4" />
+        <h3 className="text-lg font-medium text-gray-900">Vulturul Electric</h3>
+        <p className="text-gray-600 mt-1">Strada Tineretului, Nr. 8, Targu Jiu, Romania</p>
+        <p className="text-gray-600 mt-1">44.9460418, 23.1404828</p>
+        <div className="flex flex-col sm:flex-row gap-3 mt-4">
+          <button 
+            className="bg-vultur-red hover:bg-vultur-red/90 text-white px-6 py-2 rounded-lg font-medium"
+            onClick={() => {
+              // Using window.location to ensure it's treated as navigation, not iframe
+              if (window.confirm('Doriți să vizitați Google Maps?')) {
+                window.open('https://maps.google.com/?q=44.9460418,23.1404828', '_blank', 'noopener,noreferrer');
+              }
+            }}
+          >
+            Deschide în Google Maps
+          </button>
+          <button 
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg font-medium"
+            onClick={() => {
+              // Copy coordinates to clipboard
+              navigator.clipboard.writeText('44.9460418, 23.1404828');
+              alert('Coordonate copiate în clipboard!');
+            }}
+          >
+            Copiază coordonatele
+          </button>
         </div>
-      </a>
+      </div>
     </div>
   );
 };
