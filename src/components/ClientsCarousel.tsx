@@ -6,63 +6,53 @@ interface ClientLogo {
   id: number;
   name: string;
   logo: string;
-  url: string;
 }
 
 const clientsData: ClientLogo[] = [
   {
     id: 2,
     name: "CE OLTENIA",
-    logo: "https://placehold.co/200x100/ffffff/c41e1e?text=CE+OLTENIA",
-    url: "https://www.ceoltenia.ro"
+    logo: "https://placehold.co/200x100/ffffff/c41e1e?text=CE+OLTENIA"
   },
   {
     id: 3,
     name: "TELEKOM",
-    logo: "https://placehold.co/200x100/ffffff/e4007c?text=T-MOBILE",
-    url: "https://www.telekom.ro"
+    logo: "https://placehold.co/200x100/ffffff/e4007c?text=T-MOBILE"
   },
   {
     id: 4,
     name: "RCS & RDS",
-    logo: "https://placehold.co/200x100/ffffff/0089cf?text=RCS+%26+RDS",
-    url: "https://www.rcs-rds.ro"
+    logo: "https://placehold.co/200x100/ffffff/0089cf?text=RCS+%26+RDS"
   },
   {
     id: 5,
     name: "ENOVA GROUP",
-    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=ENOVA",
-    url: "https://www.enova-group.biz"
+    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=ENOVA"
   },
   {
     id: 6,
     name: "CS PANDURII",
-    logo: "https://placehold.co/200x100/ffffff/00a8e8?text=PANDURII",
-    url: "https://www.panduriics.ro"
+    logo: "https://placehold.co/200x100/ffffff/00a8e8?text=PANDURII"
   },
   {
     id: 7,
     name: "CARPATIA TOUR",
-    logo: "https://placehold.co/200x100/ffffff/4CAF50?text=CARPATIA+TOUR",
-    url: "https://www.carpatiatour.ro"
+    logo: "https://placehold.co/200x100/ffffff/4CAF50?text=CARPATIA+TOUR"
   },
   {
     id: 8,
     name: "FAN COURIER",
-    logo: "https://placehold.co/200x100/ffffff/003366?text=FAN+COURIER",
-    url: "https://www.fancourier.ro"
+    logo: "https://placehold.co/200x100/ffffff/003366?text=FAN+COURIER"
   },
   {
     id: 9,
     name: "VIITORUL",
-    logo: "https://placehold.co/200x100/ffffff/0033cc?text=VIITORUL",
-    url: "https://www.viitorultransport.com"
+    logo: "https://placehold.co/200x100/ffffff/0033cc?text=VIITORUL"
   },
   {
     id: 10,
     name: "ENERGOMONTAJ",
-    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM",
-    url: "https://www.saem.ro"
+    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM"
   }
 ];
 
@@ -148,13 +138,7 @@ const ClientsCarousel = () => {
             key={`${client.id}-${index}`} 
             className="shrink-0 h-16 sm:h-16 md:h-20 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
           >
-            <a 
-              href={client.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label={client.name}
-              className="h-full flex items-center"
-            >
+            <div className="h-full flex items-center">
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
@@ -164,7 +148,7 @@ const ClientsCarousel = () => {
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
                 }}
               />
-            </a>
+            </div>
           </div>
         ))}
       </div>

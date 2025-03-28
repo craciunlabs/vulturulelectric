@@ -38,7 +38,6 @@ const HeroCarousel = () => {
           ))}
         </CarouselContent>
         
-        {/* Only show one type of navigation control based on device */}
         {isMobile ? (
           <CarouselDots 
             items={sliderItems}
