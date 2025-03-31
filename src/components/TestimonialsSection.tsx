@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { User, Star, Quote, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
@@ -48,7 +49,7 @@ const TestimonialsSection: React.FC = () => {
   const isMobile = useIsMobile();
   
   const handleWriteReview = () => {
-    window.open('https://g.page/r/CXaJGdDCBZbEEAI/review', '_blank');
+    window.open('https://g.page/r/CW5TG5xNs9owEBM/review', '_blank');
   };
 
   return (
