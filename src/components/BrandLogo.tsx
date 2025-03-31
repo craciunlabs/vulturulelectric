@@ -46,7 +46,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
     <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
       <div className={`${logoSizes[adjustedSize]} ${bgColors[variant]} flex items-center justify-center relative overflow-hidden`}>
         <img 
-          src="https://i.imgur.com/DKqLNqx.jpeg" 
+          src="https://i.imgur.com/2wZrdgo.jpeg" 
           alt="Vulturul Electric Logo" 
           className="w-full h-full object-cover" 
           onError={(e) => {
