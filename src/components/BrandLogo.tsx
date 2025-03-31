@@ -48,7 +48,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
         <img 
           src="https://i.imgur.com/ijqx435.jpeg" 
           alt="Vulturul Electric Logo" 
-          className="w-full h-full object-contain" 
+          className="w-full h-full object-cover object-center scale-110" 
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.style.display = 'none';
