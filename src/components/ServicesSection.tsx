@@ -3,7 +3,6 @@ import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react'
 import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -84,7 +83,7 @@ const ServicesSection = () => {
               </div>
               <div className="relative h-48 sm:h-64 md:h-auto">
                 <img 
-                  src="https://i.imgur.com/FO71pEJ.jpeg"
+                  src="https://i.imgur.com/78J38c9.jpeg"
                   alt="Service Auto"
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={(e) => {
