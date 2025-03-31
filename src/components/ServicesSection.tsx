@@ -1,9 +1,8 @@
 
-import { Wrench, Cpu, Car, Settings, Check } from 'lucide-react';
+import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Card, CardContent } from '@/components/ui/card';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -44,100 +43,60 @@ const ServicesSection = () => {
           />
         </div>
         
-        <div className="mt-12 sm:mt-20">
+        <div className="mt-8 sm:mt-16 pb-2">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-6 sm:p-8 md:p-10">
-                <h3 className="text-xl sm:text-2xl font-bold mb-6">Servicii-ul VULTURUL ELECTRIC vă pune la dispoziție:</h3>
-                <ul className="space-y-4">
+              <div className="p-5 sm:p-8 md:p-10">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.serviceOffers}</h3>
+                <ul className="space-y-2 sm:space-y-4">
                   <li className="flex items-start">
-                    <div className="mr-3 mt-1 text-vultur-red">
-                      <Check className="h-5 w-5" />
-                    </div>
+                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Service autoturisme, autoutilitare, autocaramioane, autocare, remorci și semiremorci</p>
+                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer1}</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <div className="mr-3 mt-1 text-vultur-red">
-                      <Check className="h-5 w-5" />
-                    </div>
+                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, montaj alarme, închideri centralizate, etc.)</p>
+                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer2}</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <div className="mr-3 mt-1 text-vultur-red">
-                      <Check className="h-5 w-5" />
-                    </div>
+                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Diagnoză / Computerizată a sistemelor electrico-electronice și pneumatice pentru toate mărcile de autoturisme, autocamioane, autocare.</p>
+                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer3}</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <div className="mr-3 mt-1 text-vultur-red">
-                      <Check className="h-5 w-5" />
-                    </div>
+                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Diagnoză cu sistem de citire memorii-chei</p>
+                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer4}</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <div className="mr-3 mt-1 text-vultur-red">
-                      <Check className="h-5 w-5" />
-                    </div>
+                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">Diagnoză / sistem frânare semiremorci ABS-EBS</p>
+                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer5}</p>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div className="relative h-64 sm:h-auto">
-                <div className="absolute inset-0 bg-vultur-red flex flex-col items-center justify-center text-white p-6">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">Service Auto</h2>
-                  <div className="absolute bottom-6 right-6 bg-vultur-red p-2 rounded text-white text-sm">
-                    <div className="text-xs">Partener autorizat</div>
-                    <div className="text-xl font-bold">Webasto</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-12 sm:mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="bg-vultur-red rounded-xl shadow-lg overflow-hidden">
-              <div className="h-64 sm:h-80 flex items-center justify-center text-white text-center p-6">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold">Service Auto</h2>
-              </div>
-            </div>
-            <div>
-              <div className="mb-4">
-                <div className="text-sm uppercase tracking-wider text-vultur-red font-medium">DESPRE NOI</div>
-                <h2 className="text-2xl sm:text-3xl font-bold mt-1">Experiență și calitate în domeniul auto</h2>
-              </div>
-              <p className="text-gray-700 mb-6">
-                Cu o experiență de peste 30 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri. Pe lângă toate acestea dispunem de propriul magazin de piese auto.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="flex items-start">
-                  <div className="mr-3 mt-1 bg-red-100 p-1 rounded-full text-vultur-red">
-                    <Check className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Experiență dovedită</p>
-                    <p className="text-sm text-gray-600">Peste 30 ani de experiență în domeniul auto electric</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-3 mt-1 bg-red-100 p-1 rounded-full text-vultur-red">
-                    <Wrench className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Echipamente moderne</p>
-                    <p className="text-sm text-gray-600">Utilizăm tehnologie de ultimă generație pentru diagnosticare</p>
-                  </div>
+              <div className="relative h-48 sm:h-64 md:h-auto">
+                <img 
+                  src="https://i.imgur.com/78J38c9.jpeg"
+                  alt="Service Auto"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
+                
+                {/* Webasto badge - repositioned with more space and better visibility */}
+                <div className="absolute bottom-5 right-5 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[160px] z-10">
+                  <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
+                  <div className="text-lg font-bold">Webasto</div>
                 </div>
               </div>
             </div>

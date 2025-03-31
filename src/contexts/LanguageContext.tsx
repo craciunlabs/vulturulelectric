@@ -106,10 +106,7 @@ const translations = {
     statsYears: 'Ani de experiență',
     statsClients: 'Clienți mulțumiți',
     statsProjects: 'Proiecte finalizate',
-    statsPartnerships: 'Parteneriate',
-    
-    // Contact page
-    contactDescription: 'Aveți întrebări sau doriți să ne contactați? Completați formularul de mai jos sau folosiți datele de contact. Suntem aici pentru a vă ajuta!',
+    statsPartnerships: 'Parteneriate'
   },
   en: {
     // Header translations
@@ -207,10 +204,7 @@ const translations = {
     statsYears: 'Years of experience',
     statsClients: 'Happy clients',
     statsProjects: 'Completed projects',
-    statsPartnerships: 'Partnerships',
-    
-    // Contact page
-    contactDescription: 'Do you have questions or want to contact us? Fill out the form below or use our contact information. We are here to help you!',
+    statsPartnerships: 'Partnerships'
   }
 };
 

@@ -16,15 +16,14 @@ const HeroCarousel = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className="w-full relative">
+    <div className="w-full">
       <Carousel 
         setApi={setApi}
         className="w-full"
         onMouseEnter={() => setAutoplay(false)}
         onMouseLeave={() => setAutoplay(true)}
         opts={{
-          loop: true,
-          duration: 35
+          loop: true
         }}
       >
         <CarouselContent>
@@ -39,6 +38,7 @@ const HeroCarousel = () => {
           ))}
         </CarouselContent>
         
+        {/* Only show one type of navigation control based on device */}
         {isMobile ? (
           <CarouselDots 
             items={sliderItems}
@@ -47,22 +47,8 @@ const HeroCarousel = () => {
           />
         ) : (
           <>
-            <CarouselPrevious className="left-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white z-20" />
-            <CarouselNext className="right-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white z-20" />
-            <div className="absolute bottom-5 left-0 right-0 flex justify-center z-10">
-              <div className="flex space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1.5">
-                {sliderItems.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => api?.scrollTo(idx)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      currentIndex === idx ? "bg-vultur-red scale-125" : "bg-white/60"
-                    }`}
-                    aria-label={`Navigate to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
+            <CarouselPrevious className="left-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
+            <CarouselNext className="right-4 bg-vultur-red hover:bg-vultur-red/80 border-0 text-white" />
           </>
         )}
       </Carousel>
