@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Mail, Phone, MapPin, Clock, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -17,7 +16,7 @@ const Footer = () => {
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16 rounded-md flex items-center justify-center mr-3 overflow-hidden">
                   <img 
-                    src="https://i.imgur.com/Mbq5YFs.jpeg" 
+                    src="https://i.imgur.com/DKqLNqx.jpeg" 
                     alt="Vulturul Electric" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
