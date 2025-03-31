@@ -1,8 +1,9 @@
 
-import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield, Check } from 'lucide-react';
+import { Wrench, Cpu, Car, Settings, Check } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Card, CardContent } from '@/components/ui/card';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
