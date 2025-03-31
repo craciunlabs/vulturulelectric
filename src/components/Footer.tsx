@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex flex-col">
             <div className="mb-6">
               <img 
-                src="/logo-white.png" 
+                src="https://i.imgur.com/ijqx435.jpeg" 
                 alt="Vulturul Electric" 
                 className="h-16 object-contain mb-4"
                 onError={(e) => {
