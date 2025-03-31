@@ -12,7 +12,7 @@ const ServicesSection = () => {
   return (
     <section className="py-10 sm:py-16 bg-gray-50 overflow-x-hidden">
       <div className="container px-3 sm:px-6">
-        <div className="text-center mb-8 sm:mb-16 animate-fade-down">
+        <div className="text-center mb-8 sm:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
             {t.serviceTitle}<span className="text-vultur-red">{t.serviceHighlight}</span>
           </h2>
@@ -90,7 +90,7 @@ const ServicesSection = () => {
         
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up">
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <Settings className="h-6 w-6" />
@@ -102,7 +102,7 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <Wrench className="h-6 w-6" />
@@ -114,7 +114,7 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <Plug className="h-6 w-6" />
@@ -126,7 +126,7 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <Cpu className="h-6 w-6" />
@@ -138,7 +138,7 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <Battery className="h-6 w-6" />
@@ -150,7 +150,7 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
             <CardContent className="p-6">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                 <ShieldCheck className="h-6 w-6" />

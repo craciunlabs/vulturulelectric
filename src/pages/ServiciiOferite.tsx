@@ -25,10 +25,10 @@ const ServiciiOferite = () => {
                 <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
                 <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Servicii Oferite</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
                 Soluții complete pentru sistemele electrice auto
               </h1>
-              <p className="text-gray-300 max-w-2xl">
+              <p className="text-gray-300 max-w-2xl animate-fade-in">
                 Oferim o gamă completă de servicii pentru toate tipurile de vehicule, de la autoturisme până la camioane și autocare.
               </p>
             </div>
@@ -39,7 +39,7 @@ const ServiciiOferite = () => {
         <section className="py-16 bg-gray-50">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="animate-fade-in">
                 <div className="flex items-center mb-3">
                   <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
                   <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICIUL NOSTRU PRINCIPAL</span>
@@ -86,16 +86,16 @@ const ServiciiOferite = () => {
                 </a>
               </div>
               
-              <div className="relative">
+              <div className="relative animate-fade-in">
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <AspectRatio ratio={4/3} className="w-full">
                     <img 
-                      src="public/lovable-uploads/44ea2bb6-87b7-4959-b9b1-dd104483391f.png" 
+                      src="https://i.imgur.com/FO71pEJ.jpeg" 
                       alt="Diagnosticare auto profesională" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://i.imgur.com/FO71pEJ.jpeg';
+                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
                       }}
                     />
                   </AspectRatio>
@@ -108,7 +108,7 @@ const ServiciiOferite = () => {
         {/* All Services - Updated with New Design */}
         <section className="py-16">
           <div className="container">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 animate-fade-in">
               <h2 className="text-3xl font-bold mb-4">Serviciile Noastre</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Oferim o gamă completă de servicii pentru toate tipurile de vehicule, asigurând calitate și profesionalism.
@@ -117,7 +117,7 @@ const ServiciiOferite = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Row 1 */}
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "100ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Settings className="h-6 w-6" />
@@ -129,7 +129,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "200ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Battery className="h-6 w-6" />
@@ -141,7 +141,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "300ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Plug className="h-6 w-6" />
@@ -154,7 +154,7 @@ const ServiciiOferite = () => {
               </Card>
               
               {/* Row 2 */}
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "400ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <ShieldCheck className="h-6 w-6" />
@@ -166,7 +166,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "500ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Wrench className="h-6 w-6" />
@@ -178,7 +178,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "600ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Settings className="h-6 w-6" />
@@ -191,7 +191,7 @@ const ServiciiOferite = () => {
               </Card>
               
               {/* Row 3 */}
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "700ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Cpu className="h-6 w-6" />
@@ -203,7 +203,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "800ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Settings className="h-6 w-6" />
@@ -215,7 +215,7 @@ const ServiciiOferite = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow">
+              <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300 animate-fade-up" style={{animationDelay: "900ms"}}>
                 <CardContent className="p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
                     <Car className="h-6 w-6" />
