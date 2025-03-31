@@ -46,24 +46,6 @@ const ServicesSection = () => {
         <div className="mt-8 sm:mt-16 pb-2">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="relative h-48 sm:h-64 md:h-auto">
-                <img 
-                  src="https://i.imgur.com/78J38c9.jpeg"
-                  alt="Service Auto"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
-                
-                {/* Webasto badge - repositioned with more space and better visibility */}
-                <div className="absolute bottom-5 right-5 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[160px] z-10">
-                  <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
-                  <div className="text-lg font-bold">Webasto</div>
-                </div>
-              </div>
               <div className="p-5 sm:p-8 md:p-10">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.serviceOffers}</h3>
                 <ul className="space-y-2 sm:space-y-4">
@@ -98,6 +80,24 @@ const ServicesSection = () => {
                     </div>
                   </li>
                 </ul>
+              </div>
+              <div className="relative h-48 sm:h-64 md:h-auto">
+                <img 
+                  src="https://i.imgur.com/78J38c9.jpeg"
+                  alt="Service Auto"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
+                
+                {/* Webasto badge - repositioned with more space and better visibility */}
+                <div className="absolute bottom-5 right-5 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[160px] z-10">
+                  <div className="text-xs font-medium mb-1">{t.authorizedPartner}</div>
+                  <div className="text-lg font-bold">Webasto</div>
+                </div>
               </div>
             </div>
           </div>
