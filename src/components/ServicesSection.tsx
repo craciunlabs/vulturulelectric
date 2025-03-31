@@ -82,16 +82,18 @@ const ServicesSection = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative h-full">
-                <img 
-                  src="https://i.imgur.com/78J38c9.jpeg" 
-                  alt="Service Auto"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
-                  }}
-                />
+              <div className="relative h-full md:h-auto">
+                <AspectRatio ratio={4/3} className="md:h-full">
+                  <img 
+                    src="https://i.imgur.com/78J38c9.jpeg" 
+                    alt="Service Auto"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                    }}
+                  />
+                </AspectRatio>
                 
                 {/* Webasto badge */}
                 <div className="absolute bottom-5 right-5 bg-vultur-red p-3 rounded-lg text-white shadow-md max-w-[160px] z-10">
