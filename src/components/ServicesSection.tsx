@@ -48,7 +48,7 @@ const ServicesSection = () => {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-5 sm:p-8 md:p-10">
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.serviceOffers}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">VULTURUL ELECTRIC vă pune la dispoziție:</h3>
                 <ul className="space-y-2 sm:space-y-4">
                   <li className="flex items-start">
                     <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
@@ -85,7 +85,7 @@ const ServicesSection = () => {
               <div className="relative h-48 sm:h-64 md:h-auto">
                 <AspectRatio ratio={16/9} className="h-full">
                   <img 
-                    src="https://i.imgur.com/FO71pEJ.jpeg"
+                    src="https://i.imgur.com/FO71pEJ.jpeg" 
                     alt="Service Auto"
                     className="absolute inset-0 w-full h-full object-cover"
                     onError={(e) => {
