@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Card, CardContent } from "@/components/ui/card";
+import ServiceCard from '@/components/ServiceCard';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -90,77 +91,48 @@ const ServicesSection = () => {
         
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up">
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <Settings className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t.serviceCars}</h3>
-              <p className="text-gray-600 text-sm">
-                {t.serviceCarsDesc}
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title={t.serviceCars}
+            description={t.serviceCarsDesc}
+            icon={<Settings className="h-6 w-6" />}
+            className="animate-fade-up"
+          />
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <Wrench className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t.serviceVans}</h3>
-              <p className="text-gray-600 text-sm">
-                {t.serviceVansDesc}
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title={t.serviceVans}
+            description={t.serviceVansDesc}
+            icon={<Wrench className="h-6 w-6" />}
+            className="animate-fade-up"
+            
+          />
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <Plug className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t.serviceCoaches}</h3>
-              <p className="text-gray-600 text-sm">
-                {t.serviceCoachesDesc}
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title={t.serviceCoaches}
+            description={t.serviceCoachesDesc}
+            icon={<Plug className="h-6 w-6" />}
+            className="animate-fade-up"
+          />
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <Cpu className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t.serviceTrucks}</h3>
-              <p className="text-gray-600 text-sm">
-                {t.serviceTrucksDesc}
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title={t.serviceTrucks}
+            description={t.serviceTrucksDesc}
+            icon={<Cpu className="h-6 w-6" />}
+            className="animate-fade-up"
+          />
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <Battery className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Reparații Alternatoare</h3>
-              <p className="text-gray-600 text-sm">
-                Servicii complete de diagnoză și reparație pentru alternatoare auto.
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title="Reparații Alternatoare"
+            description="Servicii complete de diagnoză și reparație pentru alternatoare auto."
+            icon={<Battery className="h-6 w-6" />}
+            className="animate-fade-up"
+          />
           
-          <Card className="shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-2 duration-300">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Sisteme de Securitate</h3>
-              <p className="text-gray-600 text-sm">
-                Instalare și mentenanță pentru sisteme de alarmă și securitate auto.
-              </p>
-            </CardContent>
-          </Card>
+          <ServiceCard 
+            title="Sisteme de Securitate"
+            description="Instalare și mentenanță pentru sisteme de alarmă și securitate auto."
+            icon={<ShieldCheck className="h-6 w-6" />}
+            className="animate-fade-up"
+          />
         </div>
       </div>
     </section>
