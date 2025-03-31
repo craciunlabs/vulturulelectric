@@ -54,14 +54,18 @@ const DespreNoi = () => {
               <div className="relative">
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <img 
-                    src="https://images.unsplash.com/photo-1562256039-870e13602864?q=80&w=1024&auto=format&fit=crop" 
+                    src="https://i.imgur.com/hqPdiUC.jpeg" 
                     alt={t.teamAlt} 
-                    className="w-full h-[400px] object-cover"
+                    className="w-full h-[400px] md:h-[500px] object-cover object-center"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Echipa+Noastră';
                     }}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 md:hidden"></div>
+                  <div className="absolute bottom-0 left-0 p-4 w-full md:hidden">
+                    <h3 className="text-2xl font-bold text-white">Echipa Noastră</h3>
+                  </div>
                 </div>
               </div>
             </div>

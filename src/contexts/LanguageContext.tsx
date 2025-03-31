@@ -49,7 +49,7 @@ const translations = {
     serviceCoachesDesc: 'Mentenanță și reparații pentru sistemele electrice complexe ale autocarelor și autobuzelor.',
     serviceTrucks: 'Autocamioane',
     serviceTrucksDesc: 'Diagnosticare și remediere probleme electrice pentru flote de camioane și vehicule grele.',
-    serviceOffers: 'Servicii-ul VULTURUL ELECTRIC vă pune la dispoziție:',
+    serviceOffers: 'Servicii VULTURUL ELECTRIC vă pune la dispoziție:',
     serviceOffer1: 'Service autoturisme, autoutilitare, autocamioane, autocare, remorci și semiremorci',
     serviceOffer2: 'Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, montaj alarme, închideri centralizate, etc.)',
     serviceOffer3: 'Diagnoză / Computerizată a sistemelor electrico-electronice și pneumatice pentru toate mărcile de autoturisme, autocamioane, autocare.',
