@@ -141,7 +141,7 @@ const DespreNoi = () => {
                 <div className="mb-3">
                   <Users className="h-8 w-8 text-vultur-red mx-auto" />
                 </div>
-                <div className="text-4xl font-bold mb-2">1000+</div>
+                <div className="text-4xl font-bold mb-2">2000+</div>
                 <div className="text-gray-600">{t.statsClients}</div>
               </div>
               
@@ -157,7 +157,7 @@ const DespreNoi = () => {
                 <div className="mb-3">
                   <Award className="h-8 w-8 text-vultur-red mx-auto" />
                 </div>
-                <div className="text-4xl font-bold mb-2">10+</div>
+                <div className="text-4xl font-bold mb-2">100+</div>
                 <div className="text-gray-600">{t.statsPartnerships}</div>
               </div>
             </div>
