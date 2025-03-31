@@ -3,6 +3,7 @@ import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react'
 import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -82,15 +83,17 @@ const ServicesSection = () => {
                 </ul>
               </div>
               <div className="relative h-48 sm:h-64 md:h-auto">
-                <img 
-                  src="https://i.imgur.com/78J38c9.jpeg"
-                  alt="Service Auto"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
-                  }}
-                />
+                <AspectRatio ratio={16/9} className="h-full">
+                  <img 
+                    src="https://i.imgur.com/FO71pEJ.jpeg"
+                    alt="Service Auto"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                    }}
+                  />
+                </AspectRatio>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r"></div>
                 
                 {/* Webasto badge - repositioned with more space and better visibility */}

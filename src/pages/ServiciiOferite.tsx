@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import CtaSection from '@/components/CtaSection';
 import { Car, Wrench, Cpu, Settings, Battery, ShieldCheck, Plug } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import ImageLoader from '@/components/hero/ImageLoader';
 
 const ServiciiOferite = () => {
   useEffect(() => {
@@ -148,15 +150,17 @@ const ServiciiOferite = () => {
               
               <div className="relative">
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1599171628320-a8e31dc37ff5?q=80&w=1024&auto=format&fit=crop" 
-                    alt="Diagnoză auto" 
-                    className="w-full h-[500px] object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Diagnostic+Auto';
-                    }}
-                  />
+                  <AspectRatio ratio={4/3} className="w-full">
+                    <img 
+                      src="https://i.imgur.com/FO71pEJ.jpeg" 
+                      alt="Diagnosticare auto profesională" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Diagnostic+Auto';
+                      }}
+                    />
+                  </AspectRatio>
                 </div>
               </div>
             </div>
