@@ -1,4 +1,3 @@
-
 import { Zap } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -15,7 +14,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
   const adjustedSize = isMobile && size === 'md' ? 'sm' : size;
   
   const logoSizes = {
-    sm: 'w-7 h-7 sm:w-8 sm:h-8',
+    sm: 'w-6 h-6 sm:w-8 sm:h-8',
     md: 'w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12',
     lg: 'w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16',
     xl: 'w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24',
@@ -48,7 +47,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
         <img 
           src="https://i.imgur.com/2wZrdgo.jpeg" 
           alt="Vulturul Electric Logo" 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-contain" 
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.style.display = 'none';

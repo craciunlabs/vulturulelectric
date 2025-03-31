@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -113,11 +112,11 @@ const Header = () => {
         className={cn(
           "transition-all duration-300 backdrop-blur-layer", 
           isScrolled 
-            ? "bg-white/95 shadow-md py-2" 
-            : "bg-white/90 py-3"
+            ? "bg-white/95 shadow-md py-1.5 md:py-2" 
+            : "bg-white/90 py-1.5 md:py-3"
         )}
         style={{
-          paddingTop: isMobile && !showTopBar ? '0.75rem' : undefined
+          paddingTop: isMobile && !showTopBar ? '0.5rem' : undefined
         }}
       >
         <div className="container flex justify-between items-center">
