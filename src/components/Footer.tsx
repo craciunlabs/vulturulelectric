@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Facebook, Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Facebook, Linkedin, Mail, Phone, MapPin, Clock, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -14,15 +14,15 @@ const Footer = () => {
           {/* Column 1 */}
           <div className="flex flex-col">
             <div className="mb-6">
-              <img 
-                src="https://i.imgur.com/ijqx435.jpeg" 
-                alt="Vulturul Electric" 
-                className="h-16 object-contain mb-4"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'https://placehold.co/240x80/c41e1e/ffffff?text=Vulturul+Electric';
-                }}
-              />
+              <div className="flex items-center mb-4">
+                <div className="w-16 h-16 bg-vultur-red rounded-md flex items-center justify-center mr-3">
+                  <Zap className="w-10 h-10 text-white" strokeWidth={2.5} />
+                </div>
+                <div className="text-xl font-bold">
+                  <span>Vulturul</span>
+                  <span className="block">Electric</span>
+                </div>
+              </div>
               <p className="text-gray-300 text-sm">
                 {t.footerDesc}
               </p>
