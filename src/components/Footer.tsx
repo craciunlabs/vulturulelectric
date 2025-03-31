@@ -15,8 +15,23 @@ const Footer = () => {
           <div className="flex flex-col">
             <div className="mb-6">
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-vultur-red rounded-md flex items-center justify-center mr-3">
-                  <Zap className="w-10 h-10 text-white" strokeWidth={2.5} />
+                <div className="w-16 h-16 rounded-md flex items-center justify-center mr-3 overflow-hidden">
+                  <img 
+                    src="https://i.imgur.com/Mbq5YFs.jpeg" 
+                    alt="Vulturul Electric" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const container = target.parentElement;
+                      if (container) {
+                        container.classList.add('bg-vultur-red');
+                        const zapIcon = document.createElement('div');
+                        zapIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>';
+                        container.appendChild(zapIcon);
+                      }
+                    }}
+                  />
                 </div>
                 <div className="text-xl font-bold">
                   <span>Vulturul</span>

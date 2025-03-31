@@ -37,17 +37,34 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
   };
   
   const bgColors = {
-    default: 'bg-vultur-red rounded-md',
-    white: 'bg-white rounded-md',
-    dark: 'bg-vultur-dark rounded-md'
+    default: 'bg-transparent rounded-md',
+    white: 'bg-transparent rounded-md',
+    dark: 'bg-transparent rounded-md'
   };
 
   return (
     <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
       <div className={`${logoSizes[adjustedSize]} ${bgColors[variant]} flex items-center justify-center relative overflow-hidden`}>
-        <div className="absolute inset-0 flex items-center justify-center bg-vultur-red">
-          <Zap className="w-2/3 h-2/3 text-white" strokeWidth={2.5} />
-        </div>
+        <img 
+          src="https://i.imgur.com/Mbq5YFs.jpeg" 
+          alt="Vulturul Electric Logo" 
+          className="w-full h-full object-cover" 
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            // Fallback to Zap icon if image fails to load
+            const container = target.parentElement;
+            if (container) {
+              container.classList.add('bg-vultur-red');
+              const fallbackDiv = document.createElement('div');
+              fallbackDiv.className = "absolute inset-0 flex items-center justify-center";
+              const zapIcon = document.createElement('div');
+              zapIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-2/3 h-2/3 text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>';
+              fallbackDiv.appendChild(zapIcon.firstChild!);
+              container.appendChild(fallbackDiv);
+            }
+          }}
+        />
       </div>
       
       {showText && (
