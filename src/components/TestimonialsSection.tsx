@@ -80,7 +80,11 @@ const TestimonialsSection: React.FC = () => {
             <div 
               ref={scrollContainerRef}
               className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
             >
               {testimonials.map((testimonial) => (
                 <Card 
@@ -192,11 +196,13 @@ const TestimonialsSection: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      <style>
+        {`
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
     </section>
   );
 };
