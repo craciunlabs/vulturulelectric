@@ -1,9 +1,9 @@
 
-import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react';
-import ServiceCard from './ServiceCard';
+import { Wrench, Cpu, Car, Settings, Battery, Plug, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Card, CardContent } from "@/components/ui/card";
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -21,33 +21,15 @@ const ServicesSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 animate-fade-up">
-          <ServiceCard
-            title={t.serviceCars}
-            description={t.serviceCarsDesc}
-            icon={<Car className={`h-5 w-5 sm:h-6 sm:w-6`} />}
-          />
-          <ServiceCard
-            title={t.serviceVans}
-            description={t.serviceVansDesc}
-            icon={<Wrench className={`h-5 w-5 sm:h-6 sm:w-6`} />}
-          />
-          <ServiceCard
-            title={t.serviceCoaches}
-            description={t.serviceCoachesDesc}
-            icon={<Settings className={`h-5 w-5 sm:h-6 sm:w-6`} />}
-          />
-          <ServiceCard
-            title={t.serviceTrucks}
-            description={t.serviceTrucksDesc}
-            icon={<Cpu className={`h-5 w-5 sm:h-6 sm:w-6`} />}
-          />
-        </div>
-        
-        <div className="mt-8 sm:mt-16 pb-2">
+        {/* Main Services Highlight */}
+        <div className="mt-8 sm:mt-16 pb-2 mb-8 sm:mb-16">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-5 sm:p-8 md:p-10">
+                <div className="flex items-center mb-3">
+                  <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
+                  <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICIUL NOSTRU PRINCIPAL</span>
+                </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.serviceOffers}</h3>
                 <ul className="space-y-2 sm:space-y-4">
                   <li className="flex items-start">
@@ -104,6 +86,81 @@ const ServicesSection = () => {
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up">
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <Settings className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{t.serviceCars}</h3>
+              <p className="text-gray-600 text-sm">
+                {t.serviceCarsDesc}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <Wrench className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{t.serviceVans}</h3>
+              <p className="text-gray-600 text-sm">
+                {t.serviceVansDesc}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <Plug className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{t.serviceCoaches}</h3>
+              <p className="text-gray-600 text-sm">
+                {t.serviceCoachesDesc}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <Cpu className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{t.serviceTrucks}</h3>
+              <p className="text-gray-600 text-sm">
+                {t.serviceTrucksDesc}
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <Battery className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Reparații Alternatoare</h3>
+              <p className="text-gray-600 text-sm">
+                Servicii complete de diagnoză și reparație pentru alternatoare auto.
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Sisteme de Securitate</h3>
+              <p className="text-gray-600 text-sm">
+                Instalare și mentenanță pentru sisteme de alarmă și securitate auto.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

@@ -2,11 +2,10 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ServiceCard from '@/components/ServiceCard';
 import CtaSection from '@/components/CtaSection';
-import { Car, Wrench, Cpu, Settings, Battery, ShieldCheck, Plug } from 'lucide-react';
+import { Settings, Battery, ShieldCheck, Plug, Wrench, Cpu, Car } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import ImageLoader from '@/components/hero/ImageLoader';
+import { Card, CardContent } from "@/components/ui/card";
 
 const ServiciiOferite = () => {
   useEffect(() => {
@@ -36,75 +35,14 @@ const ServiciiOferite = () => {
           </div>
         </div>
         
-        {/* All Services */}
-        <section className="py-16">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <ServiceCard
-                title="Reparații Electromotoare"
-                description="Reparăm și recondiționăm electromotoare pentru toate tipurile de vehicule, asigurând porniri fără probleme."
-                icon={<Settings className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Reparații Alternatoare"
-                description="Servicii complete de diagnoză, reparație și reconstrucție a alternatoarelor pentru orice tip de vehicul."
-                icon={<Battery className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Recondiționări Instalații Electrice"
-                description="Recondiționăm complet instalațiile electrice deteriorate, asigurând funcționarea optimă a vehiculului."
-                icon={<Plug className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Montaj Alarme"
-                description="Instalăm sisteme de alarmă moderne, oferind protecție împotriva furturilor și tentativelor de efracție."
-                icon={<ShieldCheck className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Închideri Centralizate"
-                description="Montăm și reparăm sisteme de închidere centralizată pentru confort și siguranță sporite."
-                icon={<Wrench className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Montaj Casetofoane"
-                description="Servicii de instalare a sistemelor audio auto, cu integrare perfectă în bordul mașinii."
-                icon={<Settings className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Diagnoză Computerizată"
-                description="Identificăm rapid problemele cu ajutorul echipamentelor de diagnoză computerizată de ultimă generație."
-                icon={<Cpu className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Diagnoză Sisteme Frânare"
-                description="Verificarea și diagnosticarea sistemelor de frânare ABS-EBS pentru semiremorci și camioane."
-                icon={<Settings className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Service Climatizare Auto"
-                description="Reparații, întreținere și reîncărcare agent frigorific pentru sistemele de climatizare auto."
-                icon={<Car className="h-6 w-6" />}
-              />
-            </div>
-          </div>
-        </section>
-        
-        {/* Highlighted Service */}
+        {/* Highlighted Service - Now First */}
         <section className="py-16 bg-gray-50">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-3">
                   <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-                  <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">Serviciul Nostru Principal</span>
+                  <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICIUL NOSTRU PRINCIPAL</span>
                 </div>
                 <h2 className="text-3xl font-bold mb-6">
                   Diagnosticare și Reparații Electrice Complete
@@ -152,17 +90,142 @@ const ServiciiOferite = () => {
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <AspectRatio ratio={4/3} className="w-full">
                     <img 
-                      src="https://i.imgur.com/FO71pEJ.jpeg" 
+                      src="public/lovable-uploads/44ea2bb6-87b7-4959-b9b1-dd104483391f.png" 
                       alt="Diagnosticare auto profesională" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Diagnostic+Auto';
+                        target.src = 'https://i.imgur.com/FO71pEJ.jpeg';
                       }}
                     />
                   </AspectRatio>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* All Services - Updated with New Design */}
+        <section className="py-16">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Serviciile Noastre</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Oferim o gamă completă de servicii pentru toate tipurile de vehicule, asigurând calitate și profesionalism.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Row 1 */}
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Settings className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Reparații Electromotoare</h3>
+                  <p className="text-gray-600">
+                    Reparăm și recondiționăm electromotoare pentru toate tipurile de vehicule, asigurând porniri fără probleme.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Battery className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Reparații Alternatoare</h3>
+                  <p className="text-gray-600">
+                    Servicii complete de diagnoză, reparație și reconstrucție a alternatoarelor pentru orice tip de vehicul.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Plug className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Recondiționări Instalații Electrice</h3>
+                  <p className="text-gray-600">
+                    Recondiționăm complet instalațiile electrice deteriorate, asigurând funcționarea optimă a vehiculului.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Row 2 */}
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <ShieldCheck className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Montaj Alarme</h3>
+                  <p className="text-gray-600">
+                    Instalăm sisteme de alarmă moderne, oferind protecție împotriva furturilor și tentativelor de efracție.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Wrench className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Închideri Centralizate</h3>
+                  <p className="text-gray-600">
+                    Montăm și reparăm sisteme de închidere centralizată pentru confort și siguranță sporite.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Settings className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Montaj Casetofoane</h3>
+                  <p className="text-gray-600">
+                    Servicii de instalare a sistemelor audio auto, cu integrare perfectă în bordul mașinii.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Row 3 */}
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Cpu className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Diagnoză Computerizată</h3>
+                  <p className="text-gray-600">
+                    Identificăm rapid problemele cu ajutorul echipamentelor de diagnoză computerizată de ultimă generație.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Settings className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Diagnoză Sisteme Frânare</h3>
+                  <p className="text-gray-600">
+                    Verificarea și diagnosticarea sistemelor de frânare ABS-EBS pentru semiremorci și camioane.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-vultur-red mb-4">
+                    <Car className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Service Climatizare Auto</h3>
+                  <p className="text-gray-600">
+                    Reparații, întreținere și reîncărcare agent frigorific pentru sistemele de climatizare auto.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
