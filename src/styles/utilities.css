@@ -24,16 +24,6 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
-.service-card .rounded-full {
-  transition: all 0.3s ease;
-}
-
-.service-card:hover .rounded-full {
-  background-color: #c41e1e !important;
-  color: white !important;
-  transform: scale(1.1);
-}
-
 .image-container {
   @apply overflow-hidden rounded-lg;
 }

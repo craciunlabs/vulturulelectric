@@ -1,10 +1,9 @@
 
-import { Wrench, Cpu, Car, Settings, Battery, Plug, ShieldCheck } from 'lucide-react';
+import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react';
+import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Card, CardContent } from "@/components/ui/card";
-import ServiceCard from '@/components/ServiceCard';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -13,7 +12,7 @@ const ServicesSection = () => {
   return (
     <section className="py-10 sm:py-16 bg-gray-50 overflow-x-hidden">
       <div className="container px-3 sm:px-6">
-        <div className="text-center mb-8 sm:mb-16 animate-fade-in">
+        <div className="text-center mb-8 sm:mb-16 animate-fade-down">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
             {t.serviceTitle}<span className="text-vultur-red">{t.serviceHighlight}</span>
           </h2>
@@ -22,15 +21,33 @@ const ServicesSection = () => {
           </p>
         </div>
         
-        {/* Main Services Highlight */}
-        <div className="mt-8 sm:mt-16 pb-2 mb-8 sm:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 animate-fade-up">
+          <ServiceCard
+            title={t.serviceCars}
+            description={t.serviceCarsDesc}
+            icon={<Car className={`h-5 w-5 sm:h-6 sm:w-6`} />}
+          />
+          <ServiceCard
+            title={t.serviceVans}
+            description={t.serviceVansDesc}
+            icon={<Wrench className={`h-5 w-5 sm:h-6 sm:w-6`} />}
+          />
+          <ServiceCard
+            title={t.serviceCoaches}
+            description={t.serviceCoachesDesc}
+            icon={<Settings className={`h-5 w-5 sm:h-6 sm:w-6`} />}
+          />
+          <ServiceCard
+            title={t.serviceTrucks}
+            description={t.serviceTrucksDesc}
+            icon={<Cpu className={`h-5 w-5 sm:h-6 sm:w-6`} />}
+          />
+        </div>
+        
+        <div className="mt-8 sm:mt-16 pb-2">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-5 sm:p-8 md:p-10">
-                <div className="flex items-center mb-3">
-                  <div className="h-0.5 w-10 bg-vultur-red mr-3"></div>
-                  <span className="text-sm uppercase tracking-wider font-medium text-vultur-red">SERVICIUL NOSTRU PRINCIPAL</span>
-                </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.serviceOffers}</h3>
                 <ul className="space-y-2 sm:space-y-4">
                   <li className="flex items-start">
@@ -68,7 +85,7 @@ const ServicesSection = () => {
               <div className="relative h-48 sm:h-64 md:h-auto">
                 <AspectRatio ratio={16/9} className="h-full">
                   <img 
-                    src="/lovable-uploads/621b75cc-d19d-49c6-b805-5dedd0dbf9e0.png"
+                    src="https://i.imgur.com/FO71pEJ.jpeg"
                     alt="Service Auto"
                     className="absolute inset-0 w-full h-full object-cover"
                     onError={(e) => {
@@ -87,52 +104,6 @@ const ServicesSection = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-up">
-          <ServiceCard 
-            title={t.serviceCars}
-            description={t.serviceCarsDesc}
-            icon={<Settings className="h-6 w-6" />}
-            className="animate-fade-up"
-          />
-          
-          <ServiceCard 
-            title={t.serviceVans}
-            description={t.serviceVansDesc}
-            icon={<Wrench className="h-6 w-6" />}
-            className="animate-fade-up"
-            
-          />
-          
-          <ServiceCard 
-            title={t.serviceCoaches}
-            description={t.serviceCoachesDesc}
-            icon={<Plug className="h-6 w-6" />}
-            className="animate-fade-up"
-          />
-          
-          <ServiceCard 
-            title={t.serviceTrucks}
-            description={t.serviceTrucksDesc}
-            icon={<Cpu className="h-6 w-6" />}
-            className="animate-fade-up"
-          />
-          
-          <ServiceCard 
-            title="Reparații Alternatoare"
-            description="Servicii complete de diagnoză și reparație pentru alternatoare auto."
-            icon={<Battery className="h-6 w-6" />}
-            className="animate-fade-up"
-          />
-          
-          <ServiceCard 
-            title="Sisteme de Securitate"
-            description="Instalare și mentenanță pentru sisteme de alarmă și securitate auto."
-            icon={<ShieldCheck className="h-6 w-6" />}
-            className="animate-fade-up"
-          />
         </div>
       </div>
     </section>
