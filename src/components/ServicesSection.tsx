@@ -68,7 +68,7 @@ const ServicesSection = () => {
               <div className="relative h-48 sm:h-64 md:h-auto">
                 <AspectRatio ratio={16/9} className="h-full">
                   <img 
-                    src="https://i.imgur.com/FO71pEJ.jpeg"
+                    src="/lovable-uploads/621b75cc-d19d-49c6-b805-5dedd0dbf9e0.png"
                     alt="Service Auto"
                     className="absolute inset-0 w-full h-full object-cover"
                     onError={(e) => {
