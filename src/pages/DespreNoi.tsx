@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Calendar, Users, Wrench, Award, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CertificatesSection from '@/components/CertificatesSection';
 
 const DespreNoi = () => {
   const { t } = useLanguage();
@@ -72,8 +73,11 @@ const DespreNoi = () => {
           </div>
         </section>
         
+        {/* Certificates Section */}
+        <CertificatesSection />
+        
         {/* Values */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
               <div className="inline-block mx-auto">
@@ -126,7 +130,7 @@ const DespreNoi = () => {
         </section>
         
         {/* Stats */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-50">
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div className="p-6">

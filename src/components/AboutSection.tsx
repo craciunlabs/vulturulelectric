@@ -98,15 +98,24 @@ const AboutSection = () => {
               </div>
             </div>
             
-            <a 
-              href="/despre-noi" 
-              className="inline-flex items-center font-medium text-vultur-red hover:text-red-800 transition-colors"
-            >
-              Află mai multe despre noi
-              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href="/despre-noi" 
+                className="inline-flex items-center font-medium text-vultur-red hover:text-red-800 transition-colors"
+              >
+                Află mai multe despre noi
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <a 
+                href="/despre-noi#certificari" 
+                className="inline-flex items-center font-medium bg-vultur-red text-white hover:bg-red-700 transition-colors px-3 py-1 rounded-md"
+              >
+                Vezi certificările noastre
+                <Award className="ml-2 w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
