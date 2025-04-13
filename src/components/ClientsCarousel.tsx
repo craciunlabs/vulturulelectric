@@ -17,12 +17,6 @@ const clientsData: ClientLogo[] = [
     url: "https://www.ceoltenia.ro"
   },
   {
-    id: 3,
-    name: "TELEKOM",
-    logo: "https://placehold.co/200x100/ffffff/e4007c?text=T-MOBILE",
-    url: "https://www.telekom.ro"
-  },
-  {
     id: 4,
     name: "RCS & RDS",
     logo: "https://placehold.co/200x100/ffffff/0089cf?text=RCS+%26+RDS",
@@ -33,18 +27,6 @@ const clientsData: ClientLogo[] = [
     name: "ENOVA GROUP",
     logo: "https://placehold.co/200x100/ffffff/e74c3c?text=ENOVA",
     url: "https://www.enova-group.biz"
-  },
-  {
-    id: 6,
-    name: "CS PANDURII",
-    logo: "https://placehold.co/200x100/ffffff/00a8e8?text=PANDURII",
-    url: "https://www.panduriics.ro"
-  },
-  {
-    id: 7,
-    name: "CARPATIA TOUR",
-    logo: "https://placehold.co/200x100/ffffff/4CAF50?text=CARPATIA+TOUR",
-    url: "https://www.carpatiatour.ro"
   },
   {
     id: 8,
@@ -63,6 +45,36 @@ const clientsData: ClientLogo[] = [
     name: "ENERGOMONTAJ",
     logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM",
     url: "https://www.saem.ro"
+  },
+  {
+    id: 11,
+    name: "DACOREX",
+    logo: "https://placehold.co/200x100/ffffff/2c3e50?text=DACOREX",
+    url: "#"
+  },
+  {
+    id: 12,
+    name: "ECONOMIC",
+    logo: "https://placehold.co/200x100/ffffff/27ae60?text=ECONOMIC",
+    url: "#"
+  },
+  {
+    id: 13,
+    name: "TRIVOLI",
+    logo: "https://placehold.co/200x100/ffffff/8e44ad?text=TRIVOLI",
+    url: "#"
+  },
+  {
+    id: 14,
+    name: "MENTOR BETON",
+    logo: "https://placehold.co/200x100/ffffff/d35400?text=MENTOR+BETON",
+    url: "#"
+  },
+  {
+    id: 15,
+    name: "PARALELA 45",
+    logo: "https://placehold.co/200x100/ffffff/1abc9c?text=PARALELA+45",
+    url: "#"
   }
 ];
 
