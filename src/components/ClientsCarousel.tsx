@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Badge } from './ui/badge';
 
 interface ClientLogo {
   id: number;
@@ -127,18 +128,27 @@ const ClientsCarousel = () => {
   };
   
   return (
-    <section className="py-4 sm:py-8 bg-gray-50 overflow-hidden relative">
+    <section className="py-8 sm:py-12 bg-gray-50 overflow-hidden relative">
       <div className="container">
-        <div className="text-center mb-4 sm:mb-6">
-          <h2 className="text-lg sm:text-xl font-bold">Parteneri de Încredere</h2>
-          <p className="text-gray-600 text-sm sm:text-base">Soluții electrice auto pentru companii de top din România</p>
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Parteneri de Încredere</h2>
+          <p className="text-gray-600 mt-2">Soluții electrice auto pentru companii de top din România</p>
+          <div className="mt-2 flex justify-center">
+            <Badge variant="outline" className="bg-vultur-red/10 text-vultur-red border-vultur-red/30">
+              {clientsData.length}+ clienți mulțumiți
+            </Badge>
+          </div>
         </div>
       </div>
       
       <div 
         ref={scrollRef}
-        className="flex items-center space-x-6 sm:space-x-12 overflow-x-auto whitespace-nowrap py-3 sm:py-6 px-4 sm:px-8 scrollbar-hide"
-        style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
+        className="flex items-center space-x-6 sm:space-x-8 overflow-x-auto whitespace-nowrap py-4 sm:py-6 px-4 sm:px-8 scrollbar-hide"
+        style={{ 
+          msOverflowStyle: 'none', 
+          scrollbarWidth: 'none',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -146,7 +156,7 @@ const ClientsCarousel = () => {
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
-            className="shrink-0 h-16 sm:h-16 md:h-20 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group"
+            className="shrink-0 h-16 sm:h-16 md:h-20 px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group border border-gray-100"
           >
             <a 
               href={client.url} 
@@ -158,7 +168,7 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[160px] sm:max-w-[150px] transition-transform duration-300 group-hover:scale-125" 
+                className="h-full w-auto object-contain max-w-[160px] sm:max-w-[180px] transition-transform duration-300 group-hover:scale-110" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
@@ -167,6 +177,12 @@ const ClientsCarousel = () => {
             </a>
           </div>
         ))}
+      </div>
+      
+      <div className="flex justify-center mt-6">
+        <p className="text-sm text-gray-500 italic">
+          Peste 2000+ de clienți au ales serviciile noastre în ultimii 30 de ani
+        </p>
       </div>
     </section>
   );
