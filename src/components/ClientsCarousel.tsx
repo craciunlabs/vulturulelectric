@@ -41,7 +41,7 @@ const clientsData: ClientLogo[] = [
   },
   {
     id: 10,
-    name: "ENERGOMONTAJ",
+    name: "SAEM",
     logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM",
     url: "https://www.saem.ro"
   },
@@ -66,7 +66,7 @@ const clientsData: ClientLogo[] = [
   {
     id: 14,
     name: "MENTOR BETON",
-    logo: "https://placehold.co/300x120/ffffff/d35400?text=MENTOR+BETON",
+    logo: "https://placehold.co/200x100/ffffff/d35400?text=MENTOR+BETON",
     url: "#"
   },
   {
@@ -154,7 +154,7 @@ const ClientsCarousel = () => {
         {[...clientsData, ...clientsData].map((client, index) => (
           <div 
             key={`${client.id}-${index}`} 
-            className="shrink-0 h-20 sm:h-24 md:h-28 px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group border border-gray-100"
+            className="shrink-0 h-16 sm:h-16 md:h-20 px-6 sm:px-8 py-3 sm:py-4 bg-white rounded-lg shadow-sm flex items-center justify-center transition duration-300 hover:shadow-md group border border-gray-100"
           >
             <a 
               href={client.url} 
@@ -166,10 +166,10 @@ const ClientsCarousel = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="h-full w-auto object-contain max-w-[200px] sm:max-w-[240px] transition-transform duration-300 group-hover:scale-110" 
+                className="h-full w-auto object-contain max-w-[160px] sm:max-w-[180px] transition-transform duration-300 group-hover:scale-110" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = `https://placehold.co/300x120/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
+                  target.src = `https://placehold.co/200x100/ffffff/c41e1e?text=${client.name.replace(/\s+/g, '+')}`;
                 }}
               />
             </a>
