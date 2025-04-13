@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Badge } from './ui/badge';
 
 interface ClientLogo {
   id: number;
@@ -133,11 +132,6 @@ const ClientsCarousel = () => {
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Parteneri de Încredere</h2>
           <p className="text-gray-600 mt-2">Soluții electrice auto pentru companii de top din România</p>
-          <div className="mt-2 flex justify-center">
-            <Badge variant="outline" className="bg-vultur-red/10 text-vultur-red border-vultur-red/30">
-              {clientsData.length}+ clienți mulțumiți
-            </Badge>
-          </div>
         </div>
       </div>
       
