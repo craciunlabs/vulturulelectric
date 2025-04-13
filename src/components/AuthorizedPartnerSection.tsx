@@ -43,8 +43,16 @@ const AuthorizedPartnerSection = () => {
             logo="https://www.eberspaecher.com/typo3conf/ext/eberspaecher/Resources/Public/Images/logo.svg"
           />
           <PartnerBadge 
-            name="Bosch"
-            logo="https://logodownload.org/wp-content/uploads/2014/04/bosch-logo-1-1.png"
+            name="Knorr"
+            logo="https://www.knorr-bremse.com/remote/media/public/global/design/images/knorr-bremse-logo.png"
+          />
+          <PartnerBadge 
+            name="Thermo King"
+            logo="https://www.thermoking.com/content/dam/thermoking/images/tk-logo.jpg"
+          />
+          <PartnerBadge 
+            name="Carrier"
+            logo="https://www.carrier.com/carrier/en/worldwide/images/carrier-logo.png"
           />
         </div>
       </div>

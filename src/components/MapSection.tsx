@@ -91,7 +91,7 @@ const MapSection = () => {
                   <MapPin className="h-5 w-5 text-vultur-red mr-2" />
                   <span className="font-medium">Vulturul Electric - AUTO SERVICE</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">DE 79, Nr. 229, Vârt, 215400, Gorj</p>
+                <p className="text-sm text-gray-600 mt-1">DE 79, Nr. 228, Vârt, 215400, Gorj</p>
                 <div className="mt-3">
                   <a 
                     href="https://www.google.com/maps/dir//Vulturul+Electric+-+AUTO+SERVICE,+DN66,+V%C3%A2r%C8%9B/@44.9460418,23.1382941,17z/data=!4m17!1m7!3m6!1s0x475272722a35768d:0x30dab34d9c1b536e!2sVulturul+Electric+-+AUTO+SERVICE!8m2!3d44.9460418!4d23.1404828!16s%2Fg%2F11h462090p!4m8!1m0!1m5!1m1!1s0x475272722a35768d:0x30dab34d9c1b536e!2m2!1d23.1404828!2d44.9460418!3e0"
@@ -113,7 +113,7 @@ const MapSection = () => {
                 <MapPin className="h-4 w-4 text-vultur-red mr-2 mt-0.5 shrink-0" />
                 <div>
                   <div className="font-medium text-sm">Vulturul Electric - AUTO SERVICE</div>
-                  <p className="text-xs text-gray-600">DE 79, Nr. 229, Vârt, 215400, Gorj</p>
+                  <p className="text-xs text-gray-600">DE 79, Nr. 228, Vârt, 215400, Gorj</p>
                 </div>
               </div>
               <div className="flex gap-2 w-full">

@@ -35,7 +35,7 @@ export const sliderItems: CarouselItem[] = [
   {
     id: 4,
     title: "SISTEME AUTO",
-    description: "Montaj alarme, închideri centralizate, sisteme audio și navigație pentru confort și siguranță",
+    description: "to be added",
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     icon: <Car className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
   },

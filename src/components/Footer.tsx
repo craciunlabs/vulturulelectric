@@ -65,7 +65,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
-                <span>{t.address}</span>
+                <span>DE 79, Nr. 228, Vârt, 215400, Gorj, Romania</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mr-2 mt-0.5 text-vultur-red" />
@@ -82,8 +82,7 @@ const Footer = () => {
               <li><Link to="/despre-noi" className="hover:text-vultur-red transition-colors">{t.about}</Link></li>
               <li><Link to="/servicii-oferite" className="hover:text-vultur-red transition-colors">{t.services}</Link></li>
               <li><Link to="/magazin-piese-auto" className="hover:text-vultur-red transition-colors">{t.shop}</Link></li>
-              <li><Link to="/galerie" className="hover:text-vultur-red transition-colors">{t.gallery}</Link></li>
-              <li><Link to="/clienti" className="hover:text-vultur-red transition-colors">{t.clients}</Link></li>
+              <li><Link to="/lucrari-realizate" className="hover:text-vultur-red transition-colors">{t.gallery}</Link></li>
               <li><Link to="/contact" className="hover:text-vultur-red transition-colors">{t.contact}</Link></li>
             </ul>
           </div>

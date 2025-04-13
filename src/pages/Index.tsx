@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AuthorizedPartnerSection from '@/components/AuthorizedPartnerSection';
-import ClientsCarousel from '@/components/ClientsCarousel';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -26,7 +25,6 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <AuthorizedPartnerSection />
-        <ClientsCarousel />
         <ServicesSection />
         <AboutSection />
         <TestimonialsSection />

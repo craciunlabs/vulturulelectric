@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -87,7 +88,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Adresă</h3>
-                      <p className="text-gray-600">DE 79, Nr. 229, Vârt, 215400, Gorj, Romania</p>
+                      <p className="text-gray-600">DE 79, Nr. 228, Vârt, 215400, Gorj, Romania</p>
                     </div>
                   </div>
                   
@@ -98,7 +99,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Program</h3>
                       <p className="text-gray-600">
-                        Luni - Vineri: 09<sup>00</sup> - 18<sup>00</sup><br />
+                        Luni - Vineri: 09<sup>00</sup> - 17<sup>00</sup><br />
                         Sâmbătă - Duminică: Închis
                       </p>
                     </div>
@@ -249,4 +250,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

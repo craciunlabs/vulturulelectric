@@ -58,7 +58,7 @@ const ServicesSection = () => {
                   <li className="flex items-start">
                     <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
-                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer2}</p>
+                      <p className="font-medium text-sm sm:text-base">Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, etc.)</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -71,12 +71,6 @@ const ServicesSection = () => {
                     <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
                     <div>
                       <p className="font-medium text-sm sm:text-base">{t.serviceOffer4}</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 sm:mr-3 mt-0.5 text-vultur-red">✓</div>
-                    <div>
-                      <p className="font-medium text-sm sm:text-base">{t.serviceOffer5}</p>
                     </div>
                   </li>
                 </ul>

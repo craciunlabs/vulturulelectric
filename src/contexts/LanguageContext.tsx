@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type Language = 'ro' | 'en';
@@ -16,12 +17,11 @@ const translations = {
     about: 'Despre noi',
     services: 'Servicii oferite',
     shop: 'Magazin Piese Auto',
-    gallery: 'Galerie',
-    clients: 'Clienți',
+    gallery: 'Lucrari Realizate',
     contact: 'Contact',
-    schedule: 'Avem deschis: Luni - Vineri, 09<sup>00</sup> - 18<sup>00</sup>',
+    schedule: 'Avem deschis: Luni - Vineri, 09<sup>00</sup> - 17<sup>00</sup>',
     callUs: 'Sunați ne acum: +40 721 407 727',
-    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
+    address: 'DE 79, Nr. 228, Sat Vârt, 215400, Gorj, Romania',
     search: 'Căutare...',
     
     // Hero section
@@ -51,10 +51,9 @@ const translations = {
     serviceTrucksDesc: 'Diagnosticare și remediere probleme electrice pentru flote de camioane și vehicule grele.',
     serviceOffers: 'Servicii VULTURUL ELECTRIC vă pune la dispoziție:',
     serviceOffer1: 'Service autoturisme, autoutilitare, autocamioane, autocare, remorci și semiremorci',
-    serviceOffer2: 'Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, montaj alarme, închideri centralizate, etc.)',
+    serviceOffer2: 'Service instalații electrice (reparații electromotoare, alternatoare, recondiționări instalații electrice, remedieri scurt la instalația electrică, etc.)',
     serviceOffer3: 'Diagnoză / Computerizată a sistemelor electrico-electronice și pneumatice pentru toate mărcile de autoturisme, autocamioane, autocare.',
-    serviceOffer4: 'Diagnoză cu sistem de citire memorii-chei',
-    serviceOffer5: 'Diagnoză / sistem frânare semiremorci ABS-EBS',
+    serviceOffer4: 'Diagnoză / sistem frânare semiremorci ABS-EBS',
     authorizedPartner: 'Partener autorizat',
     
     // Testimonials section
@@ -66,10 +65,10 @@ const translations = {
     // Map section
     location: 'Locație',
     findUs: 'Unde ne găsești',
-    findUsDesc: 'Suntem situați pe DE 79, Nr. 229, în localitatea Vârt, Gorj. Te așteptăm să ne vizitezi!',
+    findUsDesc: 'Suntem situați pe DE 79, Nr. 228, în localitatea Vârt, Gorj. Te așteptăm să ne vizitezi!',
     directions: 'Indicații rutiere',
     workSchedule: 'Program de lucru',
-    workHours: 'Luni - Vineri: 09<sup>00</sup> - 18<sup>00</sup> | Sâmbătă - Duminică: Închis',
+    workHours: 'Luni - Vineri: 09<sup>00</sup> - 17<sup>00</sup> | Sâmbătă - Duminică: Închis',
     
     // Footer
     footerDesc: 'Cu o experiență de peste 30 ani în domeniul auto, Vulturul Electric este zi de zi pregătit să ofere asistență clienților noștri.',
@@ -114,12 +113,11 @@ const translations = {
     about: 'About Us',
     services: 'Services',
     shop: 'Auto Parts Shop',
-    gallery: 'Gallery',
-    clients: 'Clients',
+    gallery: 'Completed Works',
     contact: 'Contact',
-    schedule: 'We are open: Monday - Friday, 09<sup>00</sup> - 18<sup>00</sup>',
+    schedule: 'We are open: Monday - Friday, 09<sup>00</sup> - 17<sup>00</sup>',
     callUs: 'Call us now: +40 721 407 727',
-    address: 'DE 79, Nr. 229, Sat Vârt, 215400, Gorj, Romania',
+    address: 'DE 79, Nr. 228, Sat Vârt, 215400, Gorj, Romania',
     search: 'Search...',
     
     // Hero section
@@ -149,10 +147,9 @@ const translations = {
     serviceTrucksDesc: 'Diagnosis and remediation of electrical problems for truck fleets and heavy vehicles.',
     serviceOffers: 'VULTURUL ELECTRIC Service offers you:',
     serviceOffer1: 'Service for cars, vans, trucks, coaches, trailers and semi-trailers',
-    serviceOffer2: 'Electrical installations service (starter repairs, alternators, electrical installations reconditioning, electrical short circuit repairs, alarm installation, central locking, etc.)',
+    serviceOffer2: 'Electrical installations service (starter repairs, alternators, electrical installations reconditioning, electrical short circuit repairs, etc.)',
     serviceOffer3: 'Diagnosis / Computerized diagnosis of electro-electronic and pneumatic systems for all makes of cars, trucks, coaches.',
-    serviceOffer4: 'Diagnosis with key memory reading system',
-    serviceOffer5: 'Diagnosis / semi-trailer braking system ABS-EBS',
+    serviceOffer4: 'Diagnosis / semi-trailer braking system ABS-EBS',
     authorizedPartner: 'Authorized partner',
     
     // Testimonials section
@@ -164,10 +161,10 @@ const translations = {
     // Map section
     location: 'Location',
     findUs: 'Where to find us',
-    findUsDesc: 'We are located on DE 79, Nr. 229, in Vârt, Gorj. We are waiting for you to visit us!',
+    findUsDesc: 'We are located on DE 79, Nr. 228, in Vârt, Gorj. We are waiting for you to visit us!',
     directions: 'Get directions',
     workSchedule: 'Working hours',
-    workHours: 'Monday - Friday: 09<sup>00</sup> - 18<sup>00</sup> | Saturday - Sunday: Closed',
+    workHours: 'Monday - Friday: 09<sup>00</sup> - 17<sup>00</sup> | Saturday - Sunday: Closed',
     
     // Footer
     footerDesc: 'With over 30 years of experience in the automotive field, Vulturul Electric is ready every day to assist our clients.',

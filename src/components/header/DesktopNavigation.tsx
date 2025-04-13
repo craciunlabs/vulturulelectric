@@ -21,8 +21,7 @@ const DesktopNavigation = ({ toggleLanguage, setShowSearch, showSearch }: Deskto
         <Link to="/despre-noi" className="nav-link font-medium">{t.about}</Link>
         <Link to="/servicii-oferite" className="nav-link font-medium">{t.services}</Link>
         <Link to="/magazin-piese-auto" className="nav-link font-medium">{t.shop}</Link>
-        <Link to="/galerie" className="nav-link font-medium">{t.gallery}</Link>
-        <Link to="/clienti" className="nav-link font-medium">{t.clients}</Link>
+        <Link to="/lucrari-realizate" className="nav-link font-medium">{t.gallery}</Link>
         <Link to="/contact" className="nav-link font-medium">{t.contact}</Link>
       </nav>
       
