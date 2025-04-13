@@ -12,67 +12,67 @@ const clientsData: ClientLogo[] = [
   {
     id: 2,
     name: "CE OLTENIA",
-    logo: "https://placehold.co/200x100/ffffff/c41e1e?text=CE+OLTENIA&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/c41e1e?text=CE+OLTENIA&font=roboto&size=24",
     url: "https://www.ceoltenia.ro"
   },
   {
     id: 4,
     name: "RCS & RDS",
-    logo: "https://placehold.co/200x100/ffffff/0089cf?text=RCS+%26+RDS&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/0089cf?text=RCS+%26+RDS&font=roboto&size=24",
     url: "https://www.rcs-rds.ro"
   },
   {
     id: 5,
     name: "ENOVA GROUP",
-    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=ENOVA&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=ENOVA+GROUP&font=roboto&size=24",
     url: "https://www.enova-group.biz"
   },
   {
     id: 8,
     name: "FAN COURIER",
-    logo: "https://placehold.co/200x100/ffffff/003366?text=FAN+COURIER&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/003366?text=FAN+COURIER&font=roboto&size=24",
     url: "https://www.fancourier.ro"
   },
   {
     id: 9,
     name: "VIITORUL",
-    logo: "https://placehold.co/200x100/ffffff/0033cc?text=VIITORUL&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/0033cc?text=VIITORUL&font=roboto&size=24",
     url: "https://www.viitorultransport.com"
   },
   {
     id: 10,
     name: "SAEM",
-    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/e74c3c?text=SAEM&font=roboto&size=24",
     url: "https://www.saem.ro"
   },
   {
     id: 11,
     name: "DACOREX",
-    logo: "https://placehold.co/200x100/ffffff/2c3e50?text=DACOREX&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/2c3e50?text=DACOREX&font=roboto&size=24",
     url: "#"
   },
   {
     id: 12,
     name: "ECONOMIC",
-    logo: "https://placehold.co/200x100/ffffff/27ae60?text=ECONOMIC&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/27ae60?text=ECONOMIC&font=roboto&size=24",
     url: "#"
   },
   {
     id: 13,
     name: "TRIVOLI",
-    logo: "https://placehold.co/200x100/ffffff/8e44ad?text=TRIVOLI&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/8e44ad?text=TRIVOLI&font=roboto&size=24",
     url: "#"
   },
   {
     id: 14,
     name: "MENTOR BETON",
-    logo: "https://placehold.co/200x100/ffffff/d35400?text=MENTOR+BETON&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/d35400?text=MENTOR+BETON&font=roboto&size=24",
     url: "#"
   },
   {
     id: 15,
     name: "PARALELA 45",
-    logo: "https://placehold.co/200x100/ffffff/1abc9c?text=PARALELA+45&font=roboto&size=20",
+    logo: "https://placehold.co/200x100/ffffff/1abc9c?text=PARALELA+45&font=roboto&size=24",
     url: "#"
   }
 ];
