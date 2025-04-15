@@ -10,6 +10,7 @@ import ClientsCarousel from '@/components/ClientsCarousel';
 import CtaSection from '@/components/CtaSection';
 import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   useEffect(() => {
@@ -34,6 +35,7 @@ const Index = () => {
         <CtaSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
