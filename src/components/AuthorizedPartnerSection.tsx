@@ -46,7 +46,7 @@ const AuthorizedPartnerSection = () => {
             <PartnerBadge 
               name="Knorr"
               logo="https://www.knorr-bremse.com/remote/media/public/global/design/images/knorr-bremse-logo.png"
-              fontSize="text-[0.5rem] md:text-[0.6rem]"
+              fontSize="text-[0.3rem] md:text-[0.4rem]"
             />
             <PartnerBadge 
               name="Thermo King"
@@ -55,7 +55,7 @@ const AuthorizedPartnerSection = () => {
             <PartnerBadge 
               name="Carrier"
               logo="https://www.carrier.com/carrier/en/worldwide/images/carrier-logo.png"
-              fontSize="text-[0.5rem] md:text-[0.6rem]"
+              fontSize="text-[0.3rem] md:text-[0.4rem]"
             />
           </div>
         </div>
