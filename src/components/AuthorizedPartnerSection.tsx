@@ -4,14 +4,15 @@ import { Award } from "lucide-react";
 interface PartnerBadgeProps {
   name: string;
   logo: string;
+  fontSize?: string;
 }
 
-const PartnerBadge = ({ name, logo }: PartnerBadgeProps) => (
+const PartnerBadge = ({ name, logo, fontSize = 'text-xs md:text-sm' }: PartnerBadgeProps) => (
   <div className="bg-white rounded shadow-sm p-3 text-center flex flex-col items-center justify-center h-full">
     <img 
       src={logo} 
       alt={`${name} logo`} 
-      className="h-8 md:h-10 w-auto object-contain" 
+      className={`h-8 md:h-10 w-auto object-contain ${fontSize}`} 
       onError={(e) => {
         const target = e.target as HTMLImageElement;
         target.src = `https://placehold.co/200x80/ffffff/c41e1e?text=${name.replace(/\s+/g, '+')}`;
@@ -45,6 +46,7 @@ const AuthorizedPartnerSection = () => {
             <PartnerBadge 
               name="Knorr"
               logo="https://www.knorr-bremse.com/remote/media/public/global/design/images/knorr-bremse-logo.png"
+              fontSize="text-[0.6rem] md:text-xs"
             />
             <PartnerBadge 
               name="Thermo King"
@@ -53,6 +55,7 @@ const AuthorizedPartnerSection = () => {
             <PartnerBadge 
               name="Carrier"
               logo="https://www.carrier.com/carrier/en/worldwide/images/carrier-logo.png"
+              fontSize="text-[0.6rem] md:text-xs"
             />
           </div>
         </div>
