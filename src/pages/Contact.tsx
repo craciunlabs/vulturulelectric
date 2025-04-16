@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Contact = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -26,12 +27,6 @@ const Contact = () => {
   // Use a more secure map URL with additional parameters
   const secureMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1387.7548536429198!2d23.13978444727798!3d44.94609351744701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475272722a35768d%3A0x30dab34d9c1b536e!2sVulturul%20Electric%20-%20AUTO%20SERVICE!5e0!3m2!1sro!2sro!4v1719596219764!5m2!1sro!2sro&output=embed";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted');
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -54,7 +49,7 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* Contact Info & Form */}
+        {/* Contact Info & Image */}
         <section className="py-16">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -78,7 +73,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-gray-600">contact@vulturulelectric.ro</p>
+                      <p className="text-gray-600">service@vulturulelectric.ro</p>
                     </div>
                   </div>
                   
@@ -119,7 +114,7 @@ const Contact = () => {
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                       </svg>
                     </a>
-                    <a href="mailto:contact@vulturulelectric.ro" aria-label="Email" className="bg-vultur-gray hover:bg-vultur-red transition-colors p-2 rounded-full text-white">
+                    <a href="mailto:service@vulturulelectric.ro" aria-label="Email" className="bg-vultur-gray hover:bg-vultur-red transition-colors p-2 rounded-full text-white">
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                       </svg>
@@ -128,74 +123,24 @@ const Contact = () => {
                 </div>
               </div>
               
-              {/* Contact Form */}
+              {/* Contact Image */}
               <div>
-                <div className="bg-white p-8 rounded-xl shadow-lg">
-                  <h2 className="text-2xl font-bold mb-6">Trimite-ne un mesaj</h2>
-                  <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <label htmlFor="nume" className="block text-sm font-medium text-gray-700 mb-1">Nume</label>
-                        <input
-                          type="text"
-                          id="nume"
-                          name="nume"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vultur-red focus:border-transparent"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vultur-red focus:border-transparent"
-                          required
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <label htmlFor="telefon" className="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
-                      <input
-                        type="tel"
-                        id="telefon"
-                        name="telefon"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vultur-red focus:border-transparent"
-                        required
-                      />
-                    </div>
-                    
-                    <div className="mb-4">
-                      <label htmlFor="subiect" className="block text-sm font-medium text-gray-700 mb-1">Subiect</label>
-                      <input
-                        type="text"
-                        id="subiect"
-                        name="subiect"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vultur-red focus:border-transparent"
-                        required
-                      />
-                    </div>
-                    
-                    <div className="mb-6">
-                      <label htmlFor="mesaj" className="block text-sm font-medium text-gray-700 mb-1">Mesaj</label>
-                      <textarea
-                        id="mesaj"
-                        name="mesaj"
-                        rows={5}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vultur-red focus:border-transparent"
-                        required
-                      ></textarea>
-                    </div>
-                    
-                    <button
-                      type="submit"
-                      className="w-full px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white"
-                    >
-                      Trimite mesajul
-                    </button>
-                  </form>
+                <div className="bg-white p-4 rounded-xl shadow-lg h-full">
+                  <div className="rounded-lg overflow-hidden h-[500px]">
+                    <img 
+                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1500&auto=format&fit=crop" 
+                      alt="Servicii auto electronice" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                      }}
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <h3 className="text-xl font-bold text-vultur-red">Service Auto Electric Profesional</h3>
+                    <p className="mt-2 text-gray-600">Contactați-ne pentru orice problemă electrică a vehiculului dumneavoastră</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -245,6 +190,7 @@ const Contact = () => {
         </section>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

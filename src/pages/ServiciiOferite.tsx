@@ -4,7 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import CtaSection from '@/components/CtaSection';
-import { Car, Wrench, Cpu, Settings, Battery, ShieldCheck, Plug } from 'lucide-react';
+import { Car, Wrench, Cpu, Settings, Battery, Plug } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const ServiciiOferite = () => {
   useEffect(() => {
@@ -54,24 +55,6 @@ const ServiciiOferite = () => {
                 title="Recondiționări Instalații Electrice"
                 description="Recondiționăm complet instalațiile electrice deteriorate, asigurând funcționarea optimă a vehiculului."
                 icon={<Plug className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Montaj Alarme"
-                description="Instalăm sisteme de alarmă moderne, oferind protecție împotriva furturilor și tentativelor de efracție."
-                icon={<ShieldCheck className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Închideri Centralizate"
-                description="Montăm și reparăm sisteme de închidere centralizată pentru confort și siguranță sporite."
-                icon={<Wrench className="h-6 w-6" />}
-              />
-              
-              <ServiceCard
-                title="Montaj Casetofoane"
-                description="Servicii de instalare a sistemelor audio auto, cu integrare perfectă în bordul mașinii."
-                icon={<Settings className="h-6 w-6" />}
               />
               
               <ServiceCard
@@ -166,6 +149,7 @@ const ServiciiOferite = () => {
         <CtaSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

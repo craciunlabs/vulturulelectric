@@ -1,5 +1,5 @@
 
-import { Wrench, Cpu, Car, Settings, Battery, Plug, Shield } from 'lucide-react';
+import { Wrench, Cpu, Car, Settings, Battery, Plug } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
