@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
   }, []);
 
   const phoneNumber = '40721407727'; // Format without leading '+'
-  const message = encodeURIComponent("Buna ziua. Am gasit contactul dvs pe vulturulelectric.ro.\nAm nevoie de ajutor in urmatoarea situatie:");
+  const message = encodeURIComponent("Buna ziua. Va contactez prin optiunea whatsapp vulturulelectric.ro\nAm nevoie de ajutor in urmatoarea situatie:");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
