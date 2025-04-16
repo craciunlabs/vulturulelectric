@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -128,8 +127,8 @@ const Contact = () => {
                 <div className="bg-white p-4 rounded-xl shadow-lg h-full">
                   <div className="rounded-lg overflow-hidden h-[500px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1573007268869-c891bdf849c9?q=80&w=2070&auto=format&fit=crop" 
-                      alt="Servicii auto electrice profesionale" 
+                      src="https://i.imgur.com/WK6vdCj.jpeg" 
+                      alt="Service auto electric profesional" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
