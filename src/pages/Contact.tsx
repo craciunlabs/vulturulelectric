@@ -128,18 +128,18 @@ const Contact = () => {
                 <div className="bg-white p-4 rounded-xl shadow-lg h-full">
                   <div className="rounded-lg overflow-hidden h-[500px]">
                     <img 
-                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1500&auto=format&fit=crop" 
-                      alt="Servicii auto electronice" 
+                      src="https://images.unsplash.com/photo-1573007268869-c891bdf849c9?q=80&w=2070&auto=format&fit=crop" 
+                      alt="Servicii auto electrice profesionale" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto';
+                        target.src = 'https://placehold.co/600x400/c41e1e/ffffff?text=Service+Auto+Electric';
                       }}
                     />
                   </div>
                   <div className="mt-4 text-center">
-                    <h3 className="text-xl font-bold text-vultur-red">Service Auto Electric Profesional</h3>
-                    <p className="mt-2 text-gray-600">Contactați-ne pentru orice problemă electrică a vehiculului dumneavoastră</p>
+                    <h3 className="text-xl font-bold text-vultur-red">Servicii Auto Electrice Profesionale</h3>
+                    <p className="mt-2 text-gray-600">Diagnoză și reparații electrice de înaltă precizie</p>
                   </div>
                 </div>
               </div>
