@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FileText, ExternalLink, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -68,19 +67,19 @@ const certificates: Certificate[] = [
   },
   {
     id: 7,
-    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Mecanic+Auto",
+    logo: "/lovable-uploads/45a2a5a5-773a-47dc-ae75-d54da54c565a.png",
     title: "Mecanic Auto",
     viewUrl: "#"
   },
   {
     id: 8,
-    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Certificat",
+    logo: "https://www.rnp.ro/images/logo-new.png",
     title: "Electrician Electronist Auto",
     viewUrl: "#"
   },
   {
     id: 9,
-    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Euro+Cars",
+    logo: "https://eurocars.ro/templates/euro-cars/images/logo_new.png",
     title: "Personal Operator pentru lucrul la echipamente de climatizare auto funcționând cu anumite gaze fluorurate Categoria I",
     viewUrl: "#"
   }
