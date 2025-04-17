@@ -1,10 +1,10 @@
-
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ElectricLine from './ElectricLine';
 import StarRating from './StarRating';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface HeroContentProps {
   isMobile: boolean;
@@ -82,37 +82,37 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       <div className="flex flex-col md:flex-row gap-4">
         {isMobile ? (
           <>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="w-full inline-flex items-center justify-center py-2.5 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
             >
               Contactează-ne
               <ChevronRight className="ml-1 h-4 w-4" />
-            </a>
-            <a 
-              href="/servicii-oferite" 
+            </Link>
+            <Link 
+              to="/servicii-oferite" 
               className="w-full inline-flex items-center justify-center py-2.5 bg-white hover:bg-gray-100 transition-colors rounded-lg font-medium text-vultur-dark hover:shadow-lg transform transition-transform duration-300 hover:-translate-y-1 text-sm"
             >
               Vezi serviciile
               <ChevronRight className="ml-1 h-4 w-4" />
-            </a>
+            </Link>
           </>
         ) : (
           <>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="inline-flex items-center justify-center py-3 px-5 bg-vultur-red text-white rounded-sm font-medium text-base hover:bg-red-700 transition-colors"
             >
               Contactează-ne acum
               <ChevronRight className="ml-1.5 h-5 w-5" />
-            </a>
-            <a 
-              href="/servicii-oferite" 
+            </Link>
+            <Link 
+              to="/servicii-oferite" 
               className="inline-flex items-center justify-center py-3 px-5 bg-white text-vultur-dark rounded-sm font-medium text-base hover:bg-gray-100 transition-colors"
             >
               Vezi serviciile
               <ChevronRight className="ml-1.5 h-5 w-5" />
-            </a>
+            </Link>
           </>
         )}
       </div>

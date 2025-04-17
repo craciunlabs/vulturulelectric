@@ -1,5 +1,5 @@
-
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
@@ -121,12 +121,12 @@ const ServiciiOferite = () => {
                   </li>
                 </ul>
                 
-                <a 
-                  href="/contact" 
+                <Link 
+                  to="/contact" 
                   className="inline-flex items-center px-6 py-3 bg-vultur-red hover:bg-red-800 transition-colors rounded-lg font-medium text-white"
                 >
                   Contactează-ne acum
-                </a>
+                </Link>
               </div>
               
               <div className="relative">
