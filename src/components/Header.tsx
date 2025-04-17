@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -122,7 +121,11 @@ const Header = () => {
       >
         <div className="container flex justify-between items-center">
           <Link to="/" className="relative block animate-fade-down">
-            <BrandLogo variant="dark" size={isMobile ? "sm" : "md"} showText={false} />
+            <BrandLogo 
+              variant="dark" 
+              size={isMobile ? "sm" : "md"} 
+              showText={true}
+            />
           </Link>
           
           {/* Desktop Navigation */}

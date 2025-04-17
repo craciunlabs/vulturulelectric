@@ -68,9 +68,9 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
       </div>
       
       {showText && (
-        <div className={`${textSizes[adjustedSize]} font-bold tracking-wide ${textColors[variant]}`}>
-          <span>Vulturul</span>
-          <span className="block">Electric</span>
+        <div className={`flex flex-col ${textSizes[adjustedSize]} font-bold tracking-wide ${textColors[variant]}`}>
+          <span className="font-playfair uppercase">Vulturul</span>
+          <span className="block font-playfair uppercase">Electric</span>
         </div>
       )}
     </div>
@@ -78,3 +78,4 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
 };
 
 export default BrandLogo;
+
