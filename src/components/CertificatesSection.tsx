@@ -24,7 +24,7 @@ const certificates: Certificate[] = [
   },
   {
     id: 2,
-    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
+    logo: "https://i.imgur.com/31BU6zG.png", // Updated WABCO logo
     title: "Sistem de frânare controlat electric (EBS)",
     description: [
       "Suspensie pneumatică controlată electronic (ECAS)",
@@ -35,20 +35,20 @@ const certificates: Certificate[] = [
   },
   {
     id: 3,
-    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
-    title: "Ssteme de frânare EBS C, EBS D",
+    logo: "https://i.imgur.com/31BU6zG.png", // Updated WABCO logo
+    title: "Sisteme de frânare EBS C, EBS D", // Fixed typo from "Ssteme" to "Sisteme"
     description: ["Sisteme ECAS pentru remorci"],
     viewUrl: "#"
   },
   {
     id: 4,
-    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
+    logo: "https://i.imgur.com/31BU6zG.png", // Updated WABCO logo
     title: "Sistemul EBS-E pentru remorci",
     viewUrl: "#"
   },
   {
     id: 5,
-    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
+    logo: "https://i.imgur.com/31BU6zG.png", // Updated WABCO logo
     title: "Frânarea cu aer comprimat",
     description: ["Sisteme ABS"],
     viewUrl: "#"
