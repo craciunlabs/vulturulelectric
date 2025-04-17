@@ -74,7 +74,7 @@ const certificates: Certificate[] = [
   },
   {
     id: 8,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1500px-Flag_of_Italy.svg.png",
+    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Certificat",
     title: "Electrician Electronist Auto",
     viewUrl: "#"
   },
