@@ -1,5 +1,6 @@
 
 import { Award } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface PartnerBadgeProps {
   name: string;
@@ -22,6 +23,8 @@ const PartnerBadge = ({ name, logo, fontSize = 'text-xs md:text-sm' }: PartnerBa
 );
 
 const AuthorizedPartnerSection = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="py-6 bg-gray-100">
       <div className="container">
@@ -52,11 +55,14 @@ const AuthorizedPartnerSection = () => {
               name="Thermo King"
               logo="https://www.thermoking.com/content/dam/thermoking/images/tk-logo.jpg"
             />
-            <PartnerBadge 
-              name="Carrier"
-              logo="https://www.carrier.com/carrier/en/worldwide/images/carrier-logo.png"
-              fontSize="text-[0.3rem] md:text-[0.4rem]"
-            />
+            {/* Only render Carrier badge on non-mobile screens */}
+            {!isMobile && (
+              <PartnerBadge 
+                name="Carrier"
+                logo="https://www.carrier.com/carrier/en/worldwide/images/carrier-logo.png"
+                fontSize="text-[0.3rem] md:text-[0.4rem]"
+              />
+            )}
           </div>
         </div>
       </div>
