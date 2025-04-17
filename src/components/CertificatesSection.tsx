@@ -15,19 +15,16 @@ interface Certificate {
   viewUrl: string;
 }
 
-// Create a constant for the red certificate logo URL
-const CERTIFICAT_LOGO = "public/lovable-uploads/36e8e4de-41bc-4b9a-8fff-4d24b5c73e74.png";
-
 const certificates: Certificate[] = [
   {
     id: 1,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.eberspaecher.com/typo3conf/ext/eberspaecher_distribution/Resources/Public/Images/logo_eberspaecher.svg",
     title: "Noțiuni de bază în montarea AERO- și hidrotermetor Eberspaecher",
     viewUrl: "#"
   },
   {
     id: 2,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
     title: "Sistem de frânare controlat electric (EBS)",
     description: [
       "Suspensie pneumatică controlată electronic (ECAS)",
@@ -38,27 +35,27 @@ const certificates: Certificate[] = [
   },
   {
     id: 3,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
     title: "Ssteme de frânare EBS C, EBS D",
     description: ["Sisteme ECAS pentru remorci"],
     viewUrl: "#"
   },
   {
     id: 4,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
     title: "Sistemul EBS-E pentru remorci",
     viewUrl: "#"
   },
   {
     id: 5,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.wabco-customercentre.com/images/wabcoWeb.png",
     title: "Frânarea cu aer comprimat",
     description: ["Sisteme ABS"],
     viewUrl: "#"
   },
   {
     id: 6,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png",
     title: "Prezentare gama de încălzitoare",
     description: [
       "Prezentare gama de încălzitoare pe aer - AirTop 2000ST, AirTop EVO 3900/5500",
@@ -71,19 +68,19 @@ const certificates: Certificate[] = [
   },
   {
     id: 7,
-    logo: "/lovable-uploads/45a2a5a5-773a-47dc-ae75-d54da54c565a.png",
+    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Mecanic+Auto",
     title: "Mecanic Auto",
     viewUrl: "#"
   },
   {
     id: 8,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Certificat",
     title: "Electrician Electronist Auto",
     viewUrl: "#"
   },
   {
     id: 9,
-    logo: CERTIFICAT_LOGO,
+    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Euro+Cars",
     title: "Personal Operator pentru lucrul la echipamente de climatizare auto funcționând cu anumite gaze fluorurate Categoria I",
     viewUrl: "#"
   }
