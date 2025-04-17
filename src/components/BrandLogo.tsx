@@ -1,4 +1,3 @@
-
 import { Zap } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -31,7 +30,7 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
   };
   
   const textColors = {
-    default: 'text-white',
+    default: 'text-vultur-dark',
     white: 'text-white',
     dark: 'text-vultur-dark'
   };
@@ -78,4 +77,3 @@ const BrandLogo = ({ variant = 'default', size = 'md', showText = false }: Brand
 };
 
 export default BrandLogo;
-
