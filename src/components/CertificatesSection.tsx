@@ -18,7 +18,7 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: 1,
-    logo: "https://www.eberspaecher.com/typo3conf/ext/eberspaecher_distribution/Resources/Public/Images/logo_eberspaecher.svg",
+    logo: "https://i.imgur.com/oGtMkEK.png", // Updated Eberspaecher logo
     title: "Noțiuni de bază în montarea AERO- și hidrotermetor Eberspaecher",
     viewUrl: "#"
   },
