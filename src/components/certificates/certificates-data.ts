@@ -41,7 +41,7 @@ export const certificates: Certificate[] = [
   },
   {
     id: 6,
-    logo: "https://www.webasto-comfort.com/fileadmin/_processed_/b/e/csm_Webasto_logo_small_a57a0a4a80.png",
+    logo: "https://i.imgur.com/ibagDXy.png",
     title: "Prezentare gama de încălzitoare",
     description: [
       "Prezentare gama de încălzitoare pe aer - AirTop 2000ST, AirTop EVO 3900/5500",
@@ -54,13 +54,13 @@ export const certificates: Certificate[] = [
   },
   {
     id: 7,
-    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Mecanic+Auto",
+    logo: "https://i.imgur.com/hLkMbRa.png",
     title: "Mecanic Auto",
     viewUrl: "#"
   },
   {
     id: 8,
-    logo: "https://via.placeholder.com/150x50/ffffff/333333?text=Certificat",
+    logo: "https://i.imgur.com/7RXu8SI.png",
     title: "Electrician Electronist Auto",
     viewUrl: "#"
   },
