@@ -1,3 +1,4 @@
+
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -56,24 +57,24 @@ const HeroContent = ({ isMobile }: HeroContentProps) => {
       {isMobile ? (
         <div className="mb-5 rating-badge-container">
           <div className="flex items-center bg-black/50 backdrop-blur-sm py-1.5 px-3 rounded-lg">
-            <StarRating rating={4.6} />
-            <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.6 / 5</span>
+            <StarRating rating={4.7} />
+            <span className="ml-2 text-white font-medium text-sm whitespace-nowrap">4.7 / 5</span>
           </div>
           <div className="ml-2 inline-block">
             <Badge variant="outline" className="bg-vultur-red text-white border-vultur-red/30 px-2.5 py-1 text-xs whitespace-nowrap">
-              31 recenzii pe Google
+              33 recenzii pe Google
             </Badge>
           </div>
         </div>
       ) : (
         <div className="flex items-center mb-8 w-fit bg-black/50 backdrop-blur-sm p-2 rounded-lg">
           <div className="flex items-center">
-            <StarRating rating={4.6} />
-            <span className="ml-2 text-white font-medium text-base">4.6 / 5</span>
+            <StarRating rating={4.7} />
+            <span className="ml-2 text-white font-medium text-base">4.7 / 5</span>
           </div>
           <div className="ml-3 flex items-center">
             <Badge variant="outline" className="text-sm bg-transparent text-white border-white/30">
-              31 recenzii pe Google
+              33 recenzii pe Google
             </Badge>
           </div>
         </div>
