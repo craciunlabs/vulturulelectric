@@ -7,7 +7,7 @@ interface StarRatingProps {
 
 const StarRating = ({ rating }: StarRatingProps) => {
   const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.3 && rating % 1 <= 0.7;
+  const hasHalfStar = rating % 1 >= 0.3 && rating % 1 <= 0.8;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
   
   return (
