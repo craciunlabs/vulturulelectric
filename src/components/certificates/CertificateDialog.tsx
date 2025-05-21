@@ -10,12 +10,21 @@ interface CertificateDialogProps {
   onClose: () => void;
 }
 
+// Helper: check if a file is a PDF
+const isPdf = (fileName?: string) => {
+  return !!fileName && fileName.toLowerCase().endsWith('.pdf');
+};
+
 const CertificateDialog: React.FC<CertificateDialogProps> = ({ 
   certificate, 
   onClose 
 }) => {
   if (!certificate) return null;
-  
+
+  // Priority: show PDF (if set), then image, otherwise show loading
+  const hasPdf = isPdf(certificate.certificateFile);
+  const hasImage = certificate.certificateImage && !hasPdf;
+
   return (
     <Dialog 
       open={certificate !== null} 
@@ -39,7 +48,16 @@ const CertificateDialog: React.FC<CertificateDialogProps> = ({
             <h3 className="text-xl font-semibold">{certificate.title}</h3>
           </div>
           
-          {certificate.certificateImage ? (
+          {/* Show PDF preview if available, else image, else loading message */}
+          {hasPdf ? (
+            <div className="w-full rounded-lg overflow-hidden mb-4">
+              <div className="w-full p-10 flex items-center justify-center flex-col bg-gray-100 border-dashed border-2 border-gray-300 min-h-[350px]">
+                <FileText className="h-16 w-16 text-vultur-red mb-4" />
+                <p className="font-semibold mb-2">Certificatul este un fișier PDF.</p>
+                <p className="text-sm text-gray-500">Previzualizarea directă nu este disponibilă aici.<br />Apasă pe butonul de mai jos pentru a-l deschide sau descărca.</p>
+              </div>
+            </div>
+          ) : hasImage ? (
             <div className="w-full rounded-lg overflow-hidden mb-4">
               <img 
                 src={certificate.certificateImage} 
@@ -62,14 +80,19 @@ const CertificateDialog: React.FC<CertificateDialogProps> = ({
           )}
           
           <div className="mt-6 flex gap-4">
-            {certificate.certificateImage && (
+            {(hasPdf || certificate.certificateImage) && (
               <Button 
                 variant="outline" 
                 className="flex items-center gap-2"
-                onClick={() => window.open(certificate.certificateImage, '_blank')}
+                onClick={() => {
+                  const fileUrl = hasPdf
+                    ? certificate.certificateFile
+                    : certificate.certificateImage;
+                  if (fileUrl) window.open(fileUrl, '_blank');
+                }}
               >
                 <Download className="h-4 w-4" />
-                Descarcă certificatul
+                {hasPdf ? "Descarcă certificatul (PDF)" : "Descarcă certificatul"}
               </Button>
             )}
             <Button onClick={onClose}>

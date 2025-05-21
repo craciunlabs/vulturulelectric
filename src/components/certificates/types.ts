@@ -5,5 +5,6 @@ export interface Certificate {
   title: string;
   description?: string[];
   viewUrl: string;
-  certificateImage?: string; // URL to the certificate image
+  certificateImage?: string; // Image URL to the certificate image, if available
+  certificateFile?: string; // URL to the certificate file (PDF)
 }
