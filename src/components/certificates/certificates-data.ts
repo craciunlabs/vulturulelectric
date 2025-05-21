@@ -8,7 +8,7 @@ export const certificates: Certificate[] = [
     title: "Noțiuni de bază în montarea AERO- și hidrotermetor Eberspaecher",
     viewUrl: "#",
     certificateImage: "/certificates/certificat1.jpg",
-    certificateFile: "/certificates/certificat1.pdf"
+    certificateFile: "/certificates/eberspacher.pdf"
   },
   {
     id: 2,
