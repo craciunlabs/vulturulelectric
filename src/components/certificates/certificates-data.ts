@@ -29,11 +29,11 @@ export const certificates: Certificate[] = [
     viewUrl: "#",
     certificateFile: "https://www.vulturulelectric.ro/certificates/eurecar.pdf"
   },
-  // Registrul Auto Roman Mecanic Auto
+  // Registrul Auto Roman Mecanic Auto (corrected title, logo, file)
   {
     id: 4,
     logo: "https://i.imgur.com/31BU6zG.png",
-    title: "Registrul auto Roman Mecanic Auto",
+    title: "Registrul Auto Roman Mecanic Auto",
     viewUrl: "#",
     certificateFile: "https://www.vulturulelectric.ro/certificates/rar_mecanicauto.pdf"
   },
@@ -100,13 +100,5 @@ export const certificates: Certificate[] = [
     ],
     viewUrl: "#",
     certificateFile: "https://www.vulturulelectric.ro/certificates/wabco4.pdf"
-  },
-  // Old certificates, fallback demo entries (if needed)
-  // {
-  //   id: 10,
-  //   logo: "https://i.imgur.com/oGtMkEK.png",
-  //   title: "Noțiuni de bază în montarea AERO- și hidrotermetor Eberspaecher",
-  //   viewUrl: "#",
-  //   certificateFile: "/certificates/eberspacher.pdf"
-  // }
+  }
 ];
