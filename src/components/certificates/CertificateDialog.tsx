@@ -50,11 +50,16 @@ const CertificateDialog: React.FC<CertificateDialogProps> = ({
           
           {/* Show PDF preview if available, else image, else loading message */}
           {hasPdf ? (
-            <div className="w-full rounded-lg overflow-hidden mb-4">
-              <div className="w-full p-10 flex items-center justify-center flex-col bg-gray-100 border-dashed border-2 border-gray-300 min-h-[350px]">
-                <FileText className="h-16 w-16 text-vultur-red mb-4" />
-                <p className="font-semibold mb-2">Certificatul este un fișier PDF.</p>
-                <p className="text-sm text-gray-500">Previzualizarea directă nu este disponibilă aici.<br />Apasă pe butonul de mai jos pentru a-l deschide sau descărca.</p>
+            <div className="w-full rounded-lg overflow-hidden mb-4 flex flex-col items-center">
+              {/* Embedded PDF in iframe */}
+              <iframe
+                src={certificate.certificateFile}
+                title={`Certificat PDF - ${certificate.title}`}
+                className="w-full min-h-[500px] border rounded-md bg-gray-100"
+                style={{ maxHeight: 600 }}
+              />
+              <div className="w-full text-center mt-2 text-sm text-gray-500">
+                Dacă PDF-ul nu se încarcă, apasă „Descarcă certificatul (PDF)” mai jos.
               </div>
             </div>
           ) : hasImage ? (
