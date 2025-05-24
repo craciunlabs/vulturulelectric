@@ -4,9 +4,10 @@ import { Separator } from '@/components/ui/separator';
 import { Table, TableHeader, TableBody, TableRow, TableHead } from '@/components/ui/table';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-// Import our new components
+// Import our components
 import CertificateDialog from './certificates/CertificateDialog';
 import CertificateRow from './certificates/CertificateRow';
+import CertificateMobileCard from './certificates/CertificateMobileCard';
 import ServiceTypesList from './certificates/ServiceTypesList';
 import { certificates } from './certificates/certificates-data';
 import { Certificate } from './certificates/types';
@@ -28,7 +29,8 @@ const CertificatesSection = () => {
           <ServiceTypesList />
         </div>
         
-        <div className="mt-10">
+        {/* Desktop Table View - hidden on mobile */}
+        <div className="mt-10 hidden md:block">
           <Table>
             <TableHeader>
               <TableRow>
@@ -47,6 +49,17 @@ const CertificatesSection = () => {
               ))}
             </TableBody>
           </Table>
+        </div>
+
+        {/* Mobile Card View - visible only on mobile */}
+        <div className="mt-10 md:hidden space-y-4">
+          {certificates.map((cert) => (
+            <CertificateMobileCard 
+              key={cert.id} 
+              certificate={cert} 
+              onSelect={setSelectedCertificate} 
+            />
+          ))}
         </div>
       </div>
       
