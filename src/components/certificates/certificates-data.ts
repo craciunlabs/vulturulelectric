@@ -21,7 +21,7 @@ export const certificates: Certificate[] = [
     ],
     viewUrl: "#",
     certificateImage: "/certificates/certificat2.jpg",
-    certificateFile: "/certificates/certificat2.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/wabco1.pdf"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const certificates: Certificate[] = [
     description: ["Sisteme ECAS pentru remorci"],
     viewUrl: "#",
     certificateImage: "/certificates/certificat3.jpg",
-    certificateFile: "/certificates/certificat3.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/wabco2.pdf"
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const certificates: Certificate[] = [
     title: "Sistemul EBS-E pentru remorci",
     viewUrl: "#",
     certificateImage: "/certificates/certificat4.jpg",
-    certificateFile: "/certificates/certificat4.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/wabco3.pdf"
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const certificates: Certificate[] = [
     description: ["Sisteme ABS"],
     viewUrl: "#",
     certificateImage: "/certificates/certificat5.jpg",
-    certificateFile: "/certificates/certificat5.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/wabco4.pdf"
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ export const certificates: Certificate[] = [
     ],
     viewUrl: "#",
     certificateImage: "/certificates/certificat6.jpg",
-    certificateFile: "/certificates/certificat6.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/webasto.pdf"
   },
   {
     id: 7,
