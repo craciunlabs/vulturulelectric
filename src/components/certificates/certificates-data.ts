@@ -87,5 +87,13 @@ export const certificates: Certificate[] = [
     viewUrl: "#",
     certificateImage: "/certificates/certificat9.jpg",
     certificateFile: "https://www.vulturulelectric.ro/certificates/agfr.pdf"
+  },
+  {
+    id: 10,
+    logo: "/lovable-uploads/4a4b1d33-7582-45cb-82f8-1b173cea64dd.png",
+    title: "Mecanici Auto",
+    viewUrl: "#",
+    certificateImage: "/certificates/certificat10.jpg",
+    certificateFile: "https://www.vulturulelectric.ro/certificates/eurecar.pdf"
   }
 ];
