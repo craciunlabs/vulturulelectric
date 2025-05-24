@@ -70,7 +70,7 @@ export const certificates: Certificate[] = [
     title: "Mecanic Auto",
     viewUrl: "#",
     certificateImage: "/certificates/certificat7.jpg",
-    certificateFile: "/certificates/certificat7.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/rar_mecanicauto.pdf"
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ export const certificates: Certificate[] = [
     title: "Electrician Electronist Auto",
     viewUrl: "#",
     certificateImage: "/certificates/certificat8.jpg",
-    certificateFile: "/certificates/certificat8.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/autototal.pdf"
   },
   {
     id: 9,
@@ -86,6 +86,6 @@ export const certificates: Certificate[] = [
     title: "Personal Operator pentru lucrul la echipamente de climatizare auto funcționând cu anumite gaze fluorurate Categoria I",
     viewUrl: "#",
     certificateImage: "/certificates/certificat9.jpg",
-    certificateFile: "/certificates/certificat9.pdf"
+    certificateFile: "https://www.vulturulelectric.ro/certificates/agfr.pdf"
   }
 ];
