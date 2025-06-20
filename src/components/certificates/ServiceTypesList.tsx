@@ -15,7 +15,7 @@ const ServiceTypesList: React.FC = () => {
       </div>
       <div className="flex items-center">
         <Check className="h-5 w-5 text-vultur-red mr-2" />
-        <span>Încălzire staționară, Aer condiționat, Reactor staționar - WEBASTO</span>
+        <span>Încălzire staționară, Aer condiționat - WEBASTO</span>
       </div>
       <div className="flex items-center">
         <Check className="h-5 w-5 text-vultur-red mr-2" />
@@ -23,7 +23,7 @@ const ServiceTypesList: React.FC = () => {
       </div>
       <div className="flex items-center">
         <Check className="h-5 w-5 text-vultur-red mr-2" />
-        <span>Efectuăm reparații la autosamioane</span>
+        <span>Efectuăm reparații la autocamioane</span>
       </div>
     </div>
   );
